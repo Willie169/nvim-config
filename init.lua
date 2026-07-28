@@ -1,3 +1,3 @@
 require("config.lazy")
-vim.cmd("source vim-config/basic.vim")
+vim.cmd("source basic.vim")
 pcall(require, "config.my_configs")

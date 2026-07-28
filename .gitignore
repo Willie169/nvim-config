@@ -1,2 +1,3 @@
+basic.vim
 lazy-lock.json
 lua/config/my_configs.lua

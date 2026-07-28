@@ -7,18 +7,13 @@ My configuration for Neovim 0.12.0 or later.
 ```
 mkdir -p ~/.config
 git clone --recurse-submodules --depth=1 https://github.com/Willie169/nvim-config.git ~/.config/nvim
+sh ~/.config/nvim/update.sh
 ```
 
 ### Update
 
 ```
-cd ~/.config/nvim
-git reset --hard
-git submodule deinit --all --force
-git pull --rebase
-git submodule sync --recursive
-git submodule update --init --remote --recursive
-git clean -fd
+sh ~/.config/nvim/update.sh
 ```
 
 ### Customization
