@@ -5,8 +5,6 @@ My configuration for Neovim 0.12.0 or later.
 ### Installation
 
 ```
-mkdir -p ~/.config
-git clone --recurse-submodules --depth=1 https://github.com/Willie169/nvim-config.git ~/.config/nvim
 sh ~/.config/nvim/update.sh
 ```
 
