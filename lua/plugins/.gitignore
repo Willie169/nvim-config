@@ -1,0 +1,10 @@
+*
+!.gitignore
+!fcitx.lua
+!nvim-treesitter.lua
+!gitsigns.lua
+!telescope.lua
+!jupytext.lua
+!termux-clipboard.lua
+!lightline.lua
+!vim-fugitive.lua
