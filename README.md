@@ -14,6 +14,7 @@ git clone --recurse-submodules --depth=1 https://github.com/Willie169/nvim-confi
 ```
 cd ~/.config/nvim
 git reset --hard
+git submodule deinit --all --force
 git pull --rebase
 git submodule sync --recursive
 git submodule update --init --remote --recursive
