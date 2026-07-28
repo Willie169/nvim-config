@@ -5,7 +5,7 @@ My configuration for Neovim 0.12.0 or later.
 ### Installation
 
 ```
-sh ~/.config/nvim/update.sh
+curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/install.sh | sh
 ```
 
 ### Update
