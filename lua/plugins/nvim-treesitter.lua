@@ -3,6 +3,7 @@ return {
 	branch = "main",
 	build = ":TSUpdate",
 	config = function()
+		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 		require("nvim-treesitter").setup()
 		require("nvim-treesitter").install({
 			"arduino",
@@ -62,12 +63,13 @@ return {
 			"yaml",
 			"zsh",
 		})
+        vim.treesitter.language.register("latex", "plaintex")
+        vim.treesitter.language.register("systemverilog", "v")
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = { "*" },
 			callback = function()
 				vim.treesitter.start()
 			end,
 		})
-		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 	end,
 }
