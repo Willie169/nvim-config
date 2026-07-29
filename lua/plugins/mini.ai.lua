@@ -2,7 +2,6 @@ return {
 	{
 		"nvim-mini/mini.ai",
 		version = false,
-		event = "VeryLazy",
 		opts = function()
 			local ai = require("mini.ai")
 			return {
