@@ -1,6 +1,6 @@
 ## nvim-config
 
-My configuration for Neovim 0.12.0 or later.
+My configuration for Neovim 0.12.0 or later. Part of it is derived from [LazyVim](https://github.com/LazyVim/LazyVim).
 
 ### Installation
 
