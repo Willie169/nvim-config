@@ -66,7 +66,7 @@ return {
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "TSUpdate",
 			callback = function()
-				require("nvim-treesitter.parsers").zimbu = {
+				require("nvim-treesitter.parsers").latex = {
 					install_info = {
 						url = "https://github.com/latex-lsp/tree-sitter-latex",
 						generate = true, -- only needed if repo does not contain pre-generated `src/parser.c`
