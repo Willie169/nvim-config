@@ -1,11 +1,11 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		require("tokyonight").setup({
+		opts = {
 			styles = {
-				comments = { italic = false }, -- Disable italics in comments
+				comments = { italic = false },
 			},
-		}),
+		},
 		config = function()
 			vim.cmd([[colorscheme tokyonight-moon]])
 		end,
