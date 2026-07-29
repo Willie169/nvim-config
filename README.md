@@ -4,6 +4,14 @@ My configuration for Neovim 0.12.0 or later.
 
 ### Installation
 
+Backp your configurations first. And then clean up Neovim files with:
+```
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
+rm -rf ~/.config/nvim
+```
+Install:
 ```
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/install.sh | sh
 ```
