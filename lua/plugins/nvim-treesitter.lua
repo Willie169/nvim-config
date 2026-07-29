@@ -33,7 +33,6 @@ return {
 			"jsdoc",
 			"json",
 			"kotlin",
-			"latex",
 			"lua",
 			"luadoc",
 			"luap",
