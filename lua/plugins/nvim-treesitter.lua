@@ -63,8 +63,10 @@ return {
 			"yaml",
 			"zsh",
 		})
-		vim.treesitter.language.register("latex", "plaintex")
-		vim.treesitter.language.register("systemverilog", "v")
+		vim.treesitter.language.register("xml", { "svg", "xslt" })
+		vim.treesitter.language.register("latex", { "tex" })
+		vim.treesitter.language.register("bash", { "sh" })
+		vim.treesitter.language.register("systemverilog", { "v" })
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = { "*" },
 			callback = function()
