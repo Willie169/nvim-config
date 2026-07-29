@@ -62,6 +62,19 @@ return {
 			"yaml",
 			"zsh",
 		})
+
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "TSUpdate",
+			callback = function()
+				require("nvim-treesitter.parsers").zimbu = {
+					install_info = {
+						url = "https://github.com/latex-lsp/tree-sitter-latex",
+						generate = true, -- only needed if repo does not contain pre-generated `src/parser.c`
+					},
+				}
+			end,
+		})
+
 		vim.treesitter.language.register("xml", { "svg", "xslt" })
 		vim.treesitter.language.register("latex", { "tex" })
 		vim.treesitter.language.register("bash", { "sh" })
