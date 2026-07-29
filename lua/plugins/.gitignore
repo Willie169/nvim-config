@@ -10,6 +10,7 @@
 !mini.pairs.lua
 !nvim-lspconfig.lua
 !nvim-treesitter.lua
+!nvim-treesitter-textobjects.lua
 !termux-clipboard.lua
 !todo-comments.lua
 !tokyonight.lua
