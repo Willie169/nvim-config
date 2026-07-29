@@ -68,5 +68,6 @@ return {
 				vim.treesitter.start()
 			end,
 		})
+		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 	end,
 }
