@@ -1,5 +1,6 @@
 *
 !.gitignore
+!bufferline.lua
 !fcitx.lua
 !flash.lua
 !gitsigns.lua
@@ -11,6 +12,7 @@
 !nvim-lspconfig.lua
 !nvim-treesitter.lua
 !nvim-treesitter-textobjects.lua
+!nvim-ts-autotag.lua
 !termux-clipboard.lua
 !todo-comments.lua
 !tokyonight.lua
