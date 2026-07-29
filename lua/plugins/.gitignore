@@ -1,10 +1,9 @@
 *
 !.gitignore
 !fcitx.lua
-!nvim-treesitter.lua
-!gitsigns.lua
-!telescope.lua
 !jupytext.lua
+!mini.ai.lua
+!mini.pairs.lua
+!nvim-treesitter.lua
 !termux-clipboard.lua
-!lightline.lua
-!vim-fugitive.lua
+!tokyonight.lua
