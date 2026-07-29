@@ -9,12 +9,14 @@
 !lualine.lua
 !masonn.lua
 !mini.ai.lua
+!mini.comment.lua
 !mini.icons.lua
 !mini.pairs.lua
 !nvim-lspconfig.lua
 !nvim-treesitter.lua
 !nvim-treesitter-textobjects.lua
 !nvim-ts-autotag.lua
+!nvim-ts-context-commentstring.lua
 !persistence.lua
 !termux-clipboard.lua
 !todo-comments.lua
