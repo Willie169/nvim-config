@@ -63,7 +63,7 @@ return {
 			"zsh",
 		})
 		vim.api.nvim_create_autocmd("FileType", {
-            pattern = { '*' },
+			pattern = { "*" },
 			callback = function()
 				vim.treesitter.start()
 			end,
