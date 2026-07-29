@@ -1,10 +1,8 @@
 return {
-      {
-    "folke/tokyonight.nvim",
-    opts = { style = "moon" },
-    	config = function()
-
-            vim.cmd[[colorscheme tokyonight]]
-        end
-  },
+	{
+		"folke/tokyonight.nvim",
+		config = function()
+			vim.cmd([[colorscheme tokyonight-moon]])
+		end,
+	},
 }
