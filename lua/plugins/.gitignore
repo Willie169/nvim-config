@@ -1,9 +1,10 @@
 *
 !.gitignore
-!fcitx.lua
-!jupytext.lua
-!mini.ai.lua
-!mini.pairs.lua
-!nvim-treesitter.lua
-!termux-clipboard.lua
-!tokyonight.lua
+!/home/willie/shared/nvim-config/lua/plugins/fcitx.lua
+!/home/willie/shared/nvim-config/lua/plugins/grug-far.lua
+!/home/willie/shared/nvim-config/lua/plugins/jupytext.lua
+!/home/willie/shared/nvim-config/lua/plugins/mini.ai.lua
+!/home/willie/shared/nvim-config/lua/plugins/mini.pairs.lua
+!/home/willie/shared/nvim-config/lua/plugins/nvim-treesitter.lua
+!/home/willie/shared/nvim-config/lua/plugins/termux-clipboard.lua
+!/home/willie/shared/nvim-config/lua/plugins/tokyonight.lua
