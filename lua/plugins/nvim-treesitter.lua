@@ -5,7 +5,7 @@ return {
 	config = function()
 		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 		require("nvim-treesitter").setup()
-		require("nvim-treesitter.parsers").latex.install_info.generate = true
+		-- require("nvim-treesitter.parsers").latex.install_info.generate = true
 		require("nvim-treesitter").install({
 			"arduino",
 			"asm",
@@ -34,7 +34,7 @@ return {
 			"jsdoc",
 			"json",
 			"kotlin",
-			"latex",
+			-- "latex",
 			"lua",
 			"luadoc",
 			"luap",
