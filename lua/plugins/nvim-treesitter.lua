@@ -7,6 +7,7 @@ return {
 		require("nvim-treesitter").setup()
 		if vim.fn.has("android") == 1 then
 			require("nvim-treesitter.parsers").latex.install_info.generate = true
+			require("nvim-treesitter.parsers").latex.install_info.generate_from_json = false
 		end
 		require("nvim-treesitter").install({
 			"arduino",
@@ -36,7 +37,7 @@ return {
 			"jsdoc",
 			"json",
 			"kotlin",
-			-- "latex",
+			"latex",
 			"lua",
 			"luadoc",
 			"luap",
