@@ -5,6 +5,12 @@ return {
 	config = function()
 		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 		require("nvim-treesitter").setup()
+		require("nvim-treesitter.parsers").latex_ = {
+			install_info = {
+				url = "https://github.com/latex-lsp/tree-sitter-latex",
+				generate = true, -- only needed if repo does not contain pre-generated `src/parser.c`
+			},
+		}
 		require("nvim-treesitter").install({
 			"arduino",
 			"asm",
@@ -33,6 +39,7 @@ return {
 			"jsdoc",
 			"json",
 			"kotlin",
+			"latex_",
 			"lua",
 			"luadoc",
 			"luap",
@@ -62,16 +69,8 @@ return {
 			"yaml",
 			"zsh",
 		})
-
-		require("nvim-treesitter.parsers").latex = {
-			install_info = {
-				url = "https://github.com/latex-lsp/tree-sitter-latex",
-				generate = true, -- only needed if repo does not contain pre-generated `src/parser.c`
-			},
-		}
-
 		vim.treesitter.language.register("xml", { "svg", "xslt" })
-		vim.treesitter.language.register("latex", { "tex" })
+		vim.treesitter.language.register("latex_", { "tex", "latex" })
 		vim.treesitter.language.register("bash", { "sh" })
 		vim.treesitter.language.register("systemverilog", { "v" })
 

@@ -19,7 +19,6 @@
 !nvim-ts-autotag.lua
 !nvim-ts-context-commentstring.lua
 !persistence.lua
-!termux-clipboard.lua
 !todo-comments.lua
 !tokyonight.lua
 !trouble.lua
