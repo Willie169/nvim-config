@@ -9,10 +9,7 @@ return {
 			require("nvim-treesitter.parsers").latex.install_info.url = "https://github.com/Willie169/tree-sitter-latex"
 			require("nvim-treesitter.parsers").latex.install_info.location = "tree-sitter-latex"
 			require("nvim-treesitter.parsers").latex.install_info.generate = false
-			require("nvim-treesitter.parsers").latex.install_info.files = {
-				"src/parser.c",
-				"src/scanner.c",
-			}
+			require("nvim-treesitter.parsers").latex.install_info.generate_from_json = false
 		end
 		require("nvim-treesitter").install({
 			"arduino",
