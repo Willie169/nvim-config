@@ -4,12 +4,8 @@ My configuration for Neovim 0.12.0 or later. Part of it is derived from [LazyVim
 
 ### Installation
 
-Backp your configurations first. And then clean up Neovim files and install:
+Backp your configurations first.
 ```
-rm -rf ~/.local/share/nvim
-rm -rf ~/.local/state/nvim
-rm -rf ~/.cache/nvim
-rm -rf ~/.config/nvim
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/install.sh | sh
 ```
 
