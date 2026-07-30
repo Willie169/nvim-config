@@ -11,4 +11,3 @@ cd ~/.config/nvim
 mkdir -p ~/.vim_undodir
 wget https://raw.githubusercontent.com/Willie169/vim-config/refs/heads/main/basic.vim
 echo "Installed successfully!"
-
