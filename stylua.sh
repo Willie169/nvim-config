@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 shopt -s globstar
 dir="$(cd -- "$(dirname -- "$0")" && pwd)"
 echo '*
