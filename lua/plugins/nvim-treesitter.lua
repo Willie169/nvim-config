@@ -5,13 +5,13 @@ return {
 	config = function()
 		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 		require("nvim-treesitter").setup()
-		-- if vim.fn.has("android") == 1 then
-		require("nvim-treesitter.parsers").latex.install_info = {
-			generate = false,
-			url = "https://github.com/Willie169/tree-sitter-latex",
-			location = "tree-sitter-latex",
-		}
-		-- end
+		if vim.fn.has("android") == 1 then
+			require("nvim-treesitter.parsers").latex.install_info = {
+				generate = false,
+				url = "https://github.com/Willie169/tree-sitter-latex",
+				location = "tree-sitter-latex",
+			}
+		end
 		require("nvim-treesitter").install({
 			"arduino",
 			"asm",
