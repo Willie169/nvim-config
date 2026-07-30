@@ -1,16 +1,15 @@
 if vim.fn.has("android") == 1 then
-    vim.api.nvim_create_autocmd("User", {
-        pattern = "TSUpdate",
-        callback = function()
-            require("nvim-treesitter.parsers").latex.install_info = {
+	vim.api.nvim_create_autocmd("User", {
+		pattern = "TSUpdate",
+		callback = function()
+			require("nvim-treesitter.parsers").latex.install_info = {
 				generate = false,
 				url = "https://github.com/Willie169/tree-sitter-latex",
 				location = "tree-sitter-latex",
-			},
-        end,
-    })
+			}
+		end,
+	})
 end
-
 
 return {
 	"nvim-treesitter/nvim-treesitter",
