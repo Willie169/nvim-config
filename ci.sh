@@ -10,3 +10,8 @@ done
 for f in "$dir"/**/*.lua; do
 	stylua "$f"
 done
+for f in "$dir"/*.sh; do
+    chmod +x "$f"
+	shfmt -w "$f"
+	shellcheck "$f"
+done
