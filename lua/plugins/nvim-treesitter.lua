@@ -1,3 +1,5 @@
+vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
+
 if vim.fn.has("android") == 1 then
 	vim.api.nvim_create_autocmd("User", {
 		pattern = "TSUpdate",
@@ -16,7 +18,6 @@ return {
 	branch = "main",
 	build = ":TSUpdate",
 	config = function()
-		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 		require("nvim-treesitter").setup()
 		require("nvim-treesitter").install({
 			"arduino",
