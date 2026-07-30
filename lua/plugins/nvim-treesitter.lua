@@ -5,7 +5,9 @@ return {
 	config = function()
 		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 		require("nvim-treesitter").setup()
-		-- require("nvim-treesitter.parsers").latex.install_info.generate = true
+		if vim.fn.has("android") == 1 then
+			require("nvim-treesitter.parsers").latex.install_info.generate = true
+		end
 		require("nvim-treesitter").install({
 			"arduino",
 			"asm",
@@ -120,5 +122,9 @@ return {
 				end
 			end,
 		})
+
+		vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		vim.wo[0][0].foldmethod = "expr"
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 	end,
 }
