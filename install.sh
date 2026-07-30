@@ -1,6 +1,6 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
 
+set -e
 mkdir -p ~/.config
 git clone --depth=1 https://github.com/Willie169/nvim-config.git ~/.config/nvim
 cd ~/.config/nvim

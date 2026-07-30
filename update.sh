@@ -1,6 +1,6 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
 
+set -e
 cd ~/.config/nvim
 git reset --hard
 git pull --rebase
