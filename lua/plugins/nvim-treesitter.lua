@@ -6,8 +6,9 @@ return {
 		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 		require("nvim-treesitter").setup()
 		if vim.fn.has("android") == 1 then
-			require("nvim-treesitter.parsers").latex.install_info.generate = true
-			require("nvim-treesitter.parsers").latex.install_info.generate_from_json = false
+			require("nvim-treesitter.parsers").latex.install_info.url = "https://github.com/Willie169/tree-sitter-latex"
+			require("nvim-treesitter.parsers").latex.install_info.location = "tree-sitter-latex"
+			require("nvim-treesitter.parsers").latex.install_info.generate = false
 		end
 		require("nvim-treesitter").install({
 			"arduino",
