@@ -1,3 +1,17 @@
+if vim.fn.has("android") == 1 then
+    vim.api.nvim_create_autocmd("User", {
+        pattern = "TSUpdate",
+        callback = function()
+            require("nvim-treesitter.parsers").latex.install_info = {
+				generate = false,
+				url = "https://github.com/Willie169/tree-sitter-latex",
+				location = "tree-sitter-latex",
+			},
+        end,
+    })
+end
+
+
 return {
 	"nvim-treesitter/nvim-treesitter",
 	branch = "main",
@@ -5,13 +19,6 @@ return {
 	config = function()
 		vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 		require("nvim-treesitter").setup()
-		if vim.fn.has("android") == 1 then
-			require("nvim-treesitter.parsers").latex.install_info = {
-				generate = false,
-				url = "https://github.com/Willie169/tree-sitter-latex",
-				location = "tree-sitter-latex",
-			}
-		end
 		require("nvim-treesitter").install({
 			"arduino",
 			"asm",
@@ -71,7 +78,7 @@ return {
 			"zsh",
 		})
 		vim.treesitter.language.register("xml", { "svg", "xslt" })
-		vim.treesitter.language.register("latex_", { "tex", "latex" })
+		vim.treesitter.language.register("latex", { "tex" })
 		vim.treesitter.language.register("bash", { "sh" })
 		vim.treesitter.language.register("systemverilog", { "v" })
 
