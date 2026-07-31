@@ -41,21 +41,21 @@ return {
 		},
 		keys = {
 			{
-				"<leader>?",
+				"<leader>/",
 				function()
 					require("which-key").show({ global = false })
 				end,
 				desc = "Buffer Keymaps (which-key)",
 			},
 			{
-				'<leader>"',
+				"<leader>'",
 				function()
 					require("which-key").show({ global = true })
 				end,
 				desc = "Global Keymaps (which-key)",
 			},
 			{
-				"<C-S-w>",
+				"<c-w><space>",
 				function()
 					require("which-key").show({ keys = "<c-w>", loop = true })
 				end,
