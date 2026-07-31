@@ -1,17 +1,14 @@
 return {
 	{
 		"folke/which-key.nvim",
+		event = "VeryLazy",
 		opts_extend = { "spec" },
 		opts = {
-			preset = "helix",
-			defaults = {},
 			spec = {
 				{
 					mode = { "n", "x" },
 					{ "<leader><tab>", group = "tabs" },
 					{ "<leader>c", group = "code" },
-					{ "<leader>d", group = "debug" },
-					{ "<leader>dp", group = "profiler" },
 					{ "<leader>f", group = "file/find" },
 					{ "<leader>g", group = "git" },
 					{ "<leader>gh", group = "hunks" },
@@ -51,7 +48,14 @@ return {
 				desc = "Buffer Keymaps (which-key)",
 			},
 			{
-				"<c-w><space>",
+				'<leader>"',
+				function()
+					require("which-key").show({ global = true })
+				end,
+				desc = "Global Keymaps (which-key)",
+			},
+			{
+				"<C-S-w>",
 				function()
 					require("which-key").show({ keys = "<c-w>", loop = true })
 				end,
