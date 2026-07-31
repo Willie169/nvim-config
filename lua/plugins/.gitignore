@@ -8,12 +8,14 @@
 !indent-blankline.lua
 !jupytext.lua
 !lualine.lua
+!mason-lspconfig.lua
 !masonn.lua
 !mini.ai.lua
 !mini.comment.lua
 !mini.icons.lua
 !mini.pairs.lua
 !mini.surround.lua
+!nvim-lspconfig.lua
 !nvim-treesitter.lua
 !nvim-treesitter-textobjects.lua
 !nvim-ts-autotag.lua
