@@ -43,14 +43,6 @@ return {
 			vim.keymap.set("n", "<leader>uo", builtin.vim_options, { desc = "Telescope vim options" })
 			vim.keymap.set("n", "<leader>ur", builtin.resume, { desc = "Telescope resume" })
 			vim.keymap.set("n", "<leader>uq", builtin.quickfix, { desc = "Telescope quickfix" })
-			vim.keymap.set("n", "<leader>ip", builtin.lsp_implementations, { desc = "Telescope lsp implementations" })
-			vim.keymap.set("n", "<leader>df", builtin.lsp_definitions, { desc = "Telescope lsp implementations" })
-			vim.keymap.set(
-				"n",
-				"<leader>tdf",
-				builtin.lsp_type_definitions,
-				{ desc = "Telescope lsp type implementations" }
-			)
 			vim.keymap.set("n", "<leader>tr", builtin.treesitter, { desc = "Telescope treesitter" })
 			vim.api.nvim_create_user_command("T", "Telescope <args>", {
 				nargs = "*",
