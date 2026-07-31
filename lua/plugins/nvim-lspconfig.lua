@@ -1,6 +1,12 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"mason.nvim",
+			{ "mason-org/mason-lspconfig.nvim", config = function() end },
+		},
+		opts_extend = { "servers.*.keys" },
 		opts = {
 			servers,
 			{
