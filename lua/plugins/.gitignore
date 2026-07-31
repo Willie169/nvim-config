@@ -13,7 +13,6 @@
 !mini.icons.lua
 !mini.pairs.lua
 !mini.surround.lua
-!nvim-lspconfig.lua
 !nvim-treesitter.lua
 !nvim-treesitter-textobjects.lua
 !nvim-ts-autotag.lua
