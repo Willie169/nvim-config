@@ -14,13 +14,14 @@
 !mini.pairs.lua
 !mini.surround.lua
 !nvim-lspconfig.lua
-!nvim-treesitter-textobjects.lua
 !nvim-treesitter.lua
+!nvim-treesitter-textobjects.lua
 !nvim-ts-autotag.lua
 !nvim-ts-context-commentstring.lua
 !persistence.lua
 !termux-clipboard.lua
 !todo-comments.lua
+!tokyonight.lua
 !trouble.lua
 !ts-comments.lua
 !which-key.lua
