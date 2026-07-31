@@ -5,6 +5,7 @@
 !flash.lua
 !gitsigns.lua
 !grug-far.lua
+!indent-blankline.lua
 !jupytext.lua
 !lualine.lua
 !masonn.lua
