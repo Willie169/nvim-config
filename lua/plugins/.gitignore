@@ -19,6 +19,7 @@
 !nvim-ts-autotag.lua
 !nvim-ts-context-commentstring.lua
 !persistence.lua
+!suda.lua
 !telescope.lua
 !termux-clipboard.lua
 !todo-comments.lua
