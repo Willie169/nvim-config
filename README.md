@@ -2,12 +2,21 @@
 
 My configuration for Neovim 0.12.0 or later. Part of it is derived from [LazyVim](https://github.com/LazyVim/LazyVim).
 
-### Installation
+### Configuration Installation
 
 Backp your configurations first.
 ```
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/install.sh | sh
 ```
+
+### Full Installation
+
+Full installation installs Neovim and external applications required or recommended such as providers and LSP servers. Some optional external applications are not installed. Run `:checkhealth` in Neovim after installation and refer to the documentations of the plugins for them.
+
+
+- Ubuntu derivatives AMD64: [**ubuntu-setup-with-vnc-and-gpu**](https://github.com/Willie169/ubuntu-setup-with-vnc-and-gpu).
+- Ubuntu or Debian ARM proot-distro: [**termux-sh**](https://github.com/Willie169/termux-sh).
+- Termux: [**termux-sh**](https://github.com/Willie169/termux-sh).
 
 ### Update
 
@@ -24,14 +33,7 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [fcitx.vim](https://github.com/lilydjwg/fcitx.vim): Keep and restore fcitx state for each buffer separately when leaving/re-entering insert mode or search mode
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Nvim Treesitter configurations and abstraction layer
 * [termux-clipboard](https://github.com/Willie169/termux-clipboard): Integrate Vim '+' register with the Android system clipboard via Termux APIs
-
-### External Applications
-
-Refer to files in `lua/plugins` or `:checkhealth` in Neovim after installation for required and optional external applications. The following environments' installations of this repo including external applications are parts of the following repos of mine:
-
-- Ubuntu derivatives AMD64: [**ubuntu-setup-with-vnc-and-gpu**](https://github.com/Willie169/ubuntu-setup-with-vnc-and-gpu).
-- Ubuntu or Debian ARM proot-distro: [**termux-sh**](https://github.com/Willie169/termux-sh).
-- Termux: [**termux-sh**](https://github.com/Willie169/termux-sh).
+<!-- TODO -->
 
 ### Vim
 

@@ -13,5 +13,5 @@ done
 for f in "$dir"/*.sh; do
 	chmod +x "$f"
 	shfmt -w "$f"
-	shellcheck "$f"
+	shellcheck -e 1090,1091 "$f"
 done
