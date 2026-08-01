@@ -100,3 +100,5 @@ cargo install ra_ap_rust-analyzer
 # https://github.com/chipsalliance/verible/releases arch if-else gh_latest b*c add
 # https://github.com/eclipse-jdtls/eclipse.jdt.ls brew, termux?
 # https://github.com/Kotlin/kotlin-lsp brew, termux?
+
+curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/install.sh | sh
