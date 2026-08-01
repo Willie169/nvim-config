@@ -1,5 +1,6 @@
 *
 !.gitignore
+!blink.lua
 !bufferline.lua
 !fcitx.lua
 !flash.lua
