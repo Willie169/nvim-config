@@ -25,6 +25,14 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Nvim Treesitter configurations and abstraction layer
 * [termux-clipboard](https://github.com/Willie169/termux-clipboard): Integrate Vim '+' register with the Android system clipboard via Termux APIs
 
+### External Applications
+
+Refer to files in `lua/plugins` or `:checkhealth` in Neovim after installation for required and optional external applications. The following environments' installations of this repo including external applications are parts of the following repos of mine:
+
+- Ubuntu derivatives AMD64: [**ubuntu-setup-with-vnc-and-gpu**](https://github.com/Willie169/ubuntu-setup-with-vnc-and-gpu).
+- Ubuntu or Debian ARM proot-distro: [**termux-sh**](https://github.com/Willie169/termux-sh).
+- Termux: [**termux-sh**](https://github.com/Willie169/termux-sh).
+
 ### Vim
 
 Refer to my [vim-config](https://github.com/Willie169/nvim-config) repo for my Vim configuration.
