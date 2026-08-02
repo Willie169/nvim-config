@@ -12,4 +12,4 @@ git pull --rebase
 git clean -fd
 # shellcheck disable=2164
 cd "$cwd"
-echo "Updated successfully!"
+[ "$1" = '-i' ] || echo "Updated successfully!"

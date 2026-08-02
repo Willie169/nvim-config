@@ -2,7 +2,7 @@
 
 set -e
 cwd="$(pwd)"
-[ "$1" = '-i' ] || sh ~/.config/nvim/update.sh >/dev/null
+[ "$1" = '-i' ] || sh ~/.config/nvim/update.sh -i
 ENV=0
 [ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
 [ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2
