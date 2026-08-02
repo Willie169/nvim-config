@@ -11,17 +11,96 @@ curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/ma
 
 ### Full Installation
 
-Full installation installs Neovim and external applications required or recommended such as providers and LSP servers. Some optional external applications are not installed. Run `:checkhealth` in Neovim after installation and refer to the documentations of the plugins for them.
+Backp your configurations first.
+```
+curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-install.sh | bash
+```
 
+Full installation installs Neovim, Node.js provider, Python 3 provider, Jupytext, and LSP servers including
+- bash-language-server
+- clangd
+- cmake-language-server
+- dockerfile-language-server-nodejs
+- eclipse.jdt.ls
+- gopls
+- ktlsp
+- lua-language-server
+- marksman
+- perl-lsp
+- pyright
+- quick-lint-js
+- ra_ap_rust-analyzer
+- superhtml
+- texlab
+- verible
+- vscode-json-languageserver
+- yaml-language-server
+and Neovim configuration.
 
-- Ubuntu derivatives AMD64: [**ubuntu-setup-with-vnc-and-gpu**](https://github.com/Willie169/ubuntu-setup-with-vnc-and-gpu).
-- Ubuntu or Debian ARM proot-distro: [**termux-sh**](https://github.com/Willie169/termux-sh).
-- Termux: [**termux-sh**](https://github.com/Willie169/termux-sh).
+Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:
+- `apt`
+- `brew`: can be installed with:
+  ```
+  [ "$EUID" -eq 0 ] && touch /.dockerenv
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+  ```
+- `cargo`: can be installed with:
+  ```
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  . "${HOME}"/.cargo/env
+  ```
+- `cargo-binstall`: can be installed with:
+  ```
+  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+  ```
+- `npm`: can be installed with:
+  ```
+  NVM_VERSION=$(curl -fsSL "https://api.github.com/repos/nvm-sh/nvm/releases/latest" | jq -r '.tag_name')
+  bash -c "curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash"
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+  nvm install --lts
+  echo y | corepack enable npm
+  echo y | npm --help || true
+  ```
+- `uv`: can be installed with:
+  ```
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
 
-### Update
+Termux is supported provided that the following executables are available:
+- `apt`
+- `cargo`: can be installed with:
+  ```
+  pkg install rust -y
+  ```
+- `npm`: can be installed with:
+  ```
+  pkg install nodejs-lts npm -y
+  ```
+- `pkg`
+- `uv`: can be installed with:
+  ```
+  pkg install uv -y
+  ```
+
+Run `:checkhealth` in Neovim after installation and refer to the documentations of the plugins for other optional external software you may install.
+
+This is also used in my [**ubuntu-setup-with-vnc-and-gpu**](https://github.com/Willie169/ubuntu-setup-with-vnc-and-gpu) and [**termux-sh**](https://github.com/Willie169/termux-sh) repos. You may check them out for my full setup.
+
+### Configuration Update
 
 ```
 sh ~/.config/nvim/update.sh
+```
+
+### Full Update
+
+Full update updates all applications installed in full installation that is not managed by a package manager and Neovim configuration.
+```
+bash ~/.config/nvim/full-update.sh
 ```
 
 ### Customization

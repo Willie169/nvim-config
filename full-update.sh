@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
+set -e
 cwd="$(pwd)"
+[ "$1" = '-i' ] || sh ~/.config/nvim/update.sh >/dev/null
 cd ~ || exit
 ARCH=$(uname -m)
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
@@ -35,6 +37,9 @@ cd ~ || exit
 git clone --depth=1 https://codeberg.org/winlogon/ktlsp.git
 cd ktlsp || exit
 ./gradlew :server:installDist
+mv server/build/install/server/bin/kotlin-language-server ~/.local/bin/
 cd ~ || exit
+rm -rf ktlsp
 # shellcheck disable=2164
 cd "$cwd"
+[ "$1" = '-i' ] || echo "Updated successfully!"

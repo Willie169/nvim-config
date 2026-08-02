@@ -10,17 +10,6 @@
 # xz -d file.tar.xz
 # tar -xf file.tar
 
-# TODO to readme
-# Node.js provider
-# Python 3 provider
-# jupytext
-# LSP list need checking
-# clangd gopls bash-language-server dockerfile-language-server-nodejs neovim pyright cmake-language-server quick-lint-js vscode-json-languageserver superhtml texlab lua-language-server perl-lsp yaml-language-server rust-analyzer
-
-# sort pkg by name
-
-# TODO Termux
-
 set -e
 cwd="$(pwd)"
 # ENV
@@ -37,7 +26,7 @@ mkdir -p ~/.local/bin
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 TMP_NVM_DIR="{NVM_DIR:-$HOME/.nvm}"
 [ -s "$TMP_NVM_DIR/nvm.sh" ] && \. "$TMP_NVM_DIR/nvm.sh"
-[ "$ENV" -eq 2 ] && required=("apt" "cargo" "npm" "uv") || required=("apt" "brew" "cargo" "cargo-binstall" "npm" "uv")
+[ "$ENV" -eq 2 ] && required=("apt" "cargo" "npm" "uv") || required=("apt" "brew" "cargo" "cargo-binstall" "npm" "pkg" "uv")
 missing=()
 for cmd in "${required[@]}"; do
 	if ! command -v -- "$cmd" >/dev/null 2>&1; then
@@ -68,7 +57,7 @@ if [ "$ENV" -ne 2 ]; then
 	PKG='clangd gopls python3 python3-neovim'
 else
 	PURGE=''
-	PKG='clangd gopls lua-language-server neovim python3 python3-neovim texlab tree-sitter'
+	PKG='clangd gopls lua-language-server marksman neovim python3 python3-neovim texlab tree-sitter'
 fi
 # shellcheck disable=2086
 if [ "$ENV" -eq 0 ]; then
@@ -87,7 +76,7 @@ else
 	command -v xz >/dev/null 2>&1 || DEBIAN_FRONTEND=noninteractive apt install xz-utils -y -o Dpkg::Options::="--force-confnew"
 fi
 if [ "$ENV" -ne 2 ]; then
-	BREW='lua-language-server neovim'
+	BREW='lua-language-server marksman neovim'
 	# shellcheck disable=2086
 	echo y | brew install $BREW || true
 	# shellcheck disable=2086
@@ -102,6 +91,7 @@ for pkg in cmake-language-server jupytext; do
 done
 cargo install perl-lsp
 cargo install ra_ap_rust-analyzer
-curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-update.sh | bash -- -i
 # shellcheck disable=2164
 cd "$cwd"
+. <(curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/install.sh)
