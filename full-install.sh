@@ -87,7 +87,7 @@ npm i -g bash-language-server dockerfile-language-server-nodejs neovim pyright q
 for pkg in cmake-language-server jupytext; do
 	uv tool install "$pkg"
 done
-curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-update.sh | bash -- -i
+curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-update.sh | bash -s -- -i
 # shellcheck disable=2164
 cd "$cwd"
 . <(curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/install.sh)
