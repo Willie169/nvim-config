@@ -3,7 +3,16 @@
 set -e
 cwd="$(pwd)"
 [ "$1" = '-i' ] || sh ~/.config/nvim/update.sh >/dev/null
+ENV=0
+[ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
+[ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2
 cd ~ || exit
+if [ "$ENV" -ne 2 ]; then
+	cargo-binstall tree-sitter-cli --no-confirm
+	cargo install --git https://github.com/latex-lsp/texlab
+fi
+cargo install perl-lsp
+cargo install ra_ap_rust-analyzer
 ARCH=$(uname -m)
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 rm -f ~/.local/bin/superhtml || true

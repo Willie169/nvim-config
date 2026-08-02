@@ -81,7 +81,7 @@ if [ "$ENV" -ne 2 ]; then
 	echo y | brew install $BREW || true
 	# shellcheck disable=2086
 	echo y | brew install $BREW
-	echo 'yes' | cargo-binstall tree-sitter-cli -y
+	cargo-binstall tree-sitter-cli --no-confirm
 	cargo install --git https://github.com/latex-lsp/texlab
 	npm config set allow-scripts=quick-lint-js --location=user
 fi

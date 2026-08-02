@@ -35,9 +35,9 @@ Full installation installs Neovim, Node.js provider, Python 3 provider, Jupytext
 - verible
 - vscode-json-languageserver
 - yaml-language-server
-and Neovim configuration.
+and installs Neovim configuration.
 
-Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following package managers are available:
+Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:
 - `apt`
 - `brew`: can be installed with:
   ```
@@ -70,7 +70,7 @@ Debian derivatives on x86\_64 or AArch64 architecture with normal or root user a
   curl -LsSf https://astral.sh/uv/install.sh | sh
   ```
 
-Termux is supported provided that the following package managers are available:
+Termux is supported provided that the following executables are available:
 - `apt`
 - `cargo`: can be installed with:
   ```
@@ -98,7 +98,7 @@ sh ~/.config/nvim/update.sh
 
 ### Full Update
 
-Full update updates all applications installed in full installation that is not managed by a package manager and Neovim configuration.
+Full update updates all applications installed in full installation that is not managed by a package manager, including those installed with `cargo` and `cargo-binstall`, and updates Neovim configuration.
 ```
 bash ~/.config/nvim/full-update.sh
 ```
