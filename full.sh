@@ -35,7 +35,7 @@ mkdir -p ~/.local/bin
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 TMP_NVM_DIR="{NVM_DIR:-$HOME/.nvm}"
 [ -s "$TMP_NVM_DIR/nvm.sh" ] && \. "$TMP_NVM_DIR/nvm.sh"
-[ "$ENV" -eq 2 ] && required=("apt" "cargo" "npm" "uv") || required=("apt" "brew" "cargo" "npm" "uv")
+[ "$ENV" -eq 2 ] && required=("apt" "cargo" "npm" "uv") || required=("apt" "brew" "cargo" "cargo-binstall" "npm" "uv")
 missing=()
 for cmd in "${required[@]}"; do
 	if ! command -v -- "$cmd" >/dev/null 2>&1; then
@@ -91,8 +91,8 @@ if [ "$ENV" -ne 2 ]; then
 	# shellcheck disable=2086
 	echo y | brew install $BREW
 	echo 'yes' | cargo binstall tree-sitter-cli -y
-	npm config set allow-scripts=quick-lint-js --location=user
 	cargo install --git https://github.com/latex-lsp/texlab
+	npm config set allow-scripts=quick-lint-js --location=user
 fi
 npm i -g bash-language-server dockerfile-language-server-nodejs neovim pyright quick-lint-js vscode-json-languageserver yaml-language-server
 for pkg in cmake-language-server jupytext; do
