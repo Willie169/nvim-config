@@ -22,6 +22,14 @@
 # tree sitter neovim use apt
 
 set -euxo pipefail
+# ENV
+# 0: normal
+# 1: root
+# 2: termux
+ENV=0
+[ "$EUID" -eq 0 ] && ENV=1
+[ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
+[ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2
 cd ~ || exit
 mkdir -p ~/.local/bin
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
@@ -40,7 +48,6 @@ if ((${#missing[@]})); then
 	printf '  %s\n' "${missing[@]}" >&2
 	exit 1
 fi
-[ "$EUID" -eq 0 ] && ROOT=1
 PURGE='neovim tree-sitter-cli'
 PKG='clangd gopls python3 python3-neovim'
 apt_required=("git" "wget" "curl" "unzip" "gzip" "tar" "bash")
@@ -51,7 +58,7 @@ for cmd in "${apt_required[@]}"; do
 	fi
 done
 # shellcheck disable=2086
-if [ "$ROOT" -eq 0 ]; then
+if [ "$ENV" -eq 0 ]; then
 	sudo apt update
 	sudo DEBIAN_FRONTEND=noninteractive apt purge $PURGE -y -o Dpkg::Options::="--force-confnew"
 	sudo DEBIAN_FRONTEND=noninteractive apt install $PKG -y -o Dpkg::Options::="--force-confnew"
