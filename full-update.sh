@@ -37,18 +37,20 @@ gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' chip
 tar -xzf $VERIBLE.tar.gz
 mv verible*/bin/* ~/.local/bin/
 rm -r verible*
+rm -rf eclipse.jdt.ls || true
 mkdir eclipse.jdt.ls
 cd eclipse.jdt.ls || exit
 wget --tries=100 --retry-connrefused --waitretry=5 https://www.eclipse.org/downloads/download.php?file=/jdtls/snapshots/jdt-language-server-latest.tar.gz -O jdt-language-server-latest.tar.gz
 tar -xzf jdt-language-server-latest.tar.gz
 rm jdt-language-server-latest.tar.gz*
 cd ~ || exit
-git clone --depth=1 https://codeberg.org/winlogon/ktlsp.git
-cd ktlsp || exit
-./gradlew :server:installDist
-mv server/build/install/server/bin/kotlin-language-server ~/.local/bin/
+rm -rf ktlsp || true
+mkdir ktlsp
+cd ktlsp
+gh_release --codeberg winlogon/ktlsp server.zip
+unzip server.zip
+rm server.zip*
 cd ~ || exit
-rm -rf ktlsp
 # shellcheck disable=2164
 cd "$cwd"
 [ "$1" = '-i' ] || echo "Updated successfully!"

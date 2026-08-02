@@ -21,6 +21,8 @@ ENV=0
 [ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
 [ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2
 cd ~ || exit
+# shellcheck disable=2016
+[ "$1" = "-i" ] || echo 'export PATH="${HOME}/.cargo/bin:${HOME}/eclipse.jdt.ls/bin:${HOME}/ktlsp/server/bin:${HOME}/.local/bin:${PATH}"' >>"${HOME}/.bashrc"
 mkdir -p ~/.local/bin
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
