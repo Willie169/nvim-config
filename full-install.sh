@@ -57,7 +57,7 @@ if [ "$ENV" -ne 2 ]; then
 	PKG='clangd gopls python3 python3-neovim'
 else
 	PURGE=''
-	PKG='clang gopls lua-language-server marksman neovim python python-pynvim texlab tree-sitter'
+	PKG='clang gopls lua-language-server marksman neovim python python-pynvim quick-lint-js texlab tree-sitter'
 fi
 # shellcheck disable=2086
 if [ "$ENV" -eq 0 ]; then
@@ -82,8 +82,9 @@ if [ "$ENV" -ne 2 ]; then
 	# shellcheck disable=2086
 	echo y | brew install $BREW
 	npm config set allow-scripts=quick-lint-js --location=user
+	npm i -g quick-lint-js
 fi
-npm i -g bash-language-server dockerfile-language-server-nodejs neovim pyright quick-lint-js vscode-json-languageserver yaml-language-server
+npm i -g bash-language-server dockerfile-language-server-nodejs neovim pyright vscode-json-languageserver yaml-language-server
 for pkg in cmake-language-server jupytext; do
 	uv tool install "$pkg"
 done
