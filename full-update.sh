@@ -21,7 +21,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
 else
 	SUPERHTML="aarch64-linux"
 fi
-gh_latest -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml "$SUPERHTML".tar.xz
+gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml "$SUPERHTML".tar.xz
 xz -d "$SUPERHTML".tar.xz
 tar -xf "$SUPERHTML".tar
 rm "$SUPERHTML".tar*
@@ -32,7 +32,7 @@ if [[ "$ARCH" == "x86_64" ]]; then
 elif [[ "$ARCH" == "aarch64" ]]; then
 	VERIBLE="verible-*-linux-static-arm64"
 fi
-gh_latest -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' chipsalliance/verible "$VERIBLE".tar.gz
+gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' chipsalliance/verible "$VERIBLE".tar.gz
 # shellcheck disable=2086
 tar -xzf $VERIBLE.tar.gz
 mv verible*/bin/* ~/.local/bin/
