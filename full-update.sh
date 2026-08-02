@@ -8,11 +8,11 @@ ENV=0
 [ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2
 cd ~ || exit
 if [ "$ENV" -ne 2 ]; then
-	cargo-binstall tree-sitter-cli --no-confirm
-	cargo install --git https://github.com/latex-lsp/texlab
+	cargo-binstall tree-sitter-cli --no-confirm --force
+	cargo install --git https://github.com/latex-lsp/texlab --force
 fi
-cargo install perl-lsp
-cargo install ra_ap_rust-analyzer
+cargo install perl-lsp --force
+cargo install ra_ap_rust-analyzer --force
 ARCH=$(uname -m)
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 rm -f ~/.local/bin/superhtml || true

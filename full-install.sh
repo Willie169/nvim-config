@@ -81,16 +81,12 @@ if [ "$ENV" -ne 2 ]; then
 	echo y | brew install $BREW || true
 	# shellcheck disable=2086
 	echo y | brew install $BREW
-	cargo-binstall tree-sitter-cli --no-confirm
-	cargo install --git https://github.com/latex-lsp/texlab
 	npm config set allow-scripts=quick-lint-js --location=user
 fi
 npm i -g bash-language-server dockerfile-language-server-nodejs neovim pyright quick-lint-js vscode-json-languageserver yaml-language-server
 for pkg in cmake-language-server jupytext; do
 	uv tool install "$pkg"
 done
-cargo install perl-lsp
-cargo install ra_ap_rust-analyzer
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-update.sh | bash -- -i
 # shellcheck disable=2164
 cd "$cwd"
