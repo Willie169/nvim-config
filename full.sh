@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 # GitHub Action termux/termux-docker errors to be prevented:
-## + tar -xJf file.tar.xz
-## tar: Unknown option Jf (see "tar --help")
-## and
-## + tar -xf -
-## tar: chown ...: Operation not permitted
-## use
-## xz -dc file.tar.xz | tar -xf - || true
+# + tar -xJf file.tar.xz
+# tar: Unknown option Jf (see "tar --help")
+# and
+# + tar -xf -
+# tar: chown ...: Operation not permitted
+# use
+# xz -d file.tar.xz
+# tar -xf file.tar
 
 # TODO to readme
 # Node.js provider
@@ -29,6 +30,7 @@ ENV=0
 [ "$EUID" -eq 0 ] && ENV=1
 [ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
 [ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2
+ARCH=$(uname -m)
 cd ~ || exit
 mkdir -p ~/.local/bin
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
@@ -90,7 +92,7 @@ if [ "$ENV" -ne 2 ]; then
 	echo y | brew install $BREW || true
 	# shellcheck disable=2086
 	echo y | brew install $BREW
-	echo 'yes' | cargo binstall tree-sitter-cli -y
+	echo 'yes' | cargo-binstall tree-sitter-cli -y
 	cargo install --git https://github.com/latex-lsp/texlab
 	npm config set allow-scripts=quick-lint-js --location=user
 fi
@@ -99,21 +101,28 @@ for pkg in cmake-language-server jupytext; do
 	uv tool install "$pkg"
 done
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
-ARCH=$(uname -m)
 if [[ "$ARCH" == "x86_64" ]]; then
-	gh_latest -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml x86_64-linux-musl.tar.xz
-	xz -dc x86_64-linux-musl.tar.xz | tar -xf - || true
-	rm x86_64-linux-musl.tar.xz*
-	mv superhtml ~/.local/bin/
+	SUPERHTML="x86_64-linux-musl"
 elif [[ "$ARCH" == "aarch64" ]]; then
-	gh_latest -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml aarch64-linux.tar.xz
-	xz -dc aarch64-linux.tar.xz | tar -xf - || true
-	rm aarch64-linux.tar.xz*
-	mv superhtml ~/.local/bin/
+	SUPERHTML="aarch64-linux"
 fi
+gh_latest -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml "$SUPERHTML".tar.xz
+xz -d "$SUPERHTML".tar.xz
+tar -xf "$SUPERHTML".tar.xz
+rm "$SUPERHTML".tar*
+mv superhtml ~/.local/bin/
+if [[ "$ARCH" == "x86_64" ]]; then
+	VERIBLE="verible-*-linux-static-x86_64"
+elif [[ "$ARCH" == "aarch64" ]]; then
+	VERIBLE="verible-*-linux-static-arm64"
+fi
+gh_latest -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' chipsalliance/verible "$VERIBLE".tar.gz
+# shellcheck disable=2086
+tar -xzf $VERIBLE.tar.gz
+mv verible*/bin/* ~/.local/bin/
+rm -r verible*
 cargo install perl-lsp
 cargo install ra_ap_rust-analyzer
-# https://github.com/chipsalliance/verible/releases arch if-else gh_latest b*c add
 # https://github.com/eclipse-jdtls/eclipse.jdt.ls brew, termux?
 # https://github.com/Kotlin/kotlin-lsp brew, termux?
 
