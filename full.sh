@@ -21,7 +21,8 @@
 
 # TODO Termux
 
-set -euxo pipefail
+set -e
+cwd="$(pwd)"
 # ENV
 # 0: normal
 # 1: root
@@ -30,7 +31,6 @@ ENV=0
 [ "$EUID" -eq 0 ] && ENV=1
 [ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
 [ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2
-ARCH=$(uname -m)
 cd ~ || exit
 mkdir -p ~/.local/bin
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
@@ -100,30 +100,8 @@ npm i -g bash-language-server dockerfile-language-server-nodejs neovim pyright q
 for pkg in cmake-language-server jupytext; do
 	uv tool install "$pkg"
 done
-. <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
-if [[ "$ARCH" == "x86_64" ]]; then
-	SUPERHTML="x86_64-linux-musl"
-elif [[ "$ARCH" == "aarch64" ]]; then
-	SUPERHTML="aarch64-linux"
-fi
-gh_latest -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml "$SUPERHTML".tar.xz
-xz -d "$SUPERHTML".tar.xz
-tar -xf "$SUPERHTML".tar.xz
-rm "$SUPERHTML".tar*
-mv superhtml ~/.local/bin/
-if [[ "$ARCH" == "x86_64" ]]; then
-	VERIBLE="verible-*-linux-static-x86_64"
-elif [[ "$ARCH" == "aarch64" ]]; then
-	VERIBLE="verible-*-linux-static-arm64"
-fi
-gh_latest -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' chipsalliance/verible "$VERIBLE".tar.gz
-# shellcheck disable=2086
-tar -xzf $VERIBLE.tar.gz
-mv verible*/bin/* ~/.local/bin/
-rm -r verible*
 cargo install perl-lsp
 cargo install ra_ap_rust-analyzer
-# https://github.com/eclipse-jdtls/eclipse.jdt.ls brew, termux?
-# https://github.com/Kotlin/kotlin-lsp brew, termux?
-
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/install.sh | sh
+# shellcheck disable=2164
+cd "$cwd"
