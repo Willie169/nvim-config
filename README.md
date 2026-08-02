@@ -37,7 +37,7 @@ Full installation installs Neovim, Node.js provider, Python 3 provider, Jupytext
 - yaml-language-server
 and Neovim configuration.
 
-Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:
+Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following package managers are available:
 - `apt`
 - `brew`: can be installed with:
   ```
@@ -70,7 +70,7 @@ Debian derivatives on x86\_64 or AArch64 architecture with normal or root user a
   curl -LsSf https://astral.sh/uv/install.sh | sh
   ```
 
-Termux is supported provided that the following executables are available:
+Termux is supported provided that the following package managers are available:
 - `apt`
 - `cargo`: can be installed with:
   ```
