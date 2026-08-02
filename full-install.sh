@@ -26,7 +26,7 @@ mkdir -p ~/.local/bin
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 TMP_NVM_DIR="{NVM_DIR:-$HOME/.nvm}"
 [ -s "$TMP_NVM_DIR/nvm.sh" ] && \. "$TMP_NVM_DIR/nvm.sh"
-[ "$ENV" -eq 2 ] && required=("apt" "cargo" "npm" "uv") || required=("apt" "brew" "cargo" "cargo-binstall" "npm" "pkg" "uv")
+[ "$ENV" -eq 2 ] && required=("apt" "cargo" "npm" "pkg" "uv") || required=("apt" "brew" "cargo" "cargo-binstall" "npm" "uv")
 missing=()
 for cmd in "${required[@]}"; do
 	if ! command -v -- "$cmd" >/dev/null 2>&1; then
