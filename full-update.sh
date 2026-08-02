@@ -8,7 +8,7 @@ ENV=0
 [ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2
 cd ~ || exit
 if [ "$ENV" -ne 2 ]; then
-	cargo-binstall tree-sitter-cli --no-confirm --force
+	cargo-binstall tree-sitter-cli --no-confirm
 	cargo install --git https://github.com/latex-lsp/texlab --force
 fi
 cargo install perl-lsp --force
