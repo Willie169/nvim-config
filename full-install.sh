@@ -57,7 +57,7 @@ if [ "$ENV" -ne 2 ]; then
 	PKG='clangd gopls python3 python3-neovim'
 else
 	PURGE=''
-	PKG='clang gopls lua-language-server marksman neovim python3 python3-neovim texlab tree-sitter'
+	PKG='clang gopls lua-language-server marksman neovim python python-pynvim texlab tree-sitter'
 fi
 # shellcheck disable=2086
 if [ "$ENV" -eq 0 ]; then
