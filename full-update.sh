@@ -23,7 +23,7 @@ else
 fi
 gh_latest -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml "$SUPERHTML".tar.xz
 xz -d "$SUPERHTML".tar.xz
-tar -xf "$SUPERHTML".tar.xz
+tar -xf "$SUPERHTML".tar
 rm "$SUPERHTML".tar*
 mv superhtml ~/.local/bin/
 rm ~/.local/bin/verible* || true
