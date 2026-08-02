@@ -57,16 +57,16 @@ done
 if [ "$ENV" -eq 0 ]; then
 	sudo apt update
 elif [ "$ENV" -eq 1 ]; then
-    apt update
+	apt update
 else
-    pkg update
+	pkg update
 fi
 if [ "$ENV" -ne 2 ]; then
-    PURGE='neovim tree-sitter-cli'
-    PKG='clangd gopls python3 python3-neovim'
+	PURGE='neovim tree-sitter-cli'
+	PKG='clangd gopls python3 python3-neovim'
 else
-    PURGE=''
-    PKG='clangd gopls lua-language-server neovim python3 python3-neovim texlab tree-sitter'
+	PURGE=''
+	PKG='clangd gopls lua-language-server neovim python3 python3-neovim texlab tree-sitter'
 fi
 # shellcheck disable=2086
 if [ "$ENV" -eq 0 ]; then
@@ -77,32 +77,7 @@ if [ "$ENV" -eq 0 ]; then
 	fi
 	command -v xz >/dev/null 2>&1 || sudo DEBIAN_FRONTEND=noninteractive apt install xz-utils -y -o Dpkg::Options::="--force-confnew"
 else
-	[ -n "$PURGE" ] && DEBIAN_FRONTEND=noninteractive apt plocal highlight = {
-    "RainbowRed",
-    "RainbowYellow",
-    "RainbowBlue",
-    "RainbowOrange",
-    "RainbowGreen",
-    "RainbowViolet",
-    "RainbowCyan",
-}
-local hooks = require "ibl.hooks"
--- create the highlight groups in the highlight setup hook, so they are reset
--- every time the colorscheme changes
-hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-    vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
-    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
-    vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
-    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
-    vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
-    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
-    vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
-end)
-
-vim.g.rainbow_delimiters = { highlight = highlight }
-require("ibl").setup { scope = { highlight = highlight } }
-
-hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)urge $PURGE -y -o Dpkg::Options::="--force-confnew"
+	[ -n "$PURGE" ] && DEBIAN_FRONTEND=noninteractive apt purge $PURGE -y -o Dpkg::Options::="--force-confnew"
 	[ -n "$PKG" ] && DEBIAN_FRONTEND=noninteractive apt install $PKG -y -o Dpkg::Options::="--force-confnew"
 	if ((${#apt_missing[@]})); then
 		DEBIAN_FRONTEND=noninteractive apt install "${apt_missing[@]}" -y -o Dpkg::Options::="--force-confnew"
@@ -110,14 +85,14 @@ hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_ex
 	command -v xz >/dev/null 2>&1 || DEBIAN_FRONTEND=noninteractive apt install xz-utils -y -o Dpkg::Options::="--force-confnew"
 fi
 if [ "$ENV" -ne 2 ]; then
-    BREW='lua-language-server neovim'
-    # shellcheck disable=2086
-    echo y | brew install $BREW || true
-    # shellcheck disable=2086
-    echo y | brew install $BREW
-    echo 'yes' | cargo binstall tree-sitter-cli -y
-    npm config set allow-scripts=quick-lint-js --location=user
-cargo install --git https://github.com/latex-lsp/texlab
+	BREW='lua-language-server neovim'
+	# shellcheck disable=2086
+	echo y | brew install $BREW || true
+	# shellcheck disable=2086
+	echo y | brew install $BREW
+	echo 'yes' | cargo binstall tree-sitter-cli -y
+	npm config set allow-scripts=quick-lint-js --location=user
+	cargo install --git https://github.com/latex-lsp/texlab
 fi
 npm i -g bash-language-server dockerfile-language-server-nodejs neovim pyright quick-lint-js vscode-json-languageserver yaml-language-server
 for pkg in cmake-language-server jupytext; do
