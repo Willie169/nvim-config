@@ -9,10 +9,10 @@ ENV=0
 cd ~ || exit
 if [ "$ENV" -ne 2 ]; then
 	cargo-binstall tree-sitter-cli --no-confirm
-	cargo install --git https://github.com/latex-lsp/texlab --force
+	cargo install --git https://github.com/latex-lsp/texlab
 fi
-cargo install perl-lsp --force
-cargo install ra_ap_rust-analyzer --force
+cargo install perl-lsp
+[ "$ENV" -ne 2 ] && cargo install ra_ap_rust-analyzer --force
 ARCH=$(uname -m)
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 rm -f ~/.local/bin/superhtml || true
