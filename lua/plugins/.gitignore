@@ -4,6 +4,7 @@
 !bufferline.lua
 !fcitx.lua
 !flash.lua
+!fzf-lua.lua
 !gitsigns.lua
 !grug-far.lua
 !indent-blankline.lua
