@@ -11,7 +11,6 @@
 !indent-blankline.nvim.lua
 !jupytext.nvim.lua
 !lualine.nvim.lua
-!mason-lspconfig.nvim.lua
 !mini.ai.lua
 !mini.comment.lua
 !mini.icons.lua
@@ -23,7 +22,6 @@
 !nvim-ts-autotag.lua
 !nvim-ts-context-commentstring.lua
 !persistence.nvim.lua
-!telescope.nvim.lua
 !termux-clipboard.lua
 !todo-comments.lua
 !tokyonight.lua

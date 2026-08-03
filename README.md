@@ -126,7 +126,6 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 ### Included Plugins
 
 * [blink.cmp](https://github.com/saghen/blink.cmp)
-* [blink.lib](https://github.com/saghen/blink.lib)
 * [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 * [fcitx.vim](https://github.com/lilydjwg/fcitx.vim)
 * [flash.nvim](https://github.com/folke/flash.nvim)
@@ -136,8 +135,6 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 * [jupytext.nvim](https://github.com/goerz/jupytext.nvim)
 * [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-* [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim)
-* [mason.nvim](https://github.com/mason-org/mason.nvim)
 * [mini.ai](https://github.com/nvim-mini/mini.ai)
 * [mini.comment](https://github.com/nvim-mini/mini.comment)
 * [mini.icons](https://github.com/nvim-mini/mini.icons)

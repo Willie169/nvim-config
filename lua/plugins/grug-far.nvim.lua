@@ -2,7 +2,6 @@ return {
 	"MagicDuck/grug-far.nvim",
 	dependencies = { "nvim-mini/mini.icons" },
 	opts = { headerMaxWidth = 80 },
-	cmd = { "GrugFar", "GrugFarWithin" },
 	keys = {
 		{
 			"<leader>sr",
