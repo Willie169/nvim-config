@@ -1,6 +1,7 @@
 return {
 	"folke/todo-comments.nvim",
 	dependencies = { "nvim-lua/plenary.nvim", "ibhagwan/fzf-lua" },
+    lazy = false,
 	opts = {},
 	keys = {
 		{
