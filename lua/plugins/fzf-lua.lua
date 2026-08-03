@@ -1,11 +1,12 @@
+vim.api.nvim_create_user_command("F", "FzfLua <args>", {
+	nargs = "*",
+})
+
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-mini/mini.icons" },
 	config = function()
 		require("fzf-lua").setup({ "telescope", "border-fused" })
-		vim.api.nvim_create_user_command("F", "FzfLua <args>", {
-			nargs = "*",
-		})
 	end,
 	keys = {
 		-- find
@@ -16,6 +17,7 @@ return {
 		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 		-- git
+		{ "<leader>gc", "<cmd>FzfLua git_branches<CR>", desc = "Branches" },
 		{ "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
 		{ "<leader>gd", "<cmd>FzfLua git_diff<cr>", desc = "Git Diff (files)" },
 		{ "<leader>gl", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
