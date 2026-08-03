@@ -18,7 +18,7 @@ return {
 				lualine_a = { "mode" },
 				lualine_b = { { "b:gitsigns_head", icon = "" }, { "diff", source = diff_source }, "diagnostics" },
 				lualine_c = { "selectioncount", "searchcount" },
-				lualine_x = { "lsp_status" },
+				lualine_x = { "filename", "filetype", "lsp_status" },
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
