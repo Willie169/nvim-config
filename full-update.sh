@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
-cwd="${cwd:$(pwd)}"
+cwd="${cwd:-$(pwd)}"
 UPDATED=${UPDATED:-0}
 if [ "$1" = '-i' ]; then
 	UPDATED=1
