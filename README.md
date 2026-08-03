@@ -128,6 +128,7 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 
 * [blink.cmp](https://github.com/saghen/blink.cmp)
 * [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+* [bullets.vim](https://github.com/bullets-vim/bullets.vim)
 * [fcitx.vim](https://github.com/lilydjwg/fcitx.vim)
 * [flash.nvim](https://github.com/folke/flash.nvim)
 * [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
@@ -148,6 +149,7 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 * [persistence.nvim](https://github.com/folke/persistence.nvim)
+* [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 * [termux-clipboard](https://github.com/Willie169/termux-clipboard)
 * [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 * [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
