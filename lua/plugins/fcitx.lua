@@ -1,5 +1,3 @@
 return {
-	{
-		"lilydjwg/fcitx.vim",
-	},
+	"lilydjwg/fcitx.vim",
 }

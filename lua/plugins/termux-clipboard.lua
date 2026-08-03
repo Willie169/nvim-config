@@ -1,5 +1,3 @@
 return {
-	{
-		"Willie169/termux-clipboard",
-	},
+	"Willie169/termux-clipboard",
 }

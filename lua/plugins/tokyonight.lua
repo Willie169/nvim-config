@@ -5,13 +5,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 
 return {
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = { style = "night" },
-		config = function()
-			vim.cmd([[colorscheme tokyonight]])
-		end,
-	},
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = { style = "night" },
+	config = function()
+		vim.cmd([[colorscheme tokyonight]])
+	end,
 }
