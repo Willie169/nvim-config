@@ -25,24 +25,24 @@ curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/ma
 ```
 
 Full installation installs Neovim, Node.js provider, Python 3 provider, yazi, ripgrep, fzf, Jupytext, and LSP servers including
-- bash-language-server
-- clangd
-- cmake-language-server
-- dockerfile-language-server-nodejs
-- eclipse.jdt.ls
-- gopls
-- ktlsp
-- lua-language-server
-- marksman
-- perl-lsp
-- pyright
-- quick-lint-js
-- ra_ap_rust-analyzer
-- superhtml
-- texlab
-- verible
-- vscode-json-languageserver
-- yaml-language-server
+- [bash-language-server](https://github.com/bash-lsp/bash-language-server)
+- [clangd](https://github.com/llvm/llvm-project/tree/main/clang-tools-extra/clangd)
+- [cmake-language-server](https://github.com/regen100/cmake-language-server)
+- [dockerfile-language-server-nodejs](https://github.com/rcjsuen/dockerfile-language-server)
+- [eclipse.jdt.ls](https://github.com/eclipse-jdtls/eclipse.jdt.ls)
+- [gopls](https://github.com/golang/tools/tree/master/gopls)
+- [ktlsp](https://codeberg.org/winlogon/ktlsp)
+- [lua-language-server](https://github.com/LuaLS/lua-language-server)
+- [marksman](https://github.com/artempyanykh/marksman)
+- [perl-lsp](https://github.com/FractalBoy/perl-language-server)
+- [pyright](https://github.com/microsoft/pyright)
+- [quick-lint-js](https://github.com/quick-lint/quick-lint-js)
+- [ra_ap_rust-analyzer](https://github.com/rust-lang/rust-analyzer)
+- [superhtml](https://github.com/kristoff-it/superhtml)
+- [texlab](https://github.com/latex-lsp/texlab)
+- [verible](https://github.com/chipsalliance/verible)
+- [vscode-json-languageserver](https://github.com/microsoft/vscode-json-languageservice)
+- [yaml-language-server](https://github.com/redhat-developer/yaml-language-server)
 and installs Neovim configuration.
 
 Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:
