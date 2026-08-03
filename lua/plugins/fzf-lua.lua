@@ -5,6 +5,7 @@ vim.api.nvim_create_user_command("F", "FzfLua <args>", {
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-mini/mini.icons" },
+	lazy = false,
 	config = function()
 		require("fzf-lua").setup({ "telescope", "border-fused" })
 	end,
