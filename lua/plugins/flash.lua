@@ -58,6 +58,8 @@ return {
 		},
 	},
 	config = function()
+		require("flash").treesitter()
+		require("flash").prompt()
 		require("flash").toggle()
 	end,
 }
