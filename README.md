@@ -24,7 +24,15 @@ If you don't want it to touch your `"$HOME/.bashrc"`, use
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-install.sh | bash -s -- -n
 ```
 
-Full installation installs Neovim, Node.js provider, Python 3 provider, yazi, ripgrep, fzf, Jupytext, and LSP servers including
+Full installation installs
+- [Neovim](https://github.com/neovim/neovim)
+- [Pynvim](https://github.com/neovim/pynvim)
+- [Neovim node.js client](https://github.com/neovim/node-client)
+- [shellcheck](https://github.com/koalaman/shellcheck)
+- [yazi](https://github.com/sxyazi/yazi)
+- [ripgrep](https://github.com/burntsushi/ripgrep)
+- [fzf](https://github.com/junegunn/fzf)
+- [Jupytext](https://github.com/jupytext/jupytext)
 - [bash-language-server](https://github.com/bash-lsp/bash-language-server)
 - [clangd](https://github.com/llvm/llvm-project/tree/main/clang-tools-extra/clangd)
 - [cmake-language-server](https://github.com/regen100/cmake-language-server)
@@ -43,7 +51,7 @@ Full installation installs Neovim, Node.js provider, Python 3 provider, yazi, ri
 - [verible](https://github.com/chipsalliance/verible)
 - [vscode-json-languageserver](https://github.com/microsoft/vscode-json-languageservice)
 - [yaml-language-server](https://github.com/redhat-developer/yaml-language-server)
-and installs Neovim configuration.
+and installs Neovim configuration from this repo.
 
 Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:
 - `apt`
