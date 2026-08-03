@@ -2,26 +2,18 @@ return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-mini/mini.icons" },
 	config = function()
-		require("fzf-lua").setup({
-			"default-title",
-			"fzf-native",
-			"telescope",
-			"border-fused",
+		require("fzf-lua").setup({ "telescope", "border-fused" })
+		vim.api.nvim_create_user_command("F", "FzfLua <args>", {
+			nargs = "*",
 		})
 	end,
 	keys = {
-		{ "<c-j>", "<c-j>", ft = "fzf", mode = "t", nowait = true },
-		{ "<c-k>", "<c-k>", ft = "fzf", mode = "t", nowait = true },
-		{
-			"<leader>,",
-			"<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>",
-			desc = "Switch Buffer",
-		},
-		{ "<leader>:", "<cmd>FzfLua command_history<cr>", desc = "Command History" },
 		-- find
-		{ "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
-		{ "<leader>fB", "<cmd>FzfLua buffers<cr>", desc = "Buffers (all)" },
+		{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Find Files" },
+		{ "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers (sorted)" },
+		{ "<leader>fB", "<cmd>FzfLua buffers<cr>", desc = "Buffers" },
 		{ "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "Find Files (git-files)" },
+		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 		-- git
 		{ "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
