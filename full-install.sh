@@ -80,9 +80,9 @@ fi
 if [ "$ENV" -ne 2 ]; then
 	BREW='fzf lua-language-server marksman neovim ripgrep yazi'
 	# shellcheck disable=2086
-	echo y | brew install $BREW || true
-	# shellcheck disable=2086
-	echo y | brew install $BREW
+	if ! echo y | brew install $BREW; then
+		echo y | brew install $BREW
+	fi
 	NPMG='quick-lint-js'
 	npm_allow=$(npm config get allow-scripts)
 	[ -n "$npm_allow" ] && npm_allow+=','

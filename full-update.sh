@@ -21,13 +21,13 @@ if [ "$ENV" -ne 2 ]; then
 fi
 cargo install perl-lsp
 if [ "$ENV" -ne 2 ]; then
-    if [ "$1" = '-i' ]; then
-        if ! cargo install ra_ap_rust-analyzer --force; then
-            cargo install ra_ap_rust-analyzer --force
-        fi
-    else
-        cargo install ra_ap_rust-analyzer
-    fi
+	if [ "$1" = '-i' ]; then
+		if ! cargo install ra_ap_rust-analyzer --force; then
+			cargo install ra_ap_rust-analyzer --force
+		fi
+	else
+		cargo install ra_ap_rust-analyzer
+	fi
 fi
 ARCH=$(uname -m)
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
