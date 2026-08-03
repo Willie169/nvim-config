@@ -130,6 +130,7 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 * [fcitx.vim](https://github.com/lilydjwg/fcitx.vim)
 * [flash.nvim](https://github.com/folke/flash.nvim)
+* [fzf-lua](https://github.com/ibhagwan/fzf-lua)
 * [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 * [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim)
 * [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
@@ -149,6 +150,8 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 * [persistence.nvim](https://github.com/folke/persistence.nvim)
 * [vim-suda](https://github.com/lambdalisue/vim-suda)
+
+<!-- TODO -->
 
 ### Vim
 
