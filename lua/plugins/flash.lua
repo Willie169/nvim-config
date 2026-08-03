@@ -57,4 +57,7 @@ return {
 			desc = "Treesitter Incremental Selection",
 		},
 	},
+	config = function()
+		require("flash").toggle()
+	end,
 }
