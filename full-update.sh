@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 
 set -e
-cwd="$(pwd)"
-[ "$1" = '-i' ] || sh ~/.config/nvim/update.sh -i
+cwd="${cwd:$(pwd)}"
+UPDATED=${UPDATED:-0}
+if [ "$1" = '-i' ]; then
+	UPDATED=1
+fi
+if [ "$UPDATED" -ne 1 ]; then
+	sh ~/.config/nvim/update.sh -i
+	UPDATED=1 . ~/.config/nvim/full-update.sh
+	exit
+fi
 ENV=0
 [ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
 [ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2

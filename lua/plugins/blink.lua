@@ -10,8 +10,6 @@ return {
 		require("blink.cmp").build():pwait()
 	end,
 
-	---@module 'blink.cmp'
-	---@type blink.cmp.Config
 	opts = {
 		-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
 		-- 'super-tab' for mappings similar to vscode (tab to accept)
