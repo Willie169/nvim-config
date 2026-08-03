@@ -1,10 +1,10 @@
 *
 !.gitignore
 !blink.cmp.lua
-!blink.lib.lua
 !bufferline.nvim.lua
 !fcitx.vim.lua
 !flash.nvim.lua
+!friendly-snippets.lua
 !fzf-lua.lua
 !gitsigns.nvim.lua
 !grug-far.nvim.lua
@@ -12,7 +12,6 @@
 !jupytext.nvim.lua
 !lualine.nvim.lua
 !mason-lspconfig.nvim.lua
-!mason.nvim.lua
 !mini.ai.lua
 !mini.comment.lua
 !mini.icons.lua

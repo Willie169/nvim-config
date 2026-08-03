@@ -150,6 +150,9 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 * [persistence.nvim](https://github.com/folke/persistence.nvim)
 * [vim-suda](https://github.com/lambdalisue/vim-suda)
+* [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+
+
 
 <!-- TODO -->
 
