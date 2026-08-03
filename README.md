@@ -24,7 +24,7 @@ If you don't want it to touch your `"$HOME/.bashrc"`, use
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-install.sh | bash -s -- -n
 ```
 
-Full installation installs Neovim, Node.js provider, Python 3 provider, Jupytext, and LSP servers including
+Full installation installs Neovim, Node.js provider, Python 3 provider, yazi, ripgrep, Jupytext, and LSP servers including
 - bash-language-server
 - clangd
 - cmake-language-server
