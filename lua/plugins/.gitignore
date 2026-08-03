@@ -28,5 +28,5 @@
 !trouble.lua
 !ts-comments.lua
 !vim-suda.lua
-!which-key.lua
-!yazi.lua
+!which-key.nvim.lua
+!yazi.nvim.lua

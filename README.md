@@ -148,10 +148,10 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [persistence.nvim](https://github.com/folke/persistence.nvim)
 * [vim-suda](https://github.com/lambdalisue/vim-suda)
 * [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+* [which-key.nvim](https://github.com/folke/which-key.nvim)
+* [yazi.nvim](https://github.com/mikavilpas/yazi.nvim)
 
-
-
-<!-- TODO -->
+<!-- TODO: -->
 
 ### Vim
 
