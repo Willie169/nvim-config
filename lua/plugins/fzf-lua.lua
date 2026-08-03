@@ -20,8 +20,9 @@ return {
 		{ "<leader>fh", "<cmd>FzfLua help_tags<cr>", desc = "Help Pages" },
 		-- git
 		{ "<leader>gf", "<cmd>FzfLua git_files<cr>", desc = "Git Files" },
-		{ "<leader>gc", "<cmd>FzfLua git_branches<cr>", desc = "Git Branches" },
+		{ "<leader>gb", "<cmd>FzfLua git_branches<cr>", desc = "Git Branches" },
 		{ "<leader>gc", "<cmd>FzfLua git_commits<cr>", desc = "Git Commits" },
+		{ "<leader>gl", "<cmd>FzfLua git_bcommits<cr>", desc = "Git Buffer Commits" },
 		{ "<leader>gd", "<cmd>FzfLua git_diff<cr>", desc = "Git Diff" },
 		{ "<leader>gs", "<cmd>FzfLua git_status<cr>", desc = "Git Status" },
 		{ "<leader>gh", "<cmd>FzfLua git_stash<cr>", desc = "Git Stash" },
@@ -43,5 +44,7 @@ return {
 		{ "<leader>um", "<cmd>FzfLua marks<cr>", desc = "Jump to Mark" },
 		{ "<leader>ur", "<cmd>FzfLua resume<cr>", desc = "Resume" },
 		{ "<leader>uq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
+		{ "<leader>us", "<cmd>FzfLua spellcheck<cr>", desc = "Spellcheck List" },
+		{ "<leader>uu", "<cmd>FzfLua undotree<cr>", desc = "Undo Tree" },
 	},
 }
