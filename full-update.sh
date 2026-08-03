@@ -20,7 +20,13 @@ if [ "$ENV" -ne 2 ]; then
 	cargo install --git https://github.com/latex-lsp/texlab
 fi
 cargo install perl-lsp
-[ "$ENV" -ne 2 ] && cargo install ra_ap_rust-analyzer
+if [ "$ENV" -ne 2 ]; then
+    if [ "$1" = '-i' ]; then
+        cargo install ra_ap_rust-analyzer --force
+    else
+        cargo install ra_ap_rust-analyzer
+    fi
+fi
 ARCH=$(uname -m)
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 rm -f ~/.local/bin/superhtml || true
