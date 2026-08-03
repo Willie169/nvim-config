@@ -9,11 +9,11 @@ return {
 				language_left = "",
 				language_right = "",
 			},
-			latex = { enabled = false },
 			heading = {
 				sign = false,
 				position = "inline",
 			},
+			latex = { enabled = false },
 		})
 	end,
 }
