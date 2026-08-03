@@ -10,7 +10,7 @@
 # xz -d file.tar.xz
 # tar -xf file.tar
 
-set -e
+set -euxo pipefail
 cwd="$(pwd)"
 # ENV
 # 0: normal
