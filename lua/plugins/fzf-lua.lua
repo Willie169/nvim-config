@@ -46,5 +46,13 @@ return {
 		{ "<leader>uq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
 		{ "<leader>us", "<cmd>FzfLua spellcheck<cr>", desc = "Spellcheck List" },
 		{ "<leader>uu", "<cmd>FzfLua undotree<cr>", desc = "Undo Tree" },
+		-- lsp
+		{ "<leader>li", "<cmd>FzfLua lsp_implementations<cr>", desc = "LSP Implementations" },
+		{ "<leader>ld", "<cmd>FzfLua lsp_definions<cr>", desc = "LSP Definitions" },
+		{ "<leader>lg", "<cmd>FzfLua lsp_document_diagnostics<cr>", desc = "LSP Document Diagnostics" },
+		{ "<leader>ls", "<cmd>FzfLua lsp_document_symbols<cr>", desc = "LSP Document Symbols" },
+		{ "<leader>lc", "<cmd>FzfLua lsp_declarations<cr>", desc = "LSP Declareations" },
+		{ "<leader>lt", "<cmd>FzfLua lsp_typedefs<cr>", desc = "LSP Type Definitions" },
+		{ "<leader>lr", "<cmd>FzfLua lsp_references<cr>", desc = "LSP References" },
 	},
 }
