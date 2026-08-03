@@ -56,10 +56,10 @@ else
 fi
 if [ "$ENV" -ne 2 ]; then
 	PURGE='neovim tree-sitter-cli'
-	PKG='clangd gopls python3-pynvim shellcheck'
+	PKG='clangd gopls luarocks python3-pynvim shellcheck'
 else
 	PURGE=''
-	PKG='clang fzf gopls lua-language-server marksman neovim python-pynvim quick-lint-js ripgrep rust-analyzer shellcheck texlab tree-sitter yazi'
+	PKG='clang fzf gopls luarocks lua-language-server marksman neovim python-pynvim quick-lint-js ripgrep rust-analyzer shellcheck texlab tree-sitter yazi'
 fi
 # shellcheck disable=2086
 if [ "$ENV" -eq 0 ]; then
