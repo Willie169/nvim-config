@@ -83,8 +83,13 @@ if [ "$ENV" -ne 2 ]; then
 	echo y | brew install $BREW || true
 	# shellcheck disable=2086
 	echo y | brew install $BREW
-	npm config set allow-scripts=quick-lint-js --location=user
-	npm i -g quick-lint-js
+	NPMG='quick-lint-js'
+	npm_allow=$(npm config get allow-scripts)
+	[ -n "$npm_allow" ] && npm_allow+=','
+	npm_allow+="${NPMG// /,}"
+	npm config set allow-scripts="$npm_allow" --location=user
+	# shellcheck disable=2086
+	npm i -g $NPMG
 fi
 npm i -g bash-language-server dockerfile-language-server-nodejs neovim pyright vscode-json-languageserver yaml-language-server
 for pkg in cmake-language-server jupytext; do
