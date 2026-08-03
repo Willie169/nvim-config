@@ -22,6 +22,7 @@
 !nvim-ts-autotag.lua
 !nvim-ts-context-commentstring.lua
 !persistence.nvim.lua
+!render-markdown.nvim.lua
 !termux-clipboard.lua
 !todo-comments.nvim.lua
 !tokyonight.nvim.lua
