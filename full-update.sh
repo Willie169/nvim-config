@@ -22,7 +22,9 @@ fi
 cargo install perl-lsp
 if [ "$ENV" -ne 2 ]; then
     if [ "$1" = '-i' ]; then
-        cargo install ra_ap_rust-analyzer --force
+        if ! cargo install ra_ap_rust-analyzer --force; then
+            cargo install ra_ap_rust-analyzer --force
+        fi
     else
         cargo install ra_ap_rust-analyzer
     fi
