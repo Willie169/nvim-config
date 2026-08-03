@@ -28,6 +28,7 @@ Full installation installs
 - [Neovim](https://github.com/neovim/neovim)
 - [Pynvim](https://github.com/neovim/pynvim)
 - [Neovim node.js client](https://github.com/neovim/node-client)
+- [luarocks](https://github.com/luarocks/luarocks)
 - [shellcheck](https://github.com/koalaman/shellcheck)
 - [yazi](https://github.com/sxyazi/yazi)
 - [ripgrep](https://github.com/burntsushi/ripgrep)
