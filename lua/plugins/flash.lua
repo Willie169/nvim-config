@@ -57,9 +57,4 @@ return {
 			desc = "Treesitter Incremental Selection",
 		},
 	},
-	config = function()
-		require("flash").treesitter()
-		require("flash").prompt()
-		require("flash").toggle()
-	end,
 }
