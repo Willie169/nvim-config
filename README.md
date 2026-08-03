@@ -147,6 +147,7 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 * [persistence.nvim](https://github.com/folke/persistence.nvim)
+* [termux-clipboard](https://github.com/Willie169/termux-clipboard)
 * [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 * [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 * [trouble.nvim](https://github.com/folke/trouble.nvim)
