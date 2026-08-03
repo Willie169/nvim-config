@@ -129,6 +129,7 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 * [fcitx.vim](https://github.com/lilydjwg/fcitx.vim)
 * [flash.nvim](https://github.com/folke/flash.nvim)
+* [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 * [fzf-lua](https://github.com/ibhagwan/fzf-lua)
 * [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 * [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim)
@@ -141,17 +142,17 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [mini.pairs](https://github.com/nvim-mini/mini.pairs)
 * [mini.surround](https://github.com/nvim-mini/mini.surround)
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-* [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+* [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 * [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 * [persistence.nvim](https://github.com/folke/persistence.nvim)
+* [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+* [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+* [trouble.nvim](https://github.com/folke/trouble.nvim)
 * [vim-suda](https://github.com/lambdalisue/vim-suda)
-* [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 * [which-key.nvim](https://github.com/folke/which-key.nvim)
 * [yazi.nvim](https://github.com/mikavilpas/yazi.nvim)
-
-<!-- TODO: -->
 
 ### Vim
 

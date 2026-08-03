@@ -23,10 +23,9 @@
 !nvim-ts-context-commentstring.lua
 !persistence.nvim.lua
 !termux-clipboard.lua
-!todo-comments.lua
-!tokyonight.lua
-!trouble.lua
-!ts-comments.lua
+!todo-comments.nvim.lua
+!tokyonight.nvim.lua
+!trouble.nvim.lua
 !vim-suda.lua
 !which-key.nvim.lua
 !yazi.nvim.lua
