@@ -49,8 +49,8 @@ return {
 				sections = {
 					lualine_a = { "mode" },
 					lualine_b = { { "b:gitsigns_head", icon = "" }, { "diff", source = diff_source } },
-					lualine_c = { "custom_fname" },
-					lualine_x = { "keymap" },
+					lualine_c = { custom_fname },
+					lualine_x = { keymap },
 					-- lualine_x = { "filetype" },
 					lualine_y = { "progress" },
 					lualine_z = { "location" },
