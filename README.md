@@ -125,10 +125,30 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 
 ### Included Plugins
 
-* [fcitx.vim](https://github.com/lilydjwg/fcitx.vim): Keep and restore fcitx state for each buffer separately when leaving/re-entering insert mode or search mode
-* [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Nvim Treesitter configurations and abstraction layer
-* [termux-clipboard](https://github.com/Willie169/termux-clipboard): Integrate Vim '+' register with the Android system clipboard via Termux APIs
-<!-- TODO -->
+* [blink.cmp](https://github.com/saghen/blink.cmp)
+* [blink.lib](https://github.com/saghen/blink.lib)
+* [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+* [fcitx.vim](https://github.com/lilydjwg/fcitx.vim)
+* [flash.nvim](https://github.com/folke/flash.nvim)
+* [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+* [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim)
+* [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+* [jupytext.nvim](https://github.com/goerz/jupytext.nvim)
+* [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+* [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim)
+* [mason.nvim](https://github.com/mason-org/mason.nvim)
+* [mini.ai](https://github.com/nvim-mini/mini.ai)
+* [mini.comment](https://github.com/nvim-mini/mini.comment)
+* [mini.icons](https://github.com/nvim-mini/mini.icons)
+* [mini.pairs](https://github.com/nvim-mini/mini.pairs)
+* [mini.surround](https://github.com/nvim-mini/mini.surround)
+* [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+* [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+* [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+* [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
+* [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
+* [persistence.nvim](https://github.com/folke/persistence.nvim)
+* [vim-suda](https://github.com/lambdalisue/vim-suda)
 
 ### Vim
 
