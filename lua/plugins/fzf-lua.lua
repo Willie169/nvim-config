@@ -11,13 +11,12 @@ return {
 	end,
 	keys = {
 		-- find
-		{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Find Files" },
+		{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Files" },
 		{ "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers (sorted)" },
 		{ "<leader>fB", "<cmd>FzfLua buffers<cr>", desc = "Buffers" },
 		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 		{ "<leader>fl", "<cmd>FzfLua live_grep<cr>", desc = "Live Grep" },
 		{ "<leader>fg", "<cmd>FzfLua live_grep_glob<cr>", desc = "Live Grep (glob)" },
-		{ "<leader>fh", "<cmd>FzfLua help_tags<cr>", desc = "Help Pages" },
 		-- git
 		{ "<leader>gf", "<cmd>FzfLua git_files<cr>", desc = "Git Files" },
 		{ "<leader>gb", "<cmd>FzfLua git_branches<cr>", desc = "Git Branches" },
