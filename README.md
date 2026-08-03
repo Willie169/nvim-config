@@ -87,7 +87,7 @@ Debian derivatives on x86\_64 or AArch64 architecture with normal or root user a
   curl -LsSf https://astral.sh/uv/install.sh | sh
   ```
 
-Termux is supported provided that the following executables are available:
+Termux on AArch64 architecture is supported provided that the following executables are available:
 - `apt`
 - `cargo`: can be installed with:
   ```
