@@ -17,7 +17,7 @@ curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/ma
 ```
 This script will add following line to your `"$HOME/.bashrc"`:
 ```
-export PATH="${HOME}/.cargo/bin:${HOME}/eclipse.jdt.ls/bin:${HOME}/ktlsp/server/bin:${HOME}/.local/bin:${PATH}"
+export PATH="${HOME}/.cargo/bin:${HOME}/eclipse.jdt.ls/bin:${HOME}/ktlsp/server/bin:${HOME}/.local/bin:${PATH:-}"
 ```
 If you don't want it to touch your `"$HOME/.bashrc"`, use
 ```
