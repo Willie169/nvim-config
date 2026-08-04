@@ -56,10 +56,6 @@ and installs Neovim configuration from this repo.
 
 Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:
 - `apt`
-- `curl`, `git`, `jq`, `wget`: can be installed with:
-  ```
-  apt install curl git jq wget -y
-  ```
 - `brew`: can be installed with:
   ```
   [ "$EUID" -eq 0 ] && touch /.dockerenv
@@ -93,10 +89,6 @@ Debian derivatives on x86\_64 or AArch64 architecture with normal or root user a
 
 Termux on AArch64 architecture is supported provided that the following executables are available:
 - `apt`, `pkg`
-- `curl`, `git`, `jq`, `wget`: can be installed with:
-  ```
-  pkg install curl git jq wget -y
-  ```
 - `cargo`: can be installed with:
   ```
   pkg install rust -y
