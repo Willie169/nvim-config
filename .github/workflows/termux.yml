@@ -1,4 +1,4 @@
-name: termux-setup
+name: termux
 on:
   workflow_dispatch:
 jobs:
