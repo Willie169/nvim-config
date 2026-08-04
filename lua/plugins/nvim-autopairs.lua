@@ -10,16 +10,6 @@ return {
 		npairs.setup({ check_ts = true })
 		npairs.add_rules({
 			Rule("$", "$", { "tex", "latex", "plaintex" }),
-		})
-		npairs.add_rules({
-			Rule("$$", "$$", { "tex", "latex", "plaintex" }),
-		})
-		npairs.add_rules({
-			Rule("\\(", "\\)", { "tex", "latex", "plaintex" }),
-		})
-		npairs.add_rules({
-			Rule("\\[", "\\]", { "tex", "latex", "plaintex" }),
-		})
 		npairs.add_rules({
 			Rule("=", "")
 				:with_pair(cond.not_inside_quote())
@@ -48,6 +38,16 @@ return {
 				:set_end_pair_length(0)
 				:with_move(cond.none())
 				:with_del(cond.none()),
+		})
+		})
+		npairs.add_rules({
+			Rule("$$", "$$", { "tex", "latex", "plaintex" }),
+		})
+		npairs.add_rules({
+			Rule("\\(", "\\)", { "tex", "latex", "plaintex" }),
+		})
+		npairs.add_rules({
+			Rule("\\[", "\\]", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
 			Rule("{", "},", "lua")
