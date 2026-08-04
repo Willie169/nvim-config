@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+# GitHub Action termux/termux-docker possible errors to be prevented:
+# + tar -xJf file.tar.xz
+# tar: Unknown option Jf (see "tar --help")
+# and
+# + tar -xf -
+# tar: chown ...: Operation not permitted
+# use
+# xz -d file.tar.xz
+# gzip -d file.tar.gz
+# tar -xf file.tar || true
+
 set -euxo pipefail
 cwd="${cwd:-$(pwd)}"
 UPDATED=${UPDATED:-0}
@@ -39,7 +50,7 @@ else
 fi
 gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml "$SUPERHTML".tar.xz
 xz -d "$SUPERHTML".tar.xz
-tar -xf "$SUPERHTML".tar
+tar -xf "$SUPERHTML".tar || true
 rm "$SUPERHTML".tar*
 mv superhtml ~/.local/bin/
 rm ~/.local/bin/verible* || true
@@ -52,7 +63,7 @@ gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' chip
 # shellcheck disable=2086
 gzip -d $VERIBLE.tar.gz
 # shellcheck disable=2086
-tar -xf $VERIBLE.tar
+tar -xf $VERIBLE.tar || true
 mv verible*/bin/* ~/.local/bin/
 rm -r verible*
 rm -rf eclipse.jdt.ls || true
@@ -60,9 +71,10 @@ mkdir eclipse.jdt.ls
 cd eclipse.jdt.ls || exit
 wget --tries=100 --retry-connrefused --waitretry=5 https://www.eclipse.org/downloads/download.php?file=/jdtls/snapshots/jdt-language-server-latest.tar.gz -O jdt-language-server-latest.tar.gz
 gzip -d jdt-language-server-latest.tar.gz
-tar -xf jdt-language-server-latest.tar
+tar -xf jdt-language-server-latest.tar || true
 rm jdt-language-server-latest.tar*
 cd ~ || exit
+test -f ~/eclipse.jdt.ls/bin/jdtls
 rm -rf ktlsp || true
 mkdir ktlsp
 cd ktlsp
