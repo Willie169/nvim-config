@@ -61,7 +61,7 @@ cd eclipse.jdt.ls || exit
 wget --tries=100 --retry-connrefused --waitretry=5 https://www.eclipse.org/downloads/download.php?file=/jdtls/snapshots/jdt-language-server-latest.tar.gz -O jdt-language-server-latest.tar.gz
 gzip -d jdt-language-server-latest.tar.gz
 tar -xf jdt-language-server-latest.tar
-rm jdt-language-server-latest.tar.gz*
+rm jdt-language-server-latest.tar*
 cd ~ || exit
 rm -rf ktlsp || true
 mkdir ktlsp
