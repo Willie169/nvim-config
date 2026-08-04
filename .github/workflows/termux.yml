@@ -24,6 +24,7 @@ jobs:
           sudo docker run --rm -v "$HOME/termux-sh:/data/data/com.termux/files/home/termux-sh" -w "/data/data/com.termux/files/home/termux-sh" --privileged termux/termux-docker bash -c '
             set -euxo pipefail
             echo "deb https://packages.termux.dev/apt/termux-main stable main" > /data/data/com.termux/files/usr/etc/apt/sources.list
+            export ANDROID_API_LEVEL=24
             pkg update
             DEBIAN_FRONTEND=noninteractive pkg install libxml2 libxslt nodejs-lts npm python python-ensurepip-wheels python-pip rust uv -y -o Dpkg::Options::="--force-confnew"
             curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-install.sh | bash -s -- -n

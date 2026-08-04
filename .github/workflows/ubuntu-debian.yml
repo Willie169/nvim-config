@@ -17,6 +17,7 @@ jobs:
       - name: Full install
         timeout-minutes: 360
         run: |
+          bash <<'EOF'
           set -euxo pipefail
           if [ "$EUID" -eq 0 ]; then
             touch /.dockerenv
@@ -38,3 +39,4 @@ jobs:
           echo y | corepack enable npm
           echo y | npm --help || true
           curl -LsSf https://astral.sh/uv/install.sh | sh
+          EOF
