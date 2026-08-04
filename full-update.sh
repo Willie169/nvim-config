@@ -50,7 +50,9 @@ elif [[ "$ARCH" == "aarch64" ]]; then
 fi
 gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' chipsalliance/verible "$VERIBLE".tar.gz
 # shellcheck disable=2086
-tar -xzf $VERIBLE.tar.gz
+gzip -d $VERIBLE.tar.gz
+# shellcheck disable=2086
+tar -xf $VERIBLE.tar
 mv verible*/bin/* ~/.local/bin/
 rm -r verible*
 rm -rf eclipse.jdt.ls || true

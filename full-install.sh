@@ -8,6 +8,7 @@
 # tar: chown ...: Operation not permitted
 # use
 # xz -d file.tar.xz
+# gzip -d file.tar.gz
 # tar -xf file.tar
 
 set -euxo pipefail
