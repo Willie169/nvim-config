@@ -15,8 +15,8 @@
 !mini.ai.lua
 !mini.comment.lua
 !mini.icons.lua
-!mini.pairs.lua
 !mini.surround.lua
+!nvim-autopairs.lua
 !nvim-lspconfig.lua
 !nvim-treesitter-textobjects.lua
 !nvim-treesitter.lua
