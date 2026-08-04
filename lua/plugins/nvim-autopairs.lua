@@ -40,7 +40,6 @@ return {
 				:set_end_pair_length(0)
 				:with_move(cond.none())
 				:with_del(cond.none()),
-			Rule("$", "$", ""):with_pair(ts_conds.is_not_ts_node({ "string", "comment" })),
 			Rule("{", "},", "lua")
 				:with_pair(cond.not_after_regex(","))
 				:with_pair(ts_conds.is_ts_node({ "table_constructor" })),
