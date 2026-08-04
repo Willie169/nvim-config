@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -euxo pipefail
-PPKG='curl jq'
+PPKG='curl git jq'
 if [ "$EUID" -eq 0 ]; then
 	touch /.dockerenv
 	apt update
