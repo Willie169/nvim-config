@@ -1,0 +1,31 @@
+name: ubuntu-debian
+on:
+  workflow_dispatch:
+jobs:
+  install:
+    timeout-minutes: 360
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Full install
+        timeout-minutes: 360
+        run: |
+          if [ "$EUID" -eq 0 ]; then
+            touch /.dockerenv
+            apt update
+          else
+            sudo apt update
+          fi
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          . "${HOME}"/.cargo/env
+          curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+          NVM_VERSION=$(curl -fsSL "https://api.github.com/repos/nvm-sh/nvm/releases/latest" | jq -r '.tag_name')
+          bash -c "curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash"
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+          nvm install --lts
+          echo y | corepack enable npm
+          echo y | npm --help || true
+          curl -LsSf https://astral.sh/uv/install.sh | sh

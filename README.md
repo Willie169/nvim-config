@@ -100,7 +100,7 @@ Termux on AArch64 architecture is supported provided that the following executab
 - `pkg`
 - `uv`: can be installed with:
   ```
-  pkg install uv -y
+  pkg install libxml2 libxslt python python-ensurepip-wheels python-pip uv -y
   ```
 
 Run `:checkhealth` in Neovim after installation and refer to the documentations of the plugins for other optional external software you may install.
