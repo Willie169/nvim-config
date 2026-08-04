@@ -17,6 +17,7 @@ jobs:
       - name: Full install
         timeout-minutes: 360
         run: |
+          set -euxo pipefail
           if [ "$EUID" -eq 0 ]; then
             touch /.dockerenv
             apt update

@@ -20,6 +20,7 @@ jobs:
       - name: Full install
         timeout-minutes: 360
         run: |
+          set -euxo pipefail
           sudo docker run --rm -v "$HOME/termux-sh:/data/data/com.termux/files/home/termux-sh" -w "/data/data/com.termux/files/home/termux-sh" --privileged termux/termux-docker bash -c '
             set -euxo pipefail
             echo "deb https://packages.termux.dev/apt/termux-main stable main" > /data/data/com.termux/files/usr/etc/apt/sources.list
