@@ -9,16 +9,16 @@ return {
 
 		npairs.setup({ check_ts = true })
 		npairs.add_rules({
-			Rule("$", "$", { "tex", "latex" }),
+			Rule("$", "$", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
-			Rule("$$", "$$", { "tex", "latex" }),
+			Rule("$$", "$$", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
-			Rule("\\(", "\\)", { "tex", "latex" }),
+			Rule("\\(", "\\)", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
-			Rule("\\[", "\\]", { "tex", "latex" }),
+			Rule("\\[", "\\]", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
 			Rule("=", "")
