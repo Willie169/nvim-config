@@ -13,7 +13,7 @@ if [ "$UPDATED" -ne 1 ]; then
 fi
 ENV=0
 [ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
-[ "${PREFIX}" = '/data/data/com.termux/files/usr' ] && ENV=2
+[ "${PREFIX:-}" = '/data/data/com.termux/files/usr' ] && ENV=2
 cd ~ || exit
 if [ "$ENV" -ne 2 ]; then
 	cargo-binstall tree-sitter-cli --no-confirm
