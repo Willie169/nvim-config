@@ -3,6 +3,7 @@
 !blink.cmp.lua
 !bufferline.nvim.lua
 !bullets.vim.lua
+!catppuccin-nvim.lua
 !fcitx.vim.lua
 !friendly-snippets.lua
 !fzf-lua.lua
@@ -24,7 +25,6 @@
 !render-markdown.nvim.lua
 !termux-clipboard.lua
 !todo-comments.nvim.lua
-!tokyonight.nvim.lua
 !trouble.nvim.lua
 !vim-suda.lua
 !which-key.nvim.lua
