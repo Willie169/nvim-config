@@ -30,7 +30,7 @@ if ((${#missing[@]})); then
 	printf '  %s\n' "${missing[@]}" >&2
 	exit 1
 fi
-apt_required=("bash" "coreutils" "curl" "git" "gzip" "jq" "tar" "unzip" "wget" "xz-utis")
+apt_required=("bash" "curl" "git" "gzip" "jq" "tar" "unzip" "wget")
 apt_missing=()
 for cmd in "${apt_required[@]}"; do
 	if ! command -v -- "$cmd" >/dev/null 2>&1; then
