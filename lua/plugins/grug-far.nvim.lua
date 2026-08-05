@@ -43,15 +43,12 @@ return {
 		{
 			"<leader>jc",
 			function()
-				local inst = require("grug-far").open({
+				require("grug-far").open({
 					transient = true,
 					prefills = {
 						search = vim.fn.expand("<cword>"),
 					},
 				})
-				inst:when_ready(function()
-					inst:goto_input("replacement")
-				end)
 			end,
 			mode = { "n", "x" },
 			desc = "grug-far current word",
@@ -59,16 +56,13 @@ return {
 		{
 			"<leader>jd",
 			function()
-				local inst = require("grug-far").open({
+				require("grug-far").open({
 					transient = true,
 					prefills = {
 						search = vim.fn.expand("<cword>"),
 						flags = "-i",
 					},
 				})
-				inst:when_ready(function()
-					inst:goto_input("replacement")
-				end)
 			end,
 			mode = { "n", "x" },
 			desc = "grug-far current word case-insensitive",
@@ -77,16 +71,13 @@ return {
 			"<leader>je",
 			function()
 				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
-				local inst = require("grug-far").open({
+				require("grug-far").open({
 					transient = true,
 					prefills = {
 						search = vim.fn.expand("<cword>"),
 						filesFilter = ext and ext ~= "" and "*." .. ext or nil,
 					},
 				})
-				inst:when_ready(function()
-					inst:goto_input("replacement")
-				end)
 			end,
 			mode = { "n", "x" },
 			desc = "grug-far current word in current file type",
@@ -101,15 +92,12 @@ return {
 				elseif search and vim.startswith(search, "\\V") then
 					search = search:sub(3)
 				end
-				local inst = require("grug-far").open({
+				require("grug-far").open({
 					transient = true,
 					prefills = {
 						search = search,
 					},
 				})
-				inst:when_ready(function()
-					inst:goto_input("replacement")
-				end)
 			end,
 			mode = { "n", "x" },
 			desc = "grug-far @/",
@@ -124,16 +112,13 @@ return {
 				elseif search and vim.startswith(search, "\\V") then
 					search = search:sub(3)
 				end
-				local inst = require("grug-far").open({
+				require("grug-far").open({
 					transient = true,
 					prefills = {
 						search = search,
 						flags = "-i",
 					},
 				})
-				inst:when_ready(function()
-					inst:goto_input("replacement")
-				end)
 			end,
 			mode = { "n", "x" },
 			desc = "grug-far @/ case-insensitive",
@@ -149,16 +134,13 @@ return {
 					search = search:sub(3)
 				end
 				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
-				local inst = require("grug-far").open({
+				require("grug-far").open({
 					transient = true,
 					prefills = {
 						search = search,
 						filesFilter = ext and ext ~= "" and "*." .. ext or nil,
 					},
 				})
-				inst:when_ready(function()
-					inst:goto_input("replacement")
-				end)
 			end,
 			mode = { "n", "x" },
 			desc = "grug-far @/ in current file type",
