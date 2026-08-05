@@ -129,7 +129,6 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 * [bullets.vim](https://github.com/bullets-vim/bullets.vim)
 * [fcitx.vim](https://github.com/lilydjwg/fcitx.vim)
-* [flash.nvim](https://github.com/folke/flash.nvim)
 * [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 * [fzf-lua](https://github.com/ibhagwan/fzf-lua)
 * [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
