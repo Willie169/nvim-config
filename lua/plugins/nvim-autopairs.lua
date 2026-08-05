@@ -14,11 +14,6 @@ return {
 				:with_pair(ts_conds.is_not_ts_node({ "code" })),
 		})
 		npairs.add_rules({
-			Rule("$$", "$$", { "tex", "latex", "plaintex" })
-				:with_pair(cond.not_before_text("\\$"))
-				:with_pair(ts_conds.is_not_ts_node({ "code" })),
-		})
-		npairs.add_rules({
 			Rule("\\(", "\\)"),
 		})
 		npairs.add_rules({
