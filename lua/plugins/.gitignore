@@ -13,13 +13,12 @@
 !jupytext.nvim.lua
 !lualine.nvim.lua
 !mini.ai.lua
-!mini.comment.lua
 !mini.icons.lua
 !mini.surround.lua
 !nvim-autopairs.lua
 !nvim-lspconfig.lua
-!nvim-treesitter-textobjects.lua
 !nvim-treesitter.lua
+!nvim-treesitter-textobjects.lua
 !nvim-ts-autotag.lua
 !nvim-ts-context-commentstring.lua
 !persistence.nvim.lua

@@ -139,7 +139,6 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 * [mini.ai](https://github.com/nvim-mini/mini.ai)
 * [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-* [mini.comment](https://github.com/nvim-mini/mini.comment)
 * [mini.icons](https://github.com/nvim-mini/mini.icons)
 * [mini.surround](https://github.com/nvim-mini/mini.surround)
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
