@@ -9,7 +9,7 @@ return {
 				require("grug-far").open({
 					transient = true,
 					prefills = {
-						paths = vim.fn.expand("%"),
+						paths = vim.fn.fnameescape(vim.fn.expand("%")),
 					},
 				})
 			end,
@@ -23,7 +23,7 @@ return {
 					transient = true,
 					prefills = {
 						flags = "-i",
-						paths = vim.fn.expand("%"),
+						paths = vim.fn.fnameescape(vim.fn.expand("%")),
 					},
 				})
 			end,
@@ -33,7 +33,7 @@ return {
 		{
 			"<leader>ji",
 			function()
-				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+				local ext = vim.bo.buftype == "" and vim.fn.fnameescape(vim.fn.expand("%:e"))
 				require("grug-far").open({
 					transient = true,
 					prefills = {
@@ -50,7 +50,7 @@ return {
 				require("grug-far").open({
 					transient = true,
 					prefills = {
-						paths = vim.fn.expand("%"),
+						paths = vim.fn.fnameescape(vim.fn.expand("%")),
 					},
 				})
 			end,
@@ -64,7 +64,7 @@ return {
 					transient = true,
 					prefills = {
 						search = vim.fn.expand("<cword>"),
-						paths = vim.fn.expand("%"),
+						paths = vim.fn.fnameescape(vim.fn.expand("%")),
 					},
 				})
 			end,
@@ -79,7 +79,7 @@ return {
 					prefills = {
 						search = vim.fn.expand("<cword>"),
 						flags = "-i",
-						paths = vim.fn.expand("%"),
+						paths = vim.fn.fnameescape(vim.fn.expand("%")),
 					},
 				})
 			end,
@@ -89,7 +89,7 @@ return {
 		{
 			"<leader>je",
 			function()
-				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+				local ext = vim.bo.buftype == "" and vim.fn.fnameescape(vim.fn.expand("%:e"))
 				require("grug-far").open({
 					transient = true,
 					prefills = {
@@ -128,7 +128,7 @@ return {
 					transient = true,
 					prefills = {
 						search = search,
-						paths = vim.fn.expand("%"),
+						paths = vim.fn.fnameescape(vim.fn.expand("%")),
 					},
 				})
 			end,
@@ -150,7 +150,7 @@ return {
 					prefills = {
 						search = search,
 						flags = "-i",
-						paths = vim.fn.expand("%"),
+						paths = vim.fn.fnameescape(vim.fn.expand("%")),
 					},
 				})
 			end,
@@ -167,7 +167,7 @@ return {
 				elseif search and vim.startswith(search, "\\V") then
 					search = search:sub(3)
 				end
-				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+				local ext = vim.bo.buftype == "" and vim.fn.fnameescape(vim.fn.expand("%:e"))
 				require("grug-far").open({
 					transient = true,
 					prefills = {
