@@ -9,10 +9,12 @@ return {
 
 		npairs.setup({ check_ts = true })
 		npairs.add_rules({
-			Rule("$", "$", { "tex", "latex", "plaintex" }):with_pair(cond.not_before_text("$")),
+			Rule("$", "$", { "tex", "latex", "plaintex" })
+				:with_pair(cond.not_before_text("\\"))
+				:with_pair(cond.not_before_text("$")),
 		})
 		npairs.add_rules({
-			Rule("$$", "$$", { "tex", "latex", "plaintex" }),
+			Rule("$$", "$$", { "tex", "latex", "plaintex" }):with_pair(cond.not_before_text("\\")),
 		})
 		npairs.add_rules({
 			Rule("\\(", "\\)", { "tex", "latex", "plaintex" }),
