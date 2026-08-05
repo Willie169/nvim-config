@@ -16,3 +16,6 @@ vim.lsp.enable("texlab")
 vim.lsp.enable("verible")
 vim.lsp.enable("jsonls")
 vim.lsp.enable("yamlls")
+vim.keymap.set({ "n", "x" }, "sd", "<C-W>d", {
+	remap = true,
+})
