@@ -36,5 +36,6 @@ return {
 				:with_pair(cond.not_after_regex(","))
 				:with_pair(ts_conds.is_ts_node({ "table_constructor" })),
 		})
+		npairs.clear_rules():with_pair(cond.not_filetypes({ "grug-far" }))
 	end,
 }
