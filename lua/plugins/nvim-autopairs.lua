@@ -13,13 +13,13 @@ return {
 				:with_pair(ts_conds.is_not_ts_node({ "code" })),
 		})
 		npairs.add_rules({
-			Rule("\\(", "\\)"),
+			Rule("\\(", "\\)", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
-			Rule("\\[", "\\]"),
+			Rule("\\[", "\\]", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
-			Rule("\\{", "\\}"),
+			Rule("\\{", "\\}", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
 			Rule("{", "},", "lua")
