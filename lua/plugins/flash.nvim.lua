@@ -3,7 +3,7 @@ return {
 	vscode = true,
 	keys = {
 		{
-			"s",
+			"sj",
 			mode = { "n", "x", "o" },
 			function()
 				require("flash").jump()
@@ -11,7 +11,7 @@ return {
 			desc = "Flash",
 		},
 		{
-			"S",
+			"st",
 			mode = { "n", "o", "x" },
 			function()
 				require("flash").treesitter()
@@ -19,7 +19,7 @@ return {
 			desc = "Flash Treesitter",
 		},
 		{
-			"r",
+			"sr",
 			mode = "o",
 			function()
 				require("flash").remote()
@@ -27,7 +27,7 @@ return {
 			desc = "Remote Flash",
 		},
 		{
-			"R",
+			"ss",
 			mode = { "o", "x" },
 			function()
 				require("flash").treesitter_search()
@@ -44,12 +44,12 @@ return {
 		},
 		-- Simulate nvim-treesitter incremental selection
 		{
-			"<c-space>",
+			"s<space>",
 			mode = { "n", "o", "x" },
 			function()
 				require("flash").treesitter({
 					actions = {
-						["<c-space>"] = "next",
+						["<CR>"] = "next",
 						["<BS>"] = "prev",
 					},
 				})
