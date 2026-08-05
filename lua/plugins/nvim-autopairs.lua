@@ -42,7 +42,7 @@ return {
 		npairs.get_rules("(")[1].not_filetypes = { "grug-far" }
 		npairs.get_rules("[")[1].not_filetypes = { "grug-far" }
 		npairs.get_rules("{")[1].not_filetypes = { "grug-far" }
-		npairs.get_rules("'")[1].with_pair(ts_conds.is_not_ts_node({ "string" }))
-		npairs.get_rules('"')[1].with_pair(ts_conds.is_not_ts_node({ "string" }))
+		npairs.get_rules("'")[1]:with_pair(ts_conds.is_not_ts_node({ "string" }))
+		npairs.get_rules('"')[1]:with_pair(ts_conds.is_not_ts_node({ "string" }))
 	end,
 }
