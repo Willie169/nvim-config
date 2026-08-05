@@ -4,7 +4,7 @@ return {
 	opts = { headerMaxWidth = 80 },
 	keys = {
 		{
-			"<leader>sg",
+			"<leader>jg",
 			function()
 				require("grug-far").open()
 			end,
@@ -12,11 +12,22 @@ return {
 			desc = "grug-far",
 		},
 		{
-			"<leader>sr",
+			"<leader>jh",
+			function()
+				require("grug-far").open({
+					prefills = {
+						flags = "-i",
+					},
+				})
+			end,
+			mode = { "n", "x" },
+			desc = "grug-far case-insensitive",
+		},
+		{
+			"<leader>ji",
 			function()
 				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
 				require("grug-far").open({
-					transient = true,
 					prefills = {
 						filesFilter = ext and ext ~= "" and "*." .. ext or nil,
 					},
@@ -26,7 +37,55 @@ return {
 			desc = "grug-far in current file type",
 		},
 		{
-			"<leader>sh",
+			"<leader>jc",
+			function()
+				local inst = require("grug-far").open({
+					prefills = {
+						search = vim.fn.expand("<cword>"),
+					},
+				})
+				inst:when_ready(function()
+					inst:goto_input("replacement")
+				end)
+			end,
+			mode = { "n", "x" },
+			desc = "grug-far current word",
+		},
+		{
+			"<leader>jd",
+			function()
+				local inst = require("grug-far").open({
+					prefills = {
+						search = vim.fn.expand("<cword>"),
+						flags = "-i",
+					},
+				})
+				inst:when_ready(function()
+					inst:goto_input("replacement")
+				end)
+			end,
+			mode = { "n", "x" },
+			desc = "grug-far current word case-insensitive",
+		},
+		{
+			"<leader>je",
+			function()
+				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+				local inst = require("grug-far").open({
+					prefills = {
+						search = vim.fn.expand("<cword>"),
+						filesFilter = ext and ext ~= "" and "*." .. ext or nil,
+					},
+				})
+				inst:when_ready(function()
+					inst:goto_input("replacement")
+				end)
+			end,
+			mode = { "n", "x" },
+			desc = "grug-far current word in current file type",
+		},
+		{
+			"<leader>js",
 			function()
 				local search = vim.fn.getreg("/")
 				-- surround with \b if "word" search (such as when pressing `*`)
@@ -45,10 +104,57 @@ return {
 				end)
 			end,
 			mode = { "n", "x" },
-			desc = "grug-far using @/ or visual selection",
+			desc = "grug-far @/",
 		},
 		{
-			"<leader>sl",
+			"<leader>jt",
+			function()
+				local search = vim.fn.getreg("/")
+				-- surround with \b if "word" search (such as when pressing `*`)
+				if search and vim.startswith(search, "\\<") and vim.endswith(search, "\\>") then
+					search = "\\b" .. search:sub(3, -3) .. "\\b"
+				elseif search and vim.startswith(search, "\\V") then
+					search = search:sub(3)
+				end
+				local inst = require("grug-far").open({
+					prefills = {
+						search = search,
+						flags = "-i",
+					},
+				})
+				inst:when_ready(function()
+					inst:goto_input("replacement")
+				end)
+			end,
+			mode = { "n", "x" },
+			desc = "grug-far @/ case-insensitive",
+		},
+		{
+			"<leader>ju",
+			function()
+				local search = vim.fn.getreg("/")
+				-- surround with \b if "word" search (such as when pressing `*`)
+				if search and vim.startswith(search, "\\<") and vim.endswith(search, "\\>") then
+					search = "\\b" .. search:sub(3, -3) .. "\\b"
+				elseif search and vim.startswith(search, "\\V") then
+					search = search:sub(3)
+				end
+				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
+				local inst = require("grug-far").open({
+					prefills = {
+						search = search,
+						filesFilter = ext and ext ~= "" and "*." .. ext or nil,
+					},
+				})
+				inst:when_ready(function()
+					inst:goto_input("replacement")
+				end)
+			end,
+			mode = { "n", "x" },
+			desc = "grug-far @/ in current file type",
+		},
+		{
+			"<leader>jl",
 			function()
 				local opts = {}
 				local entry = require("grug-far").get_last_history_entry()
@@ -60,7 +166,7 @@ return {
 				require("grug-far").open(opts)
 			end,
 			mode = { "n", "x" },
-			desc = "grug-far using last history entry",
+			desc = "grug-far last history entry",
 		},
 	},
 }
