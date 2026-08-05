@@ -6,7 +6,9 @@ return {
 		{
 			"<leader>jg",
 			function()
-				require("grug-far").open()
+				require("grug-far").open({
+					transient = true,
+				})
 			end,
 			mode = { "n", "x" },
 			desc = "grug-far",
@@ -15,6 +17,7 @@ return {
 			"<leader>jh",
 			function()
 				require("grug-far").open({
+					transient = true,
 					prefills = {
 						flags = "-i",
 					},
@@ -28,6 +31,7 @@ return {
 			function()
 				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
 				require("grug-far").open({
+					transient = true,
 					prefills = {
 						filesFilter = ext and ext ~= "" and "*." .. ext or nil,
 					},
@@ -40,6 +44,7 @@ return {
 			"<leader>jc",
 			function()
 				local inst = require("grug-far").open({
+					transient = true,
 					prefills = {
 						search = vim.fn.expand("<cword>"),
 					},
@@ -55,6 +60,7 @@ return {
 			"<leader>jd",
 			function()
 				local inst = require("grug-far").open({
+					transient = true,
 					prefills = {
 						search = vim.fn.expand("<cword>"),
 						flags = "-i",
@@ -72,6 +78,7 @@ return {
 			function()
 				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
 				local inst = require("grug-far").open({
+					transient = true,
 					prefills = {
 						search = vim.fn.expand("<cword>"),
 						filesFilter = ext and ext ~= "" and "*." .. ext or nil,
@@ -95,6 +102,7 @@ return {
 					search = search:sub(3)
 				end
 				local inst = require("grug-far").open({
+					transient = true,
 					prefills = {
 						search = search,
 					},
@@ -117,6 +125,7 @@ return {
 					search = search:sub(3)
 				end
 				local inst = require("grug-far").open({
+					transient = true,
 					prefills = {
 						search = search,
 						flags = "-i",
@@ -141,6 +150,7 @@ return {
 				end
 				local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
 				local inst = require("grug-far").open({
+					transient = true,
 					prefills = {
 						search = search,
 						filesFilter = ext and ext ~= "" and "*." .. ext or nil,
@@ -159,6 +169,7 @@ return {
 				local opts = {}
 				local entry = require("grug-far").get_last_history_entry()
 				if entry ~= nil then
+					opts.transient = true
 					opts.prefills = entry
 					opts.engine = entry.engine
 					opts.replacementInterpreter = entry.replacementInterpreter
