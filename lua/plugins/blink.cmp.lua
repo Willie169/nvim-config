@@ -1,6 +1,6 @@
 return {
 	"saghen/blink.cmp",
-	dependencies = { "L3MON4D3/LuaSnip" },
+	dependencies = { "saghen/blink.lib", "L3MON4D3/LuaSnip" },
 	build = function()
 		require("blink.cmp").build():pwait()
 	end,
