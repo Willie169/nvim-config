@@ -25,7 +25,7 @@ return {
 			function()
 				return require("vimtex.fzf-lua").run()
 			end,
-			desc = "vimtex fzf-lua",
+			desc = "vimtex-fzf-lua)",
 		},
 	},
 }
