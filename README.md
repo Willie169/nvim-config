@@ -128,7 +128,6 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 
 All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 
-* [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 * [blink.cmp](https://github.com/saghen/blink.cmp)
 * [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 * [bullets.vim](https://github.com/bullets-vim/bullets.vim)
@@ -141,6 +140,8 @@ All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 * [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 * [jupytext.nvim](https://github.com/goerz/jupytext.nvim)
 * [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+* [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+* [luasnip-latex-snippets.nvim](https://github.com/iurimateus/luasnip-latex-snippets.nvim)
 * [mini.ai](https://github.com/nvim-mini/mini.ai)
 * [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 * [mini.icons](https://github.com/nvim-mini/mini.icons)
@@ -155,6 +156,7 @@ All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 * [termux-clipboard](https://github.com/Willie169/termux-clipboard)
 * [trouble.nvim](https://github.com/folke/trouble.nvim)
 * [vim-suda](https://github.com/lambdalisue/vim-suda)
+* [vimtex](https://github.com/lervag/vimtex)
 * [which-key.nvim](https://github.com/folke/which-key.nvim)
 * [yazi.nvim](https://github.com/mikavilpas/yazi.nvim)
 
