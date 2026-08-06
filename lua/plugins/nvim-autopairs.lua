@@ -21,6 +21,8 @@ return {
 		npairs.add_rules({
 			Rule("\\{", "\\}", { "tex", "latex", "plaintex" }),
 		})
+		npairs.get_rules("'")[1].not_filetypes = { { "tex", "latex", "plaintex" } }
+		npairs.get_rules('"')[1].not_filetypes = { { "tex", "latex", "plaintex" } }
 		npairs.add_rules({
 			Rule("{", "},", "lua")
 				:with_pair(cond.not_after_regex(","))
