@@ -8,8 +8,9 @@ cwd="$(pwd)"
 # 2: termux
 ENV=0
 [ "$EUID" -eq 0 ] && ENV=1
-[ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
-[ "${PREFIX:-}" = '/data/data/com.termux/files/usr' ] && ENV=2
+if [ "${HOME}" = '/data/data/com.termux/files/home' ] || [ "${PREFIX:-}" = '/data/data/com.termux/files/usr' ]; then
+	ENV=2
+fi
 cd ~ || exit
 # shellcheck disable=2016
 [ "${1:-}" = "-n" ] || echo 'export PATH="${HOME}/.cargo/bin:${HOME}/eclipse.jdt.ls/bin:${HOME}/ktlsp/server/bin:${HOME}/.local/bin:${PATH:-}"' >>"${HOME}/.bashrc"

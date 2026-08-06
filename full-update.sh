@@ -24,8 +24,9 @@ if [ "$UPDATED" -ne 1 ]; then
 fi
 ENV=0
 [ "$EUID" -eq 0 ] && ENV=1
-[ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
-[ "${PREFIX:-}" = '/data/data/com.termux/files/usr' ] && ENV=2
+if [ "${HOME}" = '/data/data/com.termux/files/home' ] || [ "${PREFIX:-}" = '/data/data/com.termux/files/usr' ]; then
+	ENV=2
+fi
 cd ~ || exit
 if [ "$ENV" -eq 0 ]; then
 	sudo luarocks install jsregexp
