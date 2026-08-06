@@ -14,7 +14,7 @@
 set -euxo pipefail
 cwd="${cwd:-$(pwd)}"
 UPDATED=${UPDATED:-0}
-if [ "$1" = '-i' ]; then
+if [ "${1:-}" = '-i' ]; then
 	UPDATED=1
 fi
 if [ "$UPDATED" -ne 1 ]; then
