@@ -22,6 +22,30 @@ return {
 			Rule("\\{", "\\}", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
+			Rule("*", "*", {
+				"markdown",
+				"vimwiki",
+				"rmarkdown",
+				"rmd",
+				"pandoc",
+				"quarto",
+				"typst",
+				"gitcommit",
+			}):with_pair(cond.not_before_char("*", 2)),
+		})
+		npairs.add_rules({
+			Rule("_", "_", {
+				"markdown",
+				"vimwiki",
+				"rmarkdown",
+				"rmd",
+				"pandoc",
+				"quarto",
+				"typst",
+				"gitcommit",
+			}):with_pair(cond.not_before_char("_", 2)),
+		})
+		npairs.add_rules({
 			Rule("{", "},", "lua")
 				:with_pair(cond.not_after_regex(","))
 				:with_pair(ts_conds.is_ts_node({ "table_constructor" })),
