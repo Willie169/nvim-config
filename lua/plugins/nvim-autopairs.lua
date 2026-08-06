@@ -41,8 +41,7 @@ return {
 				})
 				:with_pair(cond.not_before_text("\\"))
 				:with_pair(cond.not_before_char("*", 2))
-				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" }))
-				:with_move(cond.done()),
+				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" })),
 		})
 		npairs.add_rules({
 			Rule("_", "_", {
@@ -57,8 +56,7 @@ return {
 				})
 				:with_pair(cond.not_before_text("\\"))
 				:with_pair(cond.not_before_char("_", 2))
-				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" }))
-				:with_move(cond.done()),
+				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" })),
 		})
 		npairs.add_rules({
 			Rule("{", "},", "lua")

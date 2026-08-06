@@ -1,5 +1,6 @@
 *
 !.gitignore
+!LuaSnip.lua
 !blink.cmp.lua
 !bufferline.nvim.lua
 !bullets.vim.lua
@@ -17,8 +18,8 @@
 !mini.surround.lua
 !nvim-autopairs.lua
 !nvim-lspconfig.lua
-!nvim-treesitter.lua
 !nvim-treesitter-textobjects.lua
+!nvim-treesitter.lua
 !nvim-ts-autotag.lua
 !nvim-ts-context-commentstring.lua
 !persistence.nvim.lua
