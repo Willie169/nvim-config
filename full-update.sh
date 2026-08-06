@@ -23,10 +23,15 @@ if [ "$UPDATED" -ne 1 ]; then
 	exit
 fi
 ENV=0
+[ "$EUID" -eq 0 ] && ENV=1
 [ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
 [ "${PREFIX:-}" = '/data/data/com.termux/files/usr' ] && ENV=2
 cd ~ || exit
-luarocks install jsregexp
+if [ "$ENV" -eq 0 ]; then
+	sudo luarocks install jsregexp
+else
+	luarocks install jsregexp
+fi
 if [ "$ENV" -ne 2 ]; then
 	cargo-binstall tree-sitter-cli --no-confirm
 	cargo install --git https://github.com/latex-lsp/texlab
