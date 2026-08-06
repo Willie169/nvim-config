@@ -125,6 +125,9 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 
 ### Included Plugins
 
+All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
+
+* [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 * [blink.cmp](https://github.com/saghen/blink.cmp)
 * [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 * [bullets.vim](https://github.com/bullets-vim/bullets.vim)
