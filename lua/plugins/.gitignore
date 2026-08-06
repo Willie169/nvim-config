@@ -26,5 +26,6 @@
 !termux-clipboard.lua
 !trouble.nvim.lua
 !vim-suda.lua
+!vimtex.lua
 !which-key.nvim.lua
 !yazi.nvim.lua
