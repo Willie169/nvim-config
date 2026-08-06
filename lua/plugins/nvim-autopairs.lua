@@ -23,27 +23,33 @@ return {
 		})
 		npairs.add_rules({
 			Rule("*", "*", {
-				"markdown",
-				"vimwiki",
-				"rmarkdown",
-				"rmd",
-				"pandoc",
-				"quarto",
-				"typst",
-				"gitcommit",
-			}):with_pair(cond.not_before_char("*", 2)),
+					"markdown",
+					"vimwiki",
+					"rmarkdown",
+					"rmd",
+					"pandoc",
+					"quarto",
+					"typst",
+					"gitcommit",
+				})
+				:with_pair(cond.not_before_text("\\"))
+				:with_pair(cond.not_before_char("*", 2))
+				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" })),
 		})
 		npairs.add_rules({
 			Rule("_", "_", {
-				"markdown",
-				"vimwiki",
-				"rmarkdown",
-				"rmd",
-				"pandoc",
-				"quarto",
-				"typst",
-				"gitcommit",
-			}):with_pair(cond.not_before_char("_", 2)),
+					"markdown",
+					"vimwiki",
+					"rmarkdown",
+					"rmd",
+					"pandoc",
+					"quarto",
+					"typst",
+					"gitcommit",
+				})
+				:with_pair(cond.not_before_text("\\"))
+				:with_pair(cond.not_before_char("_", 2))
+				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" })),
 		})
 		npairs.add_rules({
 			Rule("{", "},", "lua")
