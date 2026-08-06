@@ -24,15 +24,15 @@ return {
 		})
 		npairs.get_rules("(")[1]:with_pair(
 			cond.not_filetypes({ "grug-far" })
-				or (cond.not_filetypes({ "tex", "latex", "plaintex" }) and cond.not_before_text("\\"))
+				and (cond.not_filetypes({ "tex", "latex", "plaintex" }) or cond.not_before_text("\\"))
 		)
 		npairs.get_rules("[")[1]:with_pair(
 			cond.not_filetypes({ "grug-far" })
-				or (cond.not_filetypes({ "tex", "latex", "plaintex" }) and cond.not_before_text("\\"))
+				and (cond.not_filetypes({ "tex", "latex", "plaintex" }) or cond.not_before_text("\\"))
 		)
 		npairs.get_rules("{")[1]:with_pair(
 			cond.not_filetypes({ "grug-far" })
-				or (cond.not_filetypes({ "tex", "latex", "plaintex" }) and cond.not_before_text("\\"))
+				and (cond.not_filetypes({ "tex", "latex", "plaintex" }) or cond.not_before_text("\\"))
 		)
 		npairs
 			.get_rules("'")[1]
