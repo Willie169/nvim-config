@@ -26,6 +26,7 @@ ENV=0
 [ "${HOME}" = '/data/data/com.termux/files/home' ] && ENV=2
 [ "${PREFIX:-}" = '/data/data/com.termux/files/usr' ] && ENV=2
 cd ~ || exit
+luarocks install jsregexp
 if [ "$ENV" -ne 2 ]; then
 	cargo-binstall tree-sitter-cli --no-confirm
 	cargo install --git https://github.com/latex-lsp/texlab
