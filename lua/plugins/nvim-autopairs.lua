@@ -10,17 +10,26 @@ return {
 		npairs.add_rules({
 			Rule("$", "$", { "tex", "latex", "plaintex" })
 				:with_pair(cond.not_before_text("\\"))
-				:with_move(cond.done())
-				:with_pair(ts_conds.is_not_ts_node({ "code", "inline_formula" })),
+				:with_pair(ts_conds.is_not_ts_node({ "code", "inline_formula", "displayed_equation", }))
+				:with_move(cond.done()),
 		})
 		npairs.add_rules({
-			Rule("\\(", "\\)", { "tex", "latex", "plaintex" }),
+			Rule("\\(", "\\)", { "tex", "latex", "plaintex" })
+				:with_pair(cond.not_before_text("\\"))
+				:with_pair(ts_conds.is_not_ts_node({ "code", "inline_formula", "displayed_equation", }))
+				:with_move(cond.done()),
 		})
 		npairs.add_rules({
-			Rule("\\[", "\\]", { "tex", "latex", "plaintex" }),
+			Rule("\\[", "\\]", { "tex", "latex", "plaintex" })
+				:with_pair(cond.not_before_text("\\"))
+				:with_pair(ts_conds.is_not_ts_node({ "code", "inline_formula", "displayed_equation", }))
+				:with_move(cond.done()),
 		})
 		npairs.add_rules({
-			Rule("\\{", "\\}", { "tex", "latex", "plaintex" }),
+			Rule("\\{", "\\}", { "tex", "latex", "plaintex" })
+				:with_pair(cond.not_before_text("\\"))
+				:with_pair(ts_conds.is_not_ts_node({ "code", "inline_formula", "displayed_equation", }))
+				:with_move(cond.done()),
 		})
 		npairs.add_rules({
 			Rule("*", "*", {
@@ -35,7 +44,9 @@ return {
 				})
 				:with_pair(cond.not_before_text("\\"))
 				:with_pair(cond.not_before_char("*", 2))
-				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" })),
+				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" }))
+				:with_del(cond.after_text("*") & cond.done())
+				:with_move(cond.done()),
 		})
 		npairs.add_rules({
 			Rule("_", "_", {
@@ -50,7 +61,9 @@ return {
 				})
 				:with_pair(cond.not_before_text("\\"))
 				:with_pair(cond.not_before_char("_", 2))
-				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" })),
+				:with_pair(ts_conds.is_ts_node({ "code_span", "code_fence_content" }))
+				:with_del(cond.after_text("_") & cond.done())
+				:with_move(cond.done()),
 		})
 		npairs.add_rules({
 			Rule("{", "},", "lua")
@@ -72,10 +85,12 @@ return {
 		npairs.get_rules("{")[1].not_filetypes = { "grug-far" }
 		npairs
 			.get_rules("'")[1]
+				:with_pair(cond.not_before_text("\\"))
 			:with_pair(ts_conds.is_not_ts_node({ "string" }))
 			:with_pair(cond.not_filetypes({ "tex", "latex", "plaintex", "grug-far" }))
 		npairs
 			.get_rules('"')[1]
+				:with_pair(cond.not_before_text("\\"))
 			:with_pair(ts_conds.is_not_ts_node({ "string" }))
 			:with_pair(cond.not_filetypes({ "tex", "latex", "plaintex", "grug-far" }))
 		npairs
