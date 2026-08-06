@@ -149,7 +149,6 @@ After you have installed the setup, put your customization in `~/.config/nvim/lu
 * [persistence.nvim](https://github.com/folke/persistence.nvim)
 * [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 * [termux-clipboard](https://github.com/Willie169/termux-clipboard)
-* [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 * [trouble.nvim](https://github.com/folke/trouble.nvim)
 * [vim-suda](https://github.com/lambdalisue/vim-suda)
 * [which-key.nvim](https://github.com/folke/which-key.nvim)
