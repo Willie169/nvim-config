@@ -12,6 +12,7 @@
 !indent-blankline.nvim.lua
 !jupytext.nvim.lua
 !lualine.nvim.lua
+!luasnip-latex-snippets.nvim.lua
 !mini.ai.lua
 !mini.icons.lua
 !mini.surround.lua
