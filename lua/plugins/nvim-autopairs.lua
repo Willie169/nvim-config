@@ -23,7 +23,6 @@ return {
 		})
 		npairs.get_rules("'")[1].not_filetypes = { { "tex", "latex", "plaintex", "grug-far" } }
 		npairs.get_rules('"')[1].not_filetypes = { { "tex", "latex", "plaintex", "grug-far" } }
-		npairs.get_rules("'''")[1].not_filetypes = { { "tex", "latex", "plaintex", "grug-far" } }
 		npairs.add_rules({
 			Rule("{", "},", "lua")
 				:with_pair(cond.not_after_regex(","))
