@@ -21,8 +21,6 @@ return {
 		npairs.add_rules({
 			Rule("\\{", "\\}", { "tex", "latex", "plaintex" }),
 		})
-		npairs.get_rules("'")[1].not_filetypes = { { "tex", "latex", "plaintex", "grug-far" } }
-		npairs.get_rules('"')[1].not_filetypes = { { "tex", "latex", "plaintex", "grug-far" } }
 		npairs.add_rules({
 			Rule("{", "},", "lua")
 				:with_pair(cond.not_after_regex(","))
@@ -42,7 +40,13 @@ return {
 		npairs.get_rules("(")[1].not_filetypes = { "grug-far" }
 		npairs.get_rules("[")[1].not_filetypes = { "grug-far" }
 		npairs.get_rules("{")[1].not_filetypes = { "grug-far" }
-		npairs.get_rules("'")[1]:with_pair(ts_conds.is_not_ts_node({ "string" }))
-		npairs.get_rules('"')[1]:with_pair(ts_conds.is_not_ts_node({ "string" }))
+		npairs
+			.get_rules("'")[1]
+			:with_pair(ts_conds.is_not_ts_node({ "string" }))
+			:with_pair(cond.not_filetypes({ "tex", "latex", "plaintex", "grug-far" }))
+		npairs
+			.get_rules('"')[1]
+			:with_pair(ts_conds.is_not_ts_node({ "string" }))
+			:with_pair(cond.not_filetypes({ "tex", "latex", "plaintex", "grug-far" }))
 	end,
 }
