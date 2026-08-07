@@ -15,6 +15,16 @@ return {
 			["context (luatex)"] = "-pdf -pdflatex=context",
 			["context (xetex)"] = "-pdf -pdflatex='texexec --xtx'",
 		}
+		vim.g.vimtex_compiler_latexmk = {
+			aux_dir = "",
+			out_dir = "",
+			callback = 1,
+			continuous = 1,
+			clean_ext = "",
+			executable = "latexmk",
+			hooks = {},
+			options = { "-latexoption='-interaction=nonstopmode -halt-on-error'" },
+		}
 		vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
 		vim.g.vimtex_syntax_enabled = 0
 	end,
