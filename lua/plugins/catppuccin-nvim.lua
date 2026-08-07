@@ -5,6 +5,7 @@ return {
 	config = function()
 		require("catppuccin").setup({
 			flavour = "mocha",
+			no_italic = true,
 			integrations = {
 				grug_far = true,
 				lsp_trouble = true,
