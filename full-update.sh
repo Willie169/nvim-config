@@ -50,7 +50,7 @@ fi
 ARCH=$(uname -m)
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 rm -f ~/.local/bin/superhtml || true
-if [[ "$ARCH" == "x86_64" ]]; then
+if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
 	SUPERHTML="x86_64-linux-musl"
 else
 	SUPERHTML="aarch64-linux"
@@ -61,9 +61,9 @@ tar -xf "$SUPERHTML".tar || true
 rm "$SUPERHTML".tar*
 mv superhtml ~/.local/bin/
 rm ~/.local/bin/verible* || true
-if [[ "$ARCH" == "x86_64" ]]; then
+if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
 	VERIBLE="verible-*-linux-static-x86_64"
-elif [[ "$ARCH" == "aarch64" ]]; then
+else
 	VERIBLE="verible-*-linux-static-arm64"
 fi
 gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' chipsalliance/verible "$VERIBLE".tar.gz
