@@ -17,6 +17,7 @@ return {
 		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 		{ "<leader>fl", "<cmd>FzfLua live_grep<cr>", desc = "Live Grep" },
 		{ "<leader>fg", "<cmd>FzfLua live_grep_glob<cr>", desc = "Live Grep (glob)" },
+		{ "<leader>ft", "<cmd>FzfLua treesitter<cr>", desc = "Treesitter" },
 		-- git
 		{ "<leader>gf", "<cmd>FzfLua git_files<cr>", desc = "Git Files" },
 		{ "<leader>gb", "<cmd>FzfLua git_branches<cr>", desc = "Git Branches" },
