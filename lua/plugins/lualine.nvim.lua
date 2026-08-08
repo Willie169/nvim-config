@@ -30,7 +30,7 @@ return {
 			local sinfo = vim.fn.searchcount({ maxcount = 0 })
 			search_stat = sinfo.incomplete > 0 and "[?/?]"
 				or sinfo.total > 0 and ("[%s/%s]"):format(sinfo.current, sinfo.total)
-				or nil
+				or ""
 		end
 
 		require("lualine").setup({
@@ -100,7 +100,7 @@ return {
 						end,
 					},
 					{
-						search_stat or '',
+						search_stat,
 						on_click = function()
 							local search = vim.fn.getreg("/")
 							-- surround with \b if "word" search (such as when pressing `*`)
