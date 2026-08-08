@@ -65,7 +65,23 @@ function match_delimiter(open, close, ignored_ts_node)
 		end
 		output = output .. "\n" .. string.format("%2d %5d %s", balance, line_number, line)
 	end
-	return output
+
+	local function show_result(lines)
+		vim.cmd("topleft vertical new")
+		local win = vim.api.nvim_get_current_win()
+		vim.api.nvim_win_set_width(win, 40)
+		local buf = vim.api.nvim_get_current_buf()
+		vim.bo[buf].buftype = "nofile"
+		vim.bo[buf].bufhidden = "wipe"
+		vim.bo[buf].swapfile = false
+		vim.bo[buf].modifiable = true
+		vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+		vim.bo[buf].modifiable = true
+		vim.bo[buf].buflisted = false
+		vim.api.nvim_buf_set_name(buf, "Match Delimiter")
+	end
+
+	show_result(output)
 end
 
 function match_round()
