@@ -63,7 +63,7 @@ function match_delimiter(open, close, ignored_ts_node)
 				end
 			end
 		end
-		output = output .. string.format("%2d %5d %s", balance, line_number, line)
+		output = output .. "\n" .. string.format("%2d %5d %s", balance, line_number, line)
 	end
 	return output
 end
@@ -92,6 +92,6 @@ function match_curly()
 	})
 end
 
--- vim.keymap.set("n", "<leader>(", match_round, desc = "Match round brackets")
--- vim.keymap.set("n", "<leader>[", match_square, desc = "Match square brackets")
--- vim.keymap.set("n", "<leader>{", match_curly, desc = "Match curly brackets")
+vim.keymap.set("n", "<leader>(", match_round, { desc = "Match round brackets" })
+vim.keymap.set("n", "<leader>[", match_square, { desc = "Match square brackets" })
+vim.keymap.set("n", "<leader>{", match_curly, { desc = "Match curly brackets" })
