@@ -25,14 +25,14 @@ return {
 			hl_group = "lualine_c",
 		})
 
-		local search_stat
-		if vim.v.hlsearch == 1 then
-			local sinfo = vim.fn.searchcount({ maxcount = 0 })
-            local incomplete = sinfo.incomplete or 0
-            local total = sinfo.total or 0
-			search_stat = incomplete > 0 and "[?/?]"
-				or total > 0 and ("[%s/%s]"):format(sinfo.current, sinfo.total)
-				or ""
+		local function search_stat()
+			if vim.v.hlsearch == 1 then
+				local sinfo = vim.fn.searchcount({ maxcount = 0 })
+				local incomplete = sinfo.incomplete or 0
+				local total = sinfo.total or 0
+				local current = sinfo.current or 0
+				return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or ""
+			end
 		end
 
 		require("lualine").setup({
