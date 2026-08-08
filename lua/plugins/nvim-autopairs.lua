@@ -22,15 +22,9 @@ return {
 				:with_pair(cond.not_after_regex(","))
 				:with_pair(ts_conds.is_ts_node({ "table_constructor" })),
 		})
-		npairs.get_rules("(")[1]:with_pair(
-            :with_pair(cond.not_filetypes({ "grug-far" }))
-			:with_pair(cond.not_before_text("\\"))
-		npairs.get_rules("[")[1]:with_pair(
-            :with_pair(cond.not_filetypes({ "grug-far" }))
-			:with_pair(cond.not_before_text("\\"))
-		npairs.get_rules("{")[1]
-            :with_pair(cond.not_filetypes({ "grug-far" }))
-			:with_pair(cond.not_before_text("\\"))
+		npairs.get_rules("(")[1]:with_pair(cond.not_filetypes({ "grug-far" })):with_pair(cond.not_before_text("\\"))
+		npairs.get_rules("[")[1]:with_pair(cond.not_filetypes({ "grug-far" })):with_pair(cond.not_before_text("\\"))
+		npairs.get_rules("{")[1]:with_pair(cond.not_filetypes({ "grug-far" })):with_pair(cond.not_before_text("\\"))
 		npairs
 			.get_rules("'")[1]
 			:with_pair(cond.not_before_text("\\"))
