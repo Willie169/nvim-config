@@ -25,6 +25,14 @@ return {
 			hl_group = "lualine_c",
 		})
 
+		local search_stat
+		if vim.v.hlsearch == 1 then
+			local sinfo = vim.fn.searchcount({ maxcount = 0 })
+			search_stat = sinfo.incomplete > 0 and "[?/?]"
+				or sinfo.total > 0 and ("[%s/%s]"):format(sinfo.current, sinfo.total)
+				or nil
+		end
+
 		require("lualine").setup({
 			sections = {
 				lualine_a = {
@@ -83,14 +91,33 @@ return {
 							vim.cmd("FzfLua registers")
 						end,
 					},
+				},
+				lualine_y = {
 					{
 						"lsp_status",
 						on_click = function()
 							vim.cmd("FzfLua command_history")
 						end,
 					},
-				},
-				lualine_y = {
+					{
+						search_stat,
+						on_click = function()
+							local search = vim.fn.getreg("/")
+							-- surround with \b if "word" search (such as when pressing `*`)
+							if search and vim.startswith(search, "\\<") and vim.endswith(search, "\\>") then
+								search = "\\b" .. search:sub(3, -3) .. "\\b"
+							elseif search and vim.startswith(search, "\\V") then
+								search = search:sub(3)
+							end
+							require("grug-far").open({
+								transient = true,
+								prefills = {
+									search = search,
+									paths = vim.fn.fnameescape(vim.fn.expand("%")),
+								},
+							})
+						end,
+					},
 					{
 						"progress",
 						on_click = function()
