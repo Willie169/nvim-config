@@ -92,6 +92,6 @@ function match_curly()
 	})
 end
 
-vim.keymap.set("n", "<leader>(", match_round(), desc = "Match round brackets")
-vim.keymap.set("n", "<leader>[", match_square(), desc = "Match square brackets")
-vim.keymap.set("n", "<leader>{", match_curly(), desc = "Match curly brackets")
+vim.keymap.set("n", "<leader>(", match_round, desc = "Match round brackets")
+vim.keymap.set("n", "<leader>[", match_square, desc = "Match square brackets")
+vim.keymap.set("n", "<leader>{", match_curly, desc = "Match curly brackets")
