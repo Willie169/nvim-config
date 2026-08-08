@@ -29,8 +29,9 @@ return {
 		if vim.v.hlsearch == 1 then
 			local sinfo = vim.fn.searchcount({ maxcount = 0 })
             local incomplete = sinfo.incomplete or 0
+            local total = sinfo.total or 0
 			search_stat = incomplete > 0 and "[?/?]"
-				or sinfo.total > 0 and ("[%s/%s]"):format(sinfo.current, sinfo.total)
+				or total > 0 and ("[%s/%s]"):format(sinfo.current, sinfo.total)
 				or ""
 		end
 
