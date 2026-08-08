@@ -31,7 +31,7 @@ return {
 				local incomplete = sinfo.incomplete or 0
 				local total = sinfo.total or 0
 				local current = sinfo.current or 0
-				return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or ""
+				return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or true and ""
 			end
 		end
 
@@ -53,6 +53,7 @@ return {
 				lualine_b = {
 					{
 						"b:gitsigns_head",
+						icon = "",
 						on_click = function()
 							vim.cmd("FzfLua git_status")
 						end,
@@ -103,6 +104,7 @@ return {
 					},
 					{
 						search_stat,
+						icon = "󰍉",
 						on_click = function()
 							local search = vim.fn.getreg("/")
 							-- surround with \b if "word" search (such as when pressing `*`)
@@ -120,14 +122,14 @@ return {
 							})
 						end,
 					},
+				},
+				lualine_z = {
 					{
 						"progress",
 						on_click = function()
 							vim.cmd("FzfLua search_history")
 						end,
 					},
-				},
-				lualine_z = {
 					{
 						"location",
 						on_click = function()
