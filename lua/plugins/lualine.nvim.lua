@@ -27,13 +27,13 @@ return {
 
 		local function search_stat()
 			if vim.v.hlsearch ~= 1 then
-				return ""
+				return " "
 			end
 			local search_info = vim.fn.searchcount({ maxcount = 0 })
 			local incomplete = search_info.incomplete or 0
 			local total = search_info.total or 0
 			local current = search_info.current or 0
-			return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or ""
+			return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or " "
 		end
 
 		require("lualine").setup({
