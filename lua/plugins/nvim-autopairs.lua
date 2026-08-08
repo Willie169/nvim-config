@@ -48,5 +48,14 @@ return {
 			.get_rules("`")[1]
 			:with_pair(ts_conds.is_not_ts_node({ "string" }))
 			:with_pair(cond.not_filetypes({ "tex", "latex", "plaintex", "grug-far" }))
+		npairs.add_rules({
+			Rule("\\(", "\\)", { "tex", "latex", "plaintex" }),
+		})
+		npairs.add_rules({
+			Rule("\\[", "\\]", { "tex", "latex", "plaintex" }),
+		})
+		npairs.add_rules({
+			Rule("\\{", "\\}", { "tex", "latex", "plaintex" }),
+		})
 	end,
 }
