@@ -1,6 +1,6 @@
 return {
 	"Willie169/match-delimiter.nvim",
-    config = function()
-        require("match-delimiter"),setup()
-    end
+	config = function()
+		require("match-delimiter").setup()
+	end,
 }
