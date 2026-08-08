@@ -27,11 +27,14 @@ return {
 
 		local function search_stat()
 			if vim.v.hlsearch == 1 then
-				local sinfo = vim.fn.searchcount({ maxcount = 0 })
-				local incomplete = sinfo.incomplete or 0
-				local total = sinfo.total or 0
-				local current = sinfo.current or 0
-				return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or true and " "
+				local search_info = vim.fn.searchcount({ maxcount = 0 })
+				local incomplete = search_info.incomplete or 0
+				local total = search_info.total or 0
+				local current = search_info.current or 0
+				local stat = incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total)
+				if stat == nil then
+					stat = ""
+				end
 			end
 		end
 
