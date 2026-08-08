@@ -13,6 +13,7 @@
 !lualine.nvim.lua
 !luasnip-latex-snippets.nvim.lua
 !LuaSnip.lua
+!match-delimiter.nvim.lua
 !mini.ai.lua
 !mini.icons.lua
 !mini.surround.lua

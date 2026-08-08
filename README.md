@@ -144,6 +144,7 @@ All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 * [luasnip-latex-snippets.nvim](https://github.com/iurimateus/luasnip-latex-snippets.nvim)
 * [mini.ai](https://github.com/nvim-mini/mini.ai)
 * [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+* [match-delimiter.nvim](https://github.com/Willie169/match-delimiter.nvim)
 * [mini.icons](https://github.com/nvim-mini/mini.icons)
 * [mini.surround](https://github.com/nvim-mini/mini.surround)
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)

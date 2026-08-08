@@ -5,5 +5,4 @@ vim.opt.undodir = undodir
 vim.opt.undofile = true
 require("config.lazy")
 require("config.lsp")
-require("config.match_delimiter")
 pcall(require, "config.my_configs")
