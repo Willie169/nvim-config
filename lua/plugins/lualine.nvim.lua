@@ -31,7 +31,7 @@ return {
 				local incomplete = sinfo.incomplete or 0
 				local total = sinfo.total or 0
 				local current = sinfo.current or 0
-				return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or true and ""
+				return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or true and " "
 			end
 		end
 
