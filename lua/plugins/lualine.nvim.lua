@@ -31,10 +31,9 @@ return {
 				local incomplete = search_info.incomplete or 0
 				local total = search_info.total or 0
 				local current = search_info.current or 0
-				local stat = incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total)
-				if stat == nil then
-					stat = ""
-				end
+				return incomplete > 0 and "󰍉 [?/?]"
+					or total > 0 and ("󰍉 [%s/%s]"):format(current, total)
+					or "󰍉"
 			end
 		end
 
@@ -107,7 +106,6 @@ return {
 					},
 					{
 						search_stat,
-						icon = "󰍉",
 						on_click = function()
 							local search = vim.fn.getreg("/")
 							-- surround with \b if "word" search (such as when pressing `*`)
