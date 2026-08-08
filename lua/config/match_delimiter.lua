@@ -47,7 +47,7 @@ function match_delimiter(open, close, ignored_ts_node)
 
 	local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
 	local balance = 0
-	local output = {}
+	local output = ""
 
 	for row, line in ipairs(lines) do
 		local line_number = row
@@ -63,7 +63,7 @@ function match_delimiter(open, close, ignored_ts_node)
 				end
 			end
 		end
-		table.insert(output, string.format("%2d %5d %s", balance, line_number, line))
+		output = output + string.format("%2d %5d %s", balance, line_number, line)
 	end
 	return output
 end
