@@ -100,7 +100,7 @@ return {
 						end,
 					},
 					{
-						search_stat,
+						search_stat or '',
 						on_click = function()
 							local search = vim.fn.getreg("/")
 							-- surround with \b if "word" search (such as when pressing `*`)
