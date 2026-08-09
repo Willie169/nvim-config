@@ -54,6 +54,7 @@ return {
 			if node == nil then
 				node = ""
 			end
+			return node
 		end
 
 		require("lualine").setup({
