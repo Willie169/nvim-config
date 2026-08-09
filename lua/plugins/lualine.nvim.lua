@@ -27,13 +27,13 @@ return {
 
 		local function search_stat()
 			if vim.v.hlsearch ~= 1 then
-				return " "
+				return ""
 			end
 			local search_info = vim.fn.searchcount({ maxcount = 0 })
 			local incomplete = search_info.incomplete or 0
 			local total = search_info.total or 0
 			local current = search_info.current or 0
-			return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or " "
+			return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or ""
 		end
 
 		require("lualine").setup({
@@ -41,6 +41,7 @@ return {
 				lualine_a = {
 					{
 						"mode",
+						draw_empty = true,
 						on_click = function()
 							require("grug-far").open({
 								transient = true,
@@ -55,6 +56,7 @@ return {
 					{
 						"b:gitsigns_head",
 						icon = "",
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("FzfLua git_status")
 						end,
@@ -62,12 +64,14 @@ return {
 					{
 						"diff",
 						source = diff_source,
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("FzfLua git_diff")
 						end,
 					},
 					{
 						"diagnostics",
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("Trouble diagnostics toggle")
 						end,
@@ -76,7 +80,7 @@ return {
 				lualine_c = {
 					{
 						symbols.get,
-						cond = symbols.has,
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("InspectTree")
 						end,
@@ -85,12 +89,14 @@ return {
 				lualine_x = {
 					{
 						"filename",
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("FzfLua files")
 						end,
 					},
 					{
 						"filetype",
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("FzfLua registers")
 						end,
@@ -99,6 +105,7 @@ return {
 				lualine_y = {
 					{
 						"lsp_status",
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("FzfLua command_history")
 						end,
@@ -106,6 +113,7 @@ return {
 					{
 						search_stat,
 						icon = "󰍉",
+						draw_empty = true,
 						on_click = function()
 							local search = vim.fn.getreg("/")
 							-- surround with \b if "word" search (such as when pressing `*`)
@@ -127,12 +135,14 @@ return {
 				lualine_z = {
 					{
 						"progress",
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("FzfLua search_history")
 						end,
 					},
 					{
 						"location",
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("FzfLua undotree")
 						end,
