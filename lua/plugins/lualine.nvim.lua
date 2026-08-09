@@ -25,8 +25,8 @@ return {
 				-- Set it to the lualine section you want to use
 				hl_group = "lualine_c",
 			})
-			if symbols.has then
-				return symbols.get
+			if symbols.has() then
+				return symbols.get()
 			else
 				return " "
 			end
