@@ -83,6 +83,19 @@ return {
 				lualine_c = {
 					{
 						trouble_lsp,
+						refresh_time = 240,
+						events = {
+							"WinEnter",
+							"BufEnter",
+							"BufWritePost",
+							"SessionLoadPost",
+							"FileChangedShellPost",
+							"VimResized",
+							"Filetype",
+							"CursorMoved",
+							"CursorMovedI",
+							"ModeChanged",
+						},
 						on_click = function()
 							vim.cmd("InspectTree")
 						end,
