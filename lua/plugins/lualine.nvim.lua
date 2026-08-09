@@ -46,6 +46,7 @@ return {
 			if is_new_file() then
 				symbols = symbols .. "[New]"
 			end
+			return symbols
 		end
 
 		require("lualine").setup({
