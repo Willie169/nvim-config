@@ -33,8 +33,6 @@ return {
 					delay = 200,
 					reveal = { "close" },
 				},
-			},
-			highlights = require("catppuccin.special.bufferline").get_theme(),
 			custom_areas = {
 				right = function()
 					local result = {}
@@ -62,6 +60,8 @@ return {
 					return result
 				end,
 			},
+			},
+			highlights = require("catppuccin.special.bufferline").get_theme(),
 		})
 		-- Fix bufferline when restoring a session
 		vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete" }, {
