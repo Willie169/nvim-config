@@ -49,6 +49,13 @@ return {
 			return symbols
 		end
 
+		local function ts_node()
+			node = vim.treesitter.get_node()
+			if node == nil then
+				node = ""
+			end
+		end
+
 		require("lualine").setup({
 			sections = {
 				lualine_a = {
@@ -88,7 +95,7 @@ return {
 				},
 				lualine_c = {
 					{
-						vim.treesitter.get_node,
+						ts_node,
 						on_click = function()
 							vim.cmd("InspectTree")
 						end,
