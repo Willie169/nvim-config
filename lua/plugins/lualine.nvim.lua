@@ -25,16 +25,16 @@ return {
 		end
 
 		local function file_status()
-			local symbols = {}
+			local symbols = ""
 			if vim.fn.expand("%:t") == "" then
-				table.insert(symbols, "[No Name]")
+				symbols = symbols .. "[No Name]"
 			end
 			if vim.bo.modifiable == false or vim.bo.readonly == true then
-				table.insert(symbols, "[-]")
+				symbols = symbols .. "[-]"
 			elseif vim.bo.modified then
-				table.insert(symbols, "[+]")
+				symbols = symbols .. "[+]"
 			else
-				table.insert(symbols, "[.]")
+				symbols = symbols .. "[.]"
 			end
 			local function is_new_file()
 				local filename = vim.fn.expand("%")
@@ -44,7 +44,7 @@ return {
 					and vim.fn.filereadable(filename) == 0
 			end
 			if is_new_file() then
-				table.insert(symbols, "[New]")
+				symbols = symbols .. "[New]"
 			end
 		end
 
