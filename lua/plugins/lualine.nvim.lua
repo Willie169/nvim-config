@@ -24,6 +24,30 @@ return {
 			return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or " "
 		end
 
+		local function file_status()
+			local symbols = {}
+			if vim.fn.expand("%:t") == "" then
+				table.insert(symbols, "[No Name]")
+			end
+			if vim.bo.modifiable == false or vim.bo.readonly == true then
+				table.insert(symbols, "[-]")
+			elseif vim.bo.modified then
+				table.insert(symbols, "[+]")
+			else
+				table.insert(symbols, "[.]")
+			end
+			local function is_new_file()
+				local filename = vim.fn.expand("%")
+				return filename ~= ""
+					and filename:match("^%a+://") == nil
+					and vim.bo.buftype == ""
+					and vim.fn.filereadable(filename) == 0
+			end
+			if is_new_file() then
+				table.insert(symbols, "[New]")
+			end
+		end
+
 		require("lualine").setup({
 			sections = {
 				lualine_a = {
@@ -71,7 +95,7 @@ return {
 				},
 				lualine_x = {
 					{
-						"filename",
+						file_status,
 						on_click = function()
 							vim.cmd("FzfLua files")
 						end,
