@@ -24,7 +24,9 @@ return {
 				middle_mouse_command = "BufferLineCloseRight",
 				diagnostics = "nvim_lsp",
 				get_element_icon = function(element)
-					local icon, hl = require("mini.icons").get_icon_by_filetype(element.filetype, { default = false })
+					local icon, hl = require("mini.icons")
+						.mock_nvim_web_devicons()
+						.get_icon_by_filetype(element.filetype, { default = false })
 					return icon, hl
 				end,
 				always_show_bufferline = true,
