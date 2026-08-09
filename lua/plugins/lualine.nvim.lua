@@ -13,25 +13,6 @@ return {
 			end
 		end
 
-		local function trouble_lsp()
-			local trouble = require("trouble")
-			local symbols = trouble.statusline({
-				mode = "lsp_document_symbols",
-				groups = {},
-				title = false,
-				filter = { range = true },
-				format = "{kind_icon}{symbol.name:Normal}",
-				-- The following line is needed to fix the background color
-				-- Set it to the lualine section you want to use
-				hl_group = "lualine_c",
-			})
-			if symbols.has() then
-				return symbols.get()
-			else
-				return " "
-			end
-		end
-
 		local function search_stat()
 			if vim.v.hlsearch ~= 1 then
 				return " "
@@ -82,20 +63,7 @@ return {
 				},
 				lualine_c = {
 					{
-						trouble_lsp,
-						refresh_time = 240,
-						events = {
-							"WinEnter",
-							"BufEnter",
-							"BufWritePost",
-							"SessionLoadPost",
-							"FileChangedShellPost",
-							"VimResized",
-							"Filetype",
-							"CursorMoved",
-							"CursorMovedI",
-							"ModeChanged",
-						},
+						vim.treesitter.get_node,
 						on_click = function()
 							vim.cmd("InspectTree")
 						end,
