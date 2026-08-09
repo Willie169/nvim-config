@@ -28,6 +28,7 @@ if [ "${HOME}" = '/data/data/com.termux/files/home' ] || [ "${PREFIX:-}" = '/dat
 	ENV=2
 fi
 cd ~ || exit
+. <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 if [ "$ENV" -eq 0 ]; then
 	sudo luarocks install jsregexp
 else
@@ -48,7 +49,6 @@ if [ "$ENV" -ne 2 ]; then
 	fi
 fi
 ARCH=$(uname -m)
-. <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 rm -f ~/.local/bin/superhtml || true
 if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
 	SUPERHTML="x86_64-linux-musl"

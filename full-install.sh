@@ -12,6 +12,7 @@ if [ "${HOME}" = '/data/data/com.termux/files/home' ] || [ "${PREFIX:-}" = '/dat
 	ENV=2
 fi
 cd ~ || exit
+. <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 # shellcheck disable=2016
 [ "${1:-}" = "-n" ] || echo 'export PATH="${HOME}/.cargo/bin:${HOME}/eclipse.jdt.ls/bin:${HOME}/ktlsp/server/bin:${HOME}/.local/bin:${PATH:-}"' >>"${HOME}/.bashrc"
 mkdir -p ~/.local/bin
@@ -74,21 +75,9 @@ if [ "$ENV" -ne 2 ]; then
 	if ! echo y | brew install $BREW; then
 		echo y | brew install $BREW
 	fi
-	NPMG='quick-lint-js'
-	npm_allow=$(npm config get allow-scripts)
-	[ -n "$npm_allow" ] && npm_allow+=','
-	npm_allow+="${NPMG// /,}"
-	npm config set allow-scripts="$npm_allow" --location=user
-	# shellcheck disable=2086
-	npm i -g $NPMG
+	npmig quick-lint-js
 fi
-NPMG='bash-language-server dockerfile-language-server-nodejs neovim pyright vscode-json-languageserver yaml-language-server'
-npm_allow=$(npm config get allow-scripts)
-[ -n "$npm_allow" ] && npm_allow+=','
-npm_allow+="${NPMG// /,}"
-npm config set allow-scripts="$npm_allow" --location=user
-# shellcheck disable=2086
-npm i -g $NPMG
+npmig bash-language-server dockerfile-language-server-nodejs neovim pyright vscode-json-languageserver yaml-language-server
 for pkg in cmake-language-server jupytext; do
 	uv tool install "$pkg"
 done
