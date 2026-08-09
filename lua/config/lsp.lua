@@ -14,6 +14,18 @@ vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("superhtml")
 vim.lsp.enable("texlab")
 vim.lsp.enable("verible")
+vim.lsp.config("jsonls", {
+	cmd = function(dispatchers, config)
+		local cmd = "vscode-json-languageserver"
+		if (config or {}).root_dir then
+			local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", cmd)
+			if vim.fn.executable(local_cmd) == 1 then
+				cmd = local_cmd
+			end
+		end
+		return vim.lsp.rpc.start({ cmd, "--stdio" }, dispatchers)
+	end,
+})
 vim.lsp.enable("jsonls")
 vim.lsp.enable("yamlls")
 vim.keymap.set({ "n", "x" }, "sd", "<C-W>d", {
