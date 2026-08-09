@@ -19,10 +19,49 @@ return {
 	config = function()
 		require("bufferline").setup({
 			options = {
+				close_command = "bdelete %d",
+				right_mouse_command = "bdelete %d",
+				middle_mouse_command = "BufferLineCloseRight",
 				diagnostics = "nvim_lsp",
+				get_element_icon = function(element)
+					local icon, hl = require("mini.icons").get_icon_by_filetype(element.filetype, { default = false })
+					return icon, hl
+				end,
 				always_show_bufferline = true,
+				hover = {
+					enabled = true,
+					delay = 200,
+					reveal = { "close" },
+				},
 			},
 			highlights = require("catppuccin.special.bufferline").get_theme(),
+			custom_areas = {
+				right = function()
+					local result = {}
+					local seve = vim.diagnostic.severity
+					local error = #vim.diagnostic.get(0, { severity = seve.ERROR })
+					local warning = #vim.diagnostic.get(0, { severity = seve.WARN })
+					local info = #vim.diagnostic.get(0, { severity = seve.INFO })
+					local hint = #vim.diagnostic.get(0, { severity = seve.HINT })
+
+					if error ~= 0 then
+						table.insert(result, { text = "  " .. error, link = "DiagnosticError" })
+					end
+
+					if warning ~= 0 then
+						table.insert(result, { text = "  " .. warning, link = "DiagnosticWarn" })
+					end
+
+					if hint ~= 0 then
+						table.insert(result, { text = "  " .. hint, link = "DiagnosticHint" })
+					end
+
+					if info ~= 0 then
+						table.insert(result, { text = "  " .. info, link = "DiagnosticInfo" })
+					end
+					return result
+				end,
+			},
 		})
 		-- Fix bufferline when restoring a session
 		vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete" }, {
