@@ -25,6 +25,11 @@ vim.lsp.config("jsonls", {
 		end
 		return vim.lsp.rpc.start({ cmd, "--stdio" }, dispatchers)
 	end,
+	filetypes = { "json", "jsonc" },
+	init_options = {
+		provideFormatter = true,
+	},
+	root_markers = { ".git" },
 })
 vim.lsp.enable("jsonls")
 vim.lsp.enable("yamlls")
