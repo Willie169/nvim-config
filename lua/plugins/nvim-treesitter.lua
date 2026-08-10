@@ -1,21 +1,19 @@
-vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
-
-vim.api.nvim_create_autocmd("User", {
-	pattern = "TSUpdate",
-	callback = function()
-		require("nvim-treesitter.parsers").latex.install_info = {
-			generate = false,
-			url = "https://github.com/Willie169/tree-sitter-latex",
-			location = "tree-sitter-latex",
-		}
-	end,
-})
-
 return {
 	"nvim-treesitter/nvim-treesitter",
 	branch = "main",
 	build = ":TSUpdate",
 	config = function()
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "TSUpdate",
+			callback = function()
+				require("nvim-treesitter.parsers").latex.install_info = {
+					generate = false,
+					url = "https://github.com/Willie169/tree-sitter-latex",
+					location = "tree-sitter-latex",
+				}
+			end,
+		})
+
 		require("nvim-treesitter").setup()
 		require("nvim-treesitter").install({
 			"arduino",

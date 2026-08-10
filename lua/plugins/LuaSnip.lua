@@ -9,6 +9,7 @@ return {
 			end,
 		},
 	},
+	event = "LazyFile",
 	opts = {
 		history = true,
 		delete_check_events = "TextChanged",

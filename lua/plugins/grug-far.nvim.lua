@@ -1,6 +1,7 @@
 return {
 	"MagicDuck/grug-far.nvim",
 	dependencies = { "nvim-mini/mini.icons" },
+	event = "LazyFile",
 	opts = { headerMaxWidth = 80 },
 	keys = {
 		{

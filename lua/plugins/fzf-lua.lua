@@ -1,12 +1,11 @@
-vim.api.nvim_create_user_command("F", "FzfLua <args>", {
-	nargs = "*",
-})
-
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-mini/mini.icons" },
-	lazy = false,
+	event = "LazyFile",
 	config = function()
+		vim.api.nvim_create_user_command("F", "FzfLua <args>", {
+			nargs = "*",
+		})
 		require("fzf-lua").setup({ "telescope", "border-fused" })
 	end,
 	keys = {

@@ -1,4 +1,4 @@
 return {
 	"nvim-mini/mini.surround",
-	version = false,
+	lazy = true,
 }

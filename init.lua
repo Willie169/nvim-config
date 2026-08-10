@@ -1,4 +1,5 @@
 vim.cmd("source ~/.config/nvim/vim-config/basic.vim")
+vim.opt.runtimepath = vim.opt.runtimepath + "~/.local/share/nvim/site"
 local undodir = vim.fn.stdpath("state") .. "/undodir"
 vim.fn.mkdir(undodir, "p")
 vim.opt.undodir = undodir
