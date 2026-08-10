@@ -56,7 +56,7 @@ return {
 			end,
 		})
 		local function ts_node()
-			if not buf_ready[bufnr] then
+			if not buf_ready[vim.api.nvim_get_current_buf()] then
 				return ""
 			end
 			local node = vim.treesitter.get_node()
