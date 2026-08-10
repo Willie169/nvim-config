@@ -49,21 +49,18 @@ return {
 			return symbols
 		end
 
-		local ts_node_cache = ""
-		local ts_node_pending = false
+		local buf_ready = {}
+		vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+			callback = function(args)
+				buf_ready[args.buf] = true
+			end,
+		})
 		local function ts_node()
-			if not ts_node_pending then
-				ts_node_pending = true
-				vim.schedule(function()
-					local node = vim.treesitter.get_node()
-					ts_node_cache = node and node:type() or ""
-					ts_node_pending = false
-					require("lualine").refresh({
-						place = { "statusline" },
-					})
-				end)
+			if not buf_ready[bufnr] then
+				return ""
 			end
-			return ts_node_cache
+			local node = vim.treesitter.get_node()
+			return node and node:type() or ""
 		end
 
 		require("lualine").setup({
