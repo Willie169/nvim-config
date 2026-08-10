@@ -49,12 +49,21 @@ return {
 			return symbols
 		end
 
+		local ts_node_cache = ""
+		local ts_node_pending = false
 		local function ts_node()
-			node = vim.treesitter.get_node()
-			if node == nil then
-				node = ""
+			if not ts_node_pending then
+				ts_node_pending = true
+				vim.schedule(function()
+					local node = vim.treesitter.get_node()
+					ts_node_cache = node and node:type() or ""
+					ts_node_pending = false
+					require("lualine").refresh({
+						place = { "statusline" },
+					})
+				end)
 			end
-			return node
+			return ts_node_cache
 		end
 
 		require("lualine").setup({
