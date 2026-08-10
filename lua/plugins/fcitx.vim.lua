@@ -1,4 +1,4 @@
 return {
 	"lilydjwg/fcitx.vim",
-	event = "LazyFile",
+	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 }

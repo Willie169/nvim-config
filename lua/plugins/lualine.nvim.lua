@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-mini/mini.icons", "lewis6991/gitsigns.nvim" },
-	event = "LazyFile",
+	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	config = function()
 		local function diff_source()
 			local gitsigns = vim.b.gitsigns_status_dict

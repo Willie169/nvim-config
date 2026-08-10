@@ -9,7 +9,7 @@ return {
 			end,
 		},
 	},
-	event = "LazyFile",
+	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	opts = {
 		history = true,
 		delete_check_events = "TextChanged",

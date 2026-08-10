@@ -1,6 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter-textobjects",
-	event = "LazyFile",
+	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	branch = "main",
 	init = function()
 		-- Disable entire built-in ftplugin mappings to avoid conflicts.

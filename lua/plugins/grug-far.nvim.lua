@@ -1,7 +1,7 @@
 return {
 	"MagicDuck/grug-far.nvim",
 	dependencies = { "nvim-mini/mini.icons" },
-	event = "LazyFile",
+	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	opts = { headerMaxWidth = 80 },
 	keys = {
 		{
