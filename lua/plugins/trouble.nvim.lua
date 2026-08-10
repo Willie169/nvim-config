@@ -1,7 +1,7 @@
 return {
 	"folke/trouble.nvim",
 	dependencies = { "ibhagwan/fzf-lua" },
-	event = "VeryLazy",
+	lazy = "false",
 	opts = {},
 	keys = {
 		{
