@@ -2,6 +2,13 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-mini/mini.icons", "lewis6991/gitsigns.nvim" },
 	config = function()
+		local buf_ready = {}
+		vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+			callback = function(args)
+				buf_ready[args.buf] = true
+			end,
+		})
+
 		local function diff_source()
 			local gitsigns = vim.b.gitsigns_status_dict
 			if gitsigns then
@@ -25,6 +32,9 @@ return {
 		end
 
 		local function file_status()
+			if not buf_ready[vim.api.nvim_get_current_buf()] then
+				return ""
+			end
 			local symbols = ""
 			if vim.fn.expand("%:t") == "" then
 				symbols = symbols .. "[No Name]"
@@ -49,12 +59,6 @@ return {
 			return symbols
 		end
 
-		local buf_ready = {}
-		vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-			callback = function(args)
-				buf_ready[args.buf] = true
-			end,
-		})
 		local function ts_node()
 			if not buf_ready[vim.api.nvim_get_current_buf()] then
 				return ""
