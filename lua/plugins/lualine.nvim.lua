@@ -100,7 +100,7 @@ return {
 					{
 						"diagnostics",
 						on_click = function()
-							vim.cmd("Trouble diagnostics toggle")
+							vim.cmd("Trouble diagnostics toggle filter.buf=0")
 						end,
 					},
 				},
