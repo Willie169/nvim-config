@@ -1,7 +1,6 @@
 return {
 	"lambdalisue/vim-suda",
 	lazy = false,
-
 	init = function()
 		vim.api.nvim_create_user_command("W", function(opts)
 			local args = opts.args ~= "" and " " .. vim.fn.fnameescape(opts.args) or ""

@@ -5,5 +5,6 @@ vim.fn.mkdir(undodir, "p")
 vim.opt.undodir = undodir
 vim.opt.undofile = true
 require("config.lazy")
+vim.cmd.colorscheme("catppuccin-nvim")
 require("config.lsp")
 pcall(require, "config.my_configs")
