@@ -1,8 +1,6 @@
 return {
 	"folke/trouble.nvim",
 	dependencies = { "ibhagwan/fzf-lua" },
-	lazy = false,
-	opts = {},
 	keys = {
 		{
 			"<leader>xx",
@@ -64,6 +62,7 @@ return {
 		},
 	},
 	config = function()
+		require("trouble").setup()
 		local config = require("fzf-lua.config")
 		local actions = require("trouble.sources.fzf").actions
 		config.defaults.actions.files["ctrl-t"] = actions.open
