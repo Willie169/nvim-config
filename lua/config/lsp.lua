@@ -1,3 +1,6 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 vim.lsp.enable("bashls")
 vim.lsp.enable("clangd")
 vim.lsp.enable("cmake")
@@ -25,14 +28,36 @@ vim.lsp.config("jsonls", {
 		end
 		return vim.lsp.rpc.start({ cmd, "--stdio" }, dispatchers)
 	end,
-	filetypes = { "json", "jsonc" },
-	init_options = {
-		provideFormatter = true,
-	},
-	root_markers = { ".git" },
+	-- filetypes = { "json", "jsonc" },
+	-- init_options = {
+	-- 	provideFormatter = true,
+	-- },
+	-- root_markers = { ".git" },
 })
 vim.lsp.enable("jsonls")
 vim.lsp.enable("yamlls")
+vim.lsp.config("cssls", {
+	cmd = function(dispatchers, config)
+		local cmd = "css-languageserver"
+		if (config or {}).root_dir then
+			local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", cmd)
+			if vim.fn.executable(local_cmd) == 1 then
+				cmd = local_cmd
+			end
+		end
+		return vim.lsp.rpc.start({ cmd, "--stdio" }, dispatchers)
+	end,
+	-- filetypes = { "css", "scss", "less" },
+	-- init_options = { provideFormatter = true },
+	-- root_markers = { "package.json", ".git" },
+	-- settings = {
+	-- 	css = { validate = true },
+	-- 	scss = { validate = true },
+	-- 	less = { validate = true },
+	-- },
+    capabilities = capabilities,
+})
+vim.lsp.enable("cssls")
 vim.keymap.set({ "n", "x" }, "sd", "<C-W>d", {
 	remap = true,
 })
