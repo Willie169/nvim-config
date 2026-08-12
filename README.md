@@ -155,6 +155,7 @@ All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 * [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 * [persistence.nvim](https://github.com/folke/persistence.nvim)
 * [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+* [sort.nvim](https://github.com/sQVe/sort.nvim)
 * [termux-clipboard](https://github.com/Willie169/termux-clipboard)
 * [trouble.nvim](https://github.com/folke/trouble.nvim)
 * [vim-suda](https://github.com/lambdalisue/vim-suda)

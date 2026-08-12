@@ -26,6 +26,7 @@
 !nvim-ts-context-commentstring.lua
 !persistence.nvim.lua
 !render-markdown.nvim.lua
+!sort.nvim.lua
 !termux-clipboard.lua
 !trouble.nvim.lua
 !vim-suda.lua
