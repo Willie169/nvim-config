@@ -77,7 +77,8 @@ if [ "$ENV" -ne 2 ]; then
 	fi
 	npmig quick-lint-js
 fi
-npmig bash-language-server dockerfile-language-server-nodejs neovim pyright vscode-json-languageserver yaml-language-server
+# core-js is a dependency of vscode-langservers-extracted and needs allow-script
+npmig bash-language-server core-js dockerfile-language-server-nodejs neovim pyright vscode-langservers-extracted yaml-language-server
 for pkg in cmake-language-server jupytext; do
 	uv tool install "$pkg"
 done
