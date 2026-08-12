@@ -160,6 +160,7 @@ All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 * [vimtex](https://github.com/lervag/vimtex)
 * [which-key.nvim](https://github.com/folke/which-key.nvim)
 * [yazi.nvim](https://github.com/mikavilpas/yazi.nvim)
+* [zhuyin-pinyin.nvim](https://github.com/Willie169/zhuyin-pinyin.nvim)
 
 ### Vim
 
