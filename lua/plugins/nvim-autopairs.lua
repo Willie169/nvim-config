@@ -48,5 +48,8 @@ return {
 		npairs.add_rules({
 			Rule("\\{", "\\}", { "tex", "latex", "plaintex" }),
 		})
+		npairs.add_rules({
+			Rule("$", "$", { "tex", "latex", "plaintex" }):with_pair(cond.not_before_text("\\")):with_move(cond.done()),
+		})
 	end,
 }
