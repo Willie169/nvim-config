@@ -51,9 +51,9 @@ Full installation installs
 - [superhtml](https://github.com/kristoff-it/superhtml)
 - [texlab](https://github.com/latex-lsp/texlab)
 - [verible](https://github.com/chipsalliance/verible)
-- [vscode-json-languageserver](https://github.com/microsoft/vscode-json-languageservice)
+- [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
 - [yaml-language-server](https://github.com/redhat-developer/yaml-language-server)
-- Neovim configuration from this repo
+- Neovim configuration in this repo
 
 Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:
 - `apt`
