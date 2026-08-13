@@ -91,4 +91,4 @@ rm server.zip*
 cd ~ || exit
 # shellcheck disable=2164
 cd "$cwd"
-[ "$1" = '-i' ] || echo "Updated successfully!"
+[ "${1:-}" = '-i' ] || echo "Updated successfully!"
