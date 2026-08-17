@@ -30,6 +30,7 @@ return {
 			"desktop",
 			"diff",
 			"dockerfile",
+            "editorconfig",
 			"git_config",
 			"git_rebase",
 			"gitattributes",
