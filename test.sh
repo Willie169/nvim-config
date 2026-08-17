@@ -3,14 +3,14 @@
 set -euxo pipefail
 PPKG='curl git jq wget'
 if [ "$EUID" -eq 0 ]; then
-	touch /.dockerenv
-	apt update
-	# shellcheck disable=2086
-	DEBIAN_FRONTEND=noninteractive apt install $PPKG -y -o Dpkg::Options::="--force-confnew"
+  touch /.dockerenv
+  apt update
+  # shellcheck disable=2086
+  DEBIAN_FRONTEND=noninteractive apt install $PPKG -y -o Dpkg::Options::="--force-confnew"
 else
-	sudo apt update
-	# shellcheck disable=2086
-	sudo DEBIAN_FRONTEND=noninteractive apt install $PPKG -y -o Dpkg::Options::="--force-confnew"
+  sudo apt update
+  # shellcheck disable=2086
+  sudo DEBIAN_FRONTEND=noninteractive apt install $PPKG -y -o Dpkg::Options::="--force-confnew"
 fi
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"

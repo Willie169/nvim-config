@@ -15,45 +15,45 @@ set -euxo pipefail
 cwd="${cwd:-$(pwd)}"
 UPDATED=${UPDATED:-0}
 if [ "${1:-}" = '-i' ]; then
-	UPDATED=1
+  UPDATED=1
 fi
 if [ "$UPDATED" -ne 1 ]; then
-	sh ~/.config/nvim/update.sh -i
-	UPDATED=1 . ~/.config/nvim/full-update.sh
-	exit
+  sh ~/.config/nvim/update.sh -i
+  UPDATED=1 . ~/.config/nvim/full-update.sh
+  exit
 fi
 ENV=0
 [ "$EUID" -eq 0 ] && ENV=1
 if [ "${HOME}" = '/data/data/com.termux/files/home' ] || [ "${PREFIX:-}" = '/data/data/com.termux/files/usr' ]; then
-	ENV=2
+  ENV=2
 fi
 cd ~ || exit
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 if [ "$ENV" -eq 0 ]; then
-	sudo luarocks install jsregexp
+  sudo luarocks install jsregexp
 else
-	luarocks install jsregexp
+  luarocks install jsregexp
 fi
 if [ "$ENV" -ne 2 ]; then
-	cargo-binstall tree-sitter-cli --no-confirm
-	cargo install --git https://github.com/latex-lsp/texlab
+  cargo-binstall tree-sitter-cli --no-confirm
+  cargo install --git https://github.com/latex-lsp/texlab
 fi
 cargo install perl-lsp
 if [ "$ENV" -ne 2 ]; then
-	if [ "$1" = '-i' ]; then
-		if ! cargo install ra_ap_rust-analyzer --force; then
-			cargo install ra_ap_rust-analyzer --force
-		fi
-	else
-		cargo install ra_ap_rust-analyzer
-	fi
+  if [ "$1" = '-i' ]; then
+    if ! cargo install ra_ap_rust-analyzer --force; then
+      cargo install ra_ap_rust-analyzer --force
+    fi
+  else
+    cargo install ra_ap_rust-analyzer
+  fi
 fi
 ARCH=$(uname -m)
 rm -f ~/.local/bin/superhtml || true
 if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
-	SUPERHTML="x86_64-linux-musl"
+  SUPERHTML="x86_64-linux-musl"
 else
-	SUPERHTML="aarch64-linux"
+  SUPERHTML="aarch64-linux"
 fi
 gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml "$SUPERHTML".tar.xz
 xz -d "$SUPERHTML".tar.xz
@@ -62,9 +62,9 @@ rm "$SUPERHTML".tar*
 mv superhtml ~/.local/bin/
 rm ~/.local/bin/verible* || true
 if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
-	VERIBLE="verible-*-linux-static-x86_64"
+  VERIBLE="verible-*-linux-static-x86_64"
 else
-	VERIBLE="verible-*-linux-static-arm64"
+  VERIBLE="verible-*-linux-static-arm64"
 fi
 gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' chipsalliance/verible "$VERIBLE".tar.gz
 # shellcheck disable=2086
