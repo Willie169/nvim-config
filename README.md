@@ -11,18 +11,19 @@ curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/ma
 
 ### Full Installation
 
-Backp your configurations first.
+Backup your configurations first.
 ```
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-install.sh | bash
 ```
-This script will add following line to your `"$HOME/.bashrc"`:
+Please add the following to your `~/.bashrc`:
 ```
 export PATH="${HOME}/.cargo/bin:${HOME}/eclipse.jdt.ls/bin:${HOME}/ktlsp/server/bin:${HOME}/.local/bin:${PATH:-}"
 ```
-If you don't want it to touch your `"$HOME/.bashrc"`, use
+or use
 ```
-curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-install.sh | bash -s -- -n
+curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-install.sh | bash -s -- -a
 ```
+to let the script add it for you.
 
 Full installation installs
 - [Neovim](https://github.com/neovim/neovim)

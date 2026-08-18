@@ -14,7 +14,12 @@ fi
 cd ~ || exit
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 # shellcheck disable=2016
-[ "${1:-}" = "-n" ] || echo 'export PATH="${HOME}/.cargo/bin:${HOME}/eclipse.jdt.ls/bin:${HOME}/ktlsp/server/bin:${HOME}/.local/bin:${PATH:-}"' >>"${HOME}/.bashrc"
+if [ "${1:-}" = "-a" ]; then
+  echo 'export PATH="${HOME}/.cargo/bin:${HOME}/eclipse.jdt.ls/bin:${HOME}/ktlsp/server/bin:${HOME}/.local/bin:${PATH:-}"' >>"${HOME}/.bashrc"
+else
+  echo 'Please add the following to your ~/.bashrc'
+  echo 'export PATH="${HOME}/.cargo/bin:${HOME}/eclipse.jdt.ls/bin:${HOME}/ktlsp/server/bin:${HOME}/.local/bin:${PATH:-}"'
+fi
 mkdir -p ~/.local/bin
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
