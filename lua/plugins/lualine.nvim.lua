@@ -77,7 +77,7 @@ return {
 						end,
 					},
 					{
-						fcitx_current_im(),
+						fcitx_current_im,
 						on_click = function()
 							if vim.fn.exists("*" .. "Fcitx2en") == 1 then
 								vim.fn["Fcitx2en"]()
