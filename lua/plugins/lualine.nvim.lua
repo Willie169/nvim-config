@@ -63,6 +63,8 @@ return {
 		end
 
 		require("lualine").setup({
+			component_separators = { left = "|", right = "|" },
+			section_separators = { left = "", right = "" },
 			sections = {
 				lualine_a = {
 					{
@@ -92,7 +94,6 @@ return {
 				lualine_b = {
 					{
 						"b:gitsigns_head",
-						icon = "",
 						on_click = function()
 							vim.cmd("FzfLua git_status")
 						end,
@@ -104,14 +105,14 @@ return {
 							vim.cmd("FzfLua git_diff")
 						end,
 					},
+				},
+				lualine_c = {
 					{
 						"diagnostics",
 						on_click = function()
 							vim.cmd("Trouble diagnostics toggle filter.buf=0")
 						end,
 					},
-				},
-				lualine_c = {
 					{
 						ts_node,
 						on_click = function()
