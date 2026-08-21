@@ -116,7 +116,7 @@ return {
 				},
 				lualine_y = {
 					{
-						"lsp_status",
+						lsp_status,
 						on_click = function()
 							vim.cmd("FzfLua command_history")
 						end,
