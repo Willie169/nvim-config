@@ -16,13 +16,13 @@ return {
 
 		local function search_stat()
 			if vim.v.hlsearch ~= 1 then
-				return " "
+				return ""
 			end
 			local search_info = vim.fn.searchcount({ maxcount = 0 })
 			local incomplete = search_info.incomplete or 0
 			local total = search_info.total or 0
 			local current = search_info.current or 0
-			return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or " "
+			return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or ""
 		end
 
 		local function file_status()
@@ -127,7 +127,7 @@ return {
 					},
 					{
 						"filetype",
-						icon = nil,
+						icons_enabled = false,
 						on_click = function()
 							vim.cmd("FzfLua registers")
 						end,
@@ -136,17 +136,15 @@ return {
 				lualine_y = {
 					{
 						"lsp_status",
-						icon = nil,
+						icons_enabled = false,
 						on_click = function()
 							vim.cmd("FzfLua command_history")
 						end,
 					},
 					{
 						search_stat,
-						icon = "󰍉",
 						on_click = function()
 							local search = vim.fn.getreg("/")
-							-- surround with \b if "word" search (such as when pressing `*`)
 							if search and vim.startswith(search, "\\<") and vim.endswith(search, "\\>") then
 								search = "\\b" .. search:sub(3, -3) .. "\\b"
 							elseif search and vim.startswith(search, "\\V") then
