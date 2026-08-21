@@ -80,7 +80,11 @@ return {
 						fcitx_current_im,
 						on_click = function()
 							if vim.fn.exists("*" .. "Fcitx2en") == 1 then
-								vim.fn["Fcitx2en"]()
+								if fcitx_current_im() == "keyboard-us" then
+									vim.fn["Fcitx2zh"]()
+								else
+									vim.fn["Fcitx2en"]()
+								end
 							end
 						end,
 					},
