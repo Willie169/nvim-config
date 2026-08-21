@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "lewis6991/gitsigns.nvim", "lilydjwg/fcitx.vim" },
+	dependencies = { "nvim-mini/mini.icons", "lewis6991/gitsigns.nvim", "lilydjwg/fcitx.vim" },
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	config = function()
 		local function diff_source()
@@ -16,13 +16,13 @@ return {
 
 		local function search_stat()
 			if vim.v.hlsearch ~= 1 then
-				return "🔍"
+				return " "
 			end
 			local search_info = vim.fn.searchcount({ maxcount = 0 })
 			local incomplete = search_info.incomplete or 0
 			local total = search_info.total or 0
 			local current = search_info.current or 0
-			return incomplete > 0 and "🔍[?/?]" or total > 0 and ("🔍[%s/%s]"):format(current, total) or "🔍"
+			return incomplete > 0 and "[?/?]" or total > 0 and ("[%s/%s]"):format(current, total) or " "
 		end
 
 		local function file_status()
@@ -63,9 +63,6 @@ return {
 		end
 
 		require("lualine").setup({
-			options = {
-				icons_enabled = false,
-			},
 			sections = {
 				lualine_a = {
 					{
@@ -130,6 +127,7 @@ return {
 					},
 					{
 						"filetype",
+						icon = nil,
 						on_click = function()
 							vim.cmd("FzfLua registers")
 						end,
@@ -138,12 +136,14 @@ return {
 				lualine_y = {
 					{
 						"lsp_status",
+						icon = nil,
 						on_click = function()
 							vim.cmd("FzfLua command_history")
 						end,
 					},
 					{
 						search_stat,
+						icon = "󰍉",
 						on_click = function()
 							local search = vim.fn.getreg("/")
 							-- surround with \b if "word" search (such as when pressing `*`)
