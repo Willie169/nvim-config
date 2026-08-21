@@ -1,5 +1,15 @@
 return {
 	"stevearc/conform.nvim",
+	keys = {
+		{
+			"<leader>cF",
+			function()
+				require("conform").format()
+			end,
+			mode = { "n", "x" },
+			desc = "Format Injected Langs",
+		},
+	},
 	config = function()
 		require("conform").setup({
 			formatters = {
