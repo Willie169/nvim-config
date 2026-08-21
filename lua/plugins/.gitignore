@@ -6,6 +6,7 @@
 !bullets.vim.lua
 !catppuccin-nvim.lua
 !clever-f.vim.lua
+!conform.nvim.lua
 !fcitx.vim.lua
 !fzf-lua.lua
 !gitsigns.nvim.lua
