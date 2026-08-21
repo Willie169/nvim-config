@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-mini/mini.icons", "lewis6991/gitsigns.nvim" },
+	dependencies = { "nvim-mini/mini.icons", "lewis6991/gitsigns.nvim", "lilydjwg/fcitx.vim" },
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	config = function()
 		local function diff_source()
@@ -68,6 +68,10 @@ return {
 								},
 							})
 						end,
+					},
+					{
+						vim.fn.FcitxCurrentIM,
+						on_click = vim.fn.Fcitx2en(),
 					},
 				},
 				lualine_b = {
