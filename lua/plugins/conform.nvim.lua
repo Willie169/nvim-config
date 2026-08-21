@@ -40,7 +40,7 @@ return {
 				python = { "autopep8" },
 			},
 			format_on_save = {
-				timeout_ms = 100000,
+				timeout_ms = 500,
 				lsp_format = "fallback",
 			},
 		})
