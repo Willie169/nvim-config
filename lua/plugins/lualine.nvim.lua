@@ -71,7 +71,7 @@ return {
 					},
 					{
 						vim.fn.FcitxCurrentIM,
-						on_click = vim.fn.Fcitx2en(),
+						-- on_click = vim.fn.Fcitx2en(),
 					},
 				},
 				lualine_b = {
