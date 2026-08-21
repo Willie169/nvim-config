@@ -125,13 +125,6 @@ return {
 							vim.cmd("FzfLua files")
 						end,
 					},
-					{
-						"filetype",
-						icons_enabled = false,
-						on_click = function()
-							vim.cmd("FzfLua registers")
-						end,
-					},
 				},
 				lualine_y = {
 					{

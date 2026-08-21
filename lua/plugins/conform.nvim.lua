@@ -2,12 +2,12 @@ return {
 	"stevearc/conform.nvim",
 	keys = {
 		{
-			"<leader>cF",
+			"<leader>cf",
 			function()
 				require("conform").format()
 			end,
 			mode = { "n", "x" },
-			desc = "Format Injected Langs",
+			desc = "Format",
 		},
 	},
 	config = function()
@@ -40,7 +40,7 @@ return {
 				python = { "autopep8" },
 			},
 			format_on_save = {
-				timeout_ms = 500,
+				timeout_ms = 1000,
 				lsp_format = "fallback",
 			},
 		})
