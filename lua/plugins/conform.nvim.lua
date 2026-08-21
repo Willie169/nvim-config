@@ -38,12 +38,12 @@ return {
 						local start_offset, end_offset = util.get_offsets_from_range(ctx.buf, ctx.range)
 						return {
 							"--search-parent-directories",
+							"--respect-ignores",
 							"$FILENAME",
 							"--range-start",
 							tostring(start_offset),
 							"--range-end",
 							tostring(end_offset),
-							"-",
 						}
 					end,
 					cwd = require("conform.util").root_file({
