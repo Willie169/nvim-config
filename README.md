@@ -135,7 +135,6 @@ All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 * [bullets.vim](https://github.com/bullets-vim/bullets.vim)
 * [catppuccin-nvim](https://github.com/catppuccin/nvim)
 * [clever-f.vim](https://github.com/rhysd/clever-f.vim)
-* [fcitx.vim](https://github.com/lilydjwg/fcitx.vim)
 * [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 * [fzf-lua](https://github.com/ibhagwan/fzf-lua)
 * [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
