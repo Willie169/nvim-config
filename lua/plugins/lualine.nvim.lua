@@ -55,11 +55,6 @@ return {
 			return node and node:type() or ""
 		end
 
-		local function fcitx_current_im()
-			local im = vim.fn.FcitxCurrentIM()
-			return im or ""
-		end
-
 		require("lualine").setup({
 			sections = {
 				lualine_a = {
@@ -75,8 +70,8 @@ return {
 						end,
 					},
 					{
-						fcitx_current_im(),
-						-- on_click = vim.fn.Fcitx2en(),
+						vim.fn["FcitxCurrentIM"],
+						on_click = vim.fn["Fcitx2en"],
 					},
 				},
 				lualine_b = {
