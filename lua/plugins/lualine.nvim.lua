@@ -55,6 +55,13 @@ return {
 			return node and node:type() or ""
 		end
 
+		local function fcitx_current_im()
+			if vim.fn.exists("*" .. "FcitxCurrentIM") == 1 then
+				return vim.fn["FcitxCurrentIM"]()
+			end
+			return ""
+		end
+
 		require("lualine").setup({
 			sections = {
 				lualine_a = {
@@ -70,8 +77,12 @@ return {
 						end,
 					},
 					{
-						vim.fn["FcitxCurrentIM"],
-						on_click = vim.fn["Fcitx2en"],
+						fcitx_current_im(),
+						on_click = function()
+							if vim.fn.exists("*" .. "Fcitx2en") == 1 then
+								vim.fn["Fcitx2en"]()
+							end
+						end,
 					},
 				},
 				lualine_b = {
