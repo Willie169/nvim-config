@@ -54,6 +54,11 @@ Full installation installs
 - [verible](https://github.com/chipsalliance/verible)
 - [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
 - [yaml-language-server](https://github.com/redhat-developer/yaml-language-server)
+- [clang-format](https://github.com/llvm/llvm-project/blob/main/clang/tools/clang-format)
+- [Prettier](https://github.com/prettier/prettier)
+- [shfmt](https://github.com/mvdan/sh)
+- [StyLua](https://github.com/JohnnyMorganz/StyLua)
+- [autopep8](https://github.com/hhatto/autopep8)
 - Neovim configuration in this repo
 
 Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:

@@ -53,10 +53,10 @@ else
 fi
 if [ "$ENV" -ne 2 ]; then
   PURGE='neovim tree-sitter-cli'
-  PKG='clangd gopls luarocks python3-pynvim shellcheck'
+  PKG='clangd clang-format gopls luarocks python3-pynvim shellcheck shfmt'
 else
   PURGE=''
-  PKG='clang fzf gopls luarocks lua-language-server marksman neovim python-pynvim quick-lint-js ripgrep rust-analyzer shellcheck texlab tree-sitter yazi'
+  PKG='clang fzf gopls luarocks lua-language-server marksman neovim python-pynvim quick-lint-js ripgrep rust-analyzer shellcheck shfmt stylua texlab tree-sitter yazi'
 fi
 # shellcheck disable=2086
 if [ "$ENV" -eq 0 ]; then
@@ -83,8 +83,8 @@ if [ "$ENV" -ne 2 ]; then
   npmig quick-lint-js
 fi
 # core-js is a dependency of vscode-langservers-extracted and needs allow-script
-npmig bash-language-server core-js dockerfile-language-server-nodejs neovim pyright vscode-langservers-extracted yaml-language-server
-for pkg in cmake-language-server jupytext; do
+npmig bash-language-server core-js dockerfile-language-server-nodejs neovim prettier pyright vscode-langservers-extracted yaml-language-server
+for pkg in autopep8 cmake-language-server jupytext; do
   uv tool install "$pkg"
 done
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-update.sh | bash -s -- -i

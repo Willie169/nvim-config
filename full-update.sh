@@ -34,12 +34,11 @@ if [ "$ENV" -eq 0 ]; then
 else
   luarocks install jsregexp
 fi
-if [ "$ENV" -ne 2 ]; then
-  cargo-binstall tree-sitter-cli --no-confirm
-  cargo install --git https://github.com/latex-lsp/texlab
-fi
 cargo install perl-lsp
 if [ "$ENV" -ne 2 ]; then
+  cargo-binstall tree-sitter-cli --no-confirm
+  cargo install stylua
+  cargo install --git https://github.com/latex-lsp/texlab
   if [ "$1" = '-i' ]; then
     if ! cargo install ra_ap_rust-analyzer --force; then
       cargo install ra_ap_rust-analyzer --force
