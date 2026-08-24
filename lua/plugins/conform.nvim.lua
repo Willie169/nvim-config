@@ -30,8 +30,6 @@ return {
 				css = { "prettier" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
-				html = { "prettier" },
-				markdown = { "prettier" },
 				json = { "prettier" },
 				yaml = { "prettier" },
 				sh = { "shfmt" },
