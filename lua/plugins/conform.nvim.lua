@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	keys = {
 		{
-			"<leader>cf",
+			"<localleader>f",
 			function()
 				require("conform").format()
 			end,
