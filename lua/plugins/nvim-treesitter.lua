@@ -63,6 +63,7 @@ return {
 			"query",
 			"rust",
 			"sql",
+			"ssh_config",
 			"systemverilog",
 			"toml",
 			"tsx",
