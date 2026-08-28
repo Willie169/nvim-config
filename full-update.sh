@@ -30,9 +30,9 @@ fi
 cd ~ || exit
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 if [ "$ENV" -eq 0 ]; then
-  sudo luarocks install jsregexp
+  sudo luarocks install jsregexp || sudo luarocks install jsregexp
 else
-  luarocks install jsregexp
+  luarocks install jsregexp || luarocks install jsregexp
 fi
 cargo install perl-lsp
 if [ "$ENV" -ne 2 ]; then
