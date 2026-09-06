@@ -25,9 +25,6 @@ return {
 			shfmt = {
 				append_args = { "-i", "2", "-ci" },
 			},
-			autopep8 = {
-				append_args = { "--aggressive", "--aggressive" },
-			},
 		},
 		formatters_by_ft = {
 			c = { "clang-format" },
@@ -41,7 +38,7 @@ return {
 			sh = { "shfmt" },
 			rust = { "rustfmt" },
 			lua = { "stylua" },
-			python = { "autopep8" },
+			python = { "black" },
 		},
 		format_on_save = {
 			timeout_ms = 3000,

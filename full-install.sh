@@ -84,7 +84,7 @@ if [ "$ENV" -ne 2 ]; then
 fi
 # core-js is a dependency of vscode-langservers-extracted and needs allow-script
 npmig bash-language-server core-js dockerfile-language-server-nodejs neovim prettier pyright vscode-langservers-extracted yaml-language-server
-for pkg in autopep8 cmake-language-server jupytext; do
+for pkg in black cmake-language-server jupytext; do
   uv tool install "$pkg"
 done
 curl -fsSL https://raw.githubusercontent.com/Willie169/nvim-config/refs/heads/main/full-update.sh | bash -s -- -i

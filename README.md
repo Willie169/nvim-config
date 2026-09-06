@@ -58,7 +58,7 @@ Full installation installs
 - [Prettier](https://github.com/prettier/prettier)
 - [shfmt](https://github.com/mvdan/sh)
 - [StyLua](https://github.com/JohnnyMorganz/StyLua)
-- [autopep8](https://github.com/hhatto/autopep8)
+- [black](https://github.com/psf/black)
 - Neovim configuration in this repo
 
 Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:
