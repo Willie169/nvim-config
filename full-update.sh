@@ -28,6 +28,8 @@ if [ "${HOME}" = '/data/data/com.termux/files/home' ] || [ "${PREFIX:-}" = '/dat
   ENV=2
 fi
 cd ~ || exit
+mkdir -p ~/.config/nvim/dictionary
+wget --tries=100 --retry-connrefused --waitretry=5 -O ~/.config/nvim/dictionary/words.txt https://raw.githubusercontent.com/dwyl/english-words/refs/heads/master/words.txt
 . <(curl -fsSL 'https://raw.githubusercontent.com/Willie169/bashrc/refs/heads/main/bashrc.d/30-shared-functions.sh')
 if [ "$ENV" -eq 0 ]; then
   sudo luarocks install jsregexp

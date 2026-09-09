@@ -1,6 +1,6 @@
 return {
 	"saghen/blink.cmp",
-	dependencies = { "saghen/blink.lib", "L3MON4D3/LuaSnip" },
+	dependencies = { "saghen/blink.lib", "L3MON4D3/LuaSnip", "Kaiser-Yang/blink-cmp-dictionary" },
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	build = function()
 		require("blink.cmp").build():pwait()
@@ -15,7 +15,17 @@ return {
 		snippets = {
 			preset = "luasnip",
 		},
-		sources = { default = { "lsp", "path", "snippets", "buffer" } },
+		sources = { default = { "lsp", "path", "snippets", "buffer", "dictionary" } },
 		fuzzy = { implementation = "rust" },
+		providers = {
+			dictionary = {
+				module = "blink-cmp-dictionary",
+				name = "Dict",
+				min_keyword_length = 1,
+				opt = {
+					dictionary_directories = { vim.fn.expand("~/.config/nvim/dictionary") },
+				},
+			},
+		},
 	},
 }

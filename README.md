@@ -59,6 +59,7 @@ Full installation installs
 - [shfmt](https://github.com/mvdan/sh)
 - [StyLua](https://github.com/JohnnyMorganz/StyLua)
 - [black](https://github.com/psf/black)
+- [words.txt of english-words at ~/.config/nvim/dictionary/words.txt](https://github.com/dwyl/english-words)
 - Neovim configuration in this repo
 
 Debian derivatives on x86\_64 or AArch64 architecture with normal or root user are supported provided that the following executables are available:
@@ -136,6 +137,7 @@ All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 
 * [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 * [blink.cmp](https://github.com/saghen/blink.cmp)
+* [blink-cmp-dictionary](https://github.com/Kaiser-Yang/blink-cmp-dictionary)
 * [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 * [bullets.vim](https://github.com/bullets-vim/bullets.vim)
 * [catppuccin-nvim](https://github.com/catppuccin/nvim)
