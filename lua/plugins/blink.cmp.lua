@@ -1,7 +1,7 @@
 return {
 	"saghen/blink.cmp",
 	dependencies = { "saghen/blink.lib", "L3MON4D3/LuaSnip", "Kaiser-Yang/blink-cmp-dictionary" },
-	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+	lazy = false,
 	build = function()
 		require("blink.cmp").build():pwait()
 	end,
