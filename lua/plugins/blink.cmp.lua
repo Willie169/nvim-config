@@ -15,17 +15,19 @@ return {
 		snippets = {
 			preset = "luasnip",
 		},
-		sources = { default = { "lsp", "path", "snippets", "buffer", "dictionary" } },
-		fuzzy = { implementation = "rust" },
-		providers = {
-			dictionary = {
-				module = "blink-cmp-dictionary",
-				name = "Dict",
-				min_keyword_length = 1,
-				opt = {
-					dictionary_directories = { vim.fn.expand("~/.config/nvim/dictionary") },
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer", "dictionary" },
+			providers = {
+				dictionary = {
+					module = "blink-cmp-dictionary",
+					name = "Dict",
+					min_keyword_length = 1,
+					opt = {
+						dictionary_directories = { vim.fn.expand("~/.config/nvim/dictionary") },
+					},
 				},
 			},
 		},
+		fuzzy = { implementation = "rust" },
 	},
 }
