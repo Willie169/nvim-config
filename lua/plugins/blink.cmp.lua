@@ -16,7 +16,7 @@ return {
 			preset = "luasnip",
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "dictionary" },
+			default = { "dictionary", "lsp", "path", "snippets", "buffer" },
 			providers = {
 				dictionary = {
 					module = "blink-cmp-dictionary",
