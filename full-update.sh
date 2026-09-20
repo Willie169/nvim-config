@@ -41,16 +41,10 @@ if [ "$ENV" -ne 2 ]; then
   cargo-binstall tree-sitter-cli --no-confirm
   cargo install stylua
   cargo install --git https://github.com/latex-lsp/texlab
-  if [ "$1" = '-i' ]; then
-    if ! cargo install ra_ap_rust-analyzer --force; then
-      cargo install ra_ap_rust-analyzer --force
-    fi
-  else
-    cargo install ra_ap_rust-analyzer
-  fi
+  rustup component add rust-src
 fi
 ARCH=$(uname -m)
-rm -f ~/.local/bin/superhtml || true
+rm -f ~/.local/bin/superhtml
 if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
   SUPERHTML="x86_64-linux-musl"
 else
@@ -59,9 +53,9 @@ fi
 gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' kristoff-it/superhtml "$SUPERHTML".tar.xz
 xz -d "$SUPERHTML".tar.xz
 tar -xf "$SUPERHTML".tar || true
-rm "$SUPERHTML".tar*
+rm -f "$SUPERHTML".tar*
 mv superhtml ~/.local/bin/
-rm ~/.local/bin/verible* || true
+rm -f ~/.local/bin/verible*
 if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
   VERIBLE="verible-*-linux-static-x86_64"
 else
@@ -73,23 +67,37 @@ gzip -d $VERIBLE.tar.gz
 # shellcheck disable=2086
 tar -xf $VERIBLE.tar || true
 mv verible*/bin/* ~/.local/bin/
-rm -r verible*
-rm -rf eclipse.jdt.ls || true
+rm -rf verible*
+rm -rf eclipse.jdt.ls
 mkdir eclipse.jdt.ls
 cd eclipse.jdt.ls || exit
 wget --tries=100 --retry-connrefused --waitretry=5 https://www.eclipse.org/downloads/download.php?file=/jdtls/snapshots/jdt-language-server-latest.tar.gz -O jdt-language-server-latest.tar.gz
 gzip -d jdt-language-server-latest.tar.gz
 tar -xf jdt-language-server-latest.tar || true
-rm jdt-language-server-latest.tar*
+rm -f jdt-language-server-latest.tar*
 cd ~ || exit
 test -f ~/eclipse.jdt.ls/bin/jdtls
-rm -rf ktlsp || true
+rm -rf ktlsp
 mkdir ktlsp
 cd ktlsp
 gh_release --codeberg winlogon/ktlsp server.zip
 unzip server.zip
-rm server.zip*
+rm -f server.zip*
 cd ~ || exit
+if [ "$ENV" -ne 2 ]; then
+  rm -f ~/.local/bin/rust-analyzer
+  if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
+    RUSTANALYZER='rust-analyzer-x86_64-unknown-linux-gnu'
+  else
+    RUSTANALYZER='rust-analyzer-aarch64-unknown-linux-gnu'
+  fi
+  gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' rust-lang/rust-analyzer "$RUSTANALYZER".gz
+  gzip -d "$RUSTANALYZER".gz
+  rm -f "$RUSTANALYZER".gz*
+  chmod +x "$RUSTANALYZER"
+  mv "$RUSTANALYZER" rust-analyzer
+  mv rust-analyzer ~/.local/bin/
+fi
 # shellcheck disable=2164
 cd "$cwd"
 [ "${1:-}" = '-i' ] || echo "Updated successfully!"

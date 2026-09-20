@@ -90,6 +90,10 @@ Debian derivatives on x86\_64 or AArch64 architecture with normal or root user a
   echo y | corepack enable npm
   echo y | npm --help || true
   ```
+- `rustup`: can be installed with
+  ```
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  ```
 - `uv`: can be installed with:
   ```
   curl -LsSf https://astral.sh/uv/install.sh | sh

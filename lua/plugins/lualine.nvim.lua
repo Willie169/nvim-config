@@ -107,6 +107,7 @@ return {
 				lualine_c = {
 					{
 						"diagnostics",
+						draw_empty = true,
 						on_click = function()
 							vim.cmd("Trouble diagnostics toggle filter.buf=0")
 						end,
