@@ -116,7 +116,7 @@ Termux on AArch64 architecture is supported provided that the following executab
 
 Run `:checkhealth` in Neovim after installation and refer to the documentations of the plugins for other optional external software you may install.
 
-This is also used in my [**ubuntu-setup-with-vnc-and-gpu**](https://github.com/Willie169/ubuntu-setup-with-vnc-and-gpu) and [**termux-sh**](https://github.com/Willie169/termux-sh) repos. You may check them out for my full setup.
+This is also used in my [**ubuntu-setup**](https://github.com/Willie169/ubuntu-setup) and [**termux-sh**](https://github.com/Willie169/termux-sh) repos. You may check them out for my full setup.
 
 ### Configuration Update
 
