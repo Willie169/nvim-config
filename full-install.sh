@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -euxo pipefail
 cwd="$(pwd)"
 # ENV
 # 0: normal

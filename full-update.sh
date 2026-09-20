@@ -11,7 +11,6 @@
 # gzip -d file.tar.gz
 # tar -xf file.tar || true
 
-set -euxo pipefail
 cwd="${cwd:-$(pwd)}"
 UPDATED=${UPDATED:-0}
 if [ "${1:-}" = '-i' ]; then

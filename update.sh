@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
 cwd="$(pwd)"
 cd ~/.config/nvim
 git reset --hard

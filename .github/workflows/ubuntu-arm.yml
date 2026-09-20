@@ -1,6 +1,14 @@
 name: ubuntu-arm
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "full-install.sh"
+      - "install.sh"
+      - "full-update.sh"
+      - "update.sh"
+      - "test.sh"
+      - ".github/workflows/ubuntu-arm.yml"
 jobs:
   install:
     timeout-minutes: 360

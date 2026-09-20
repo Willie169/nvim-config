@@ -1,6 +1,13 @@
 name: termux
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "full-install.sh"
+      - "install.sh"
+      - "full-update.sh"
+      - "update.sh"
+      - ".github/workflows/termux.yml"
 jobs:
   install:
     timeout-minutes: 360

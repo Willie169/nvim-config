@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
 cwd="$(pwd)"
 rm -rf ~/.local/share/nvim || true
 rm -rf ~/.local/state/nvim || true

@@ -1,6 +1,14 @@
 name: ubuntu-debian
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "full-install.sh"
+      - "install.sh"
+      - "full-update.sh"
+      - "update.sh"
+      - "test.sh"
+      - ".github/workflows/ubuntu-debian.yml"
 jobs:
   install:
     timeout-minutes: 360
