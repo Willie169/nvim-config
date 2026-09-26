@@ -55,7 +55,7 @@ Full installation installs
 - [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
 - [yaml-language-server](https://github.com/redhat-developer/yaml-language-server)
 - [clang-format](https://github.com/llvm/llvm-project/blob/main/clang/tools/clang-format)
-- [latexindent.pl](https://github.com/cmhughes/latexindent.pl) (with Homebrew)
+- [latexindent.pl](https://github.com/cmhughes/latexindent.pl)
 - [Prettier](https://github.com/prettier/prettier)
 - [shfmt](https://github.com/mvdan/sh)
 - [StyLua](https://github.com/JohnnyMorganz/StyLua)
