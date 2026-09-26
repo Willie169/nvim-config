@@ -74,7 +74,7 @@ else
   command -v xz >/dev/null 2>&1 || DEBIAN_FRONTEND=noninteractive apt install xz-utils -y -o Dpkg::Options::="--force-confnew"
 fi
 if [ "$ENV" -ne 2 ]; then
-  BREW='fzf lua-language-server marksman neovim ripgrep yazi'
+  BREW='fzf latexindent lua-language-server marksman neovim ripgrep yazi'
   # shellcheck disable=2086
   if ! echo y | brew install $BREW; then
     echo y | brew install $BREW
