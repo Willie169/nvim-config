@@ -52,7 +52,7 @@ else
 fi
 if [ "$ENV" -ne 2 ]; then
   PURGE='neovim tree-sitter-cli'
-  PKG='clangd clang-format gopls luarocks python3-pynvim shellcheck shfmt'
+  PKG='clangd clang-format gopls luarocks python3-pynvim shellcheck shfmt texlive-extra-utils'
 else
   PURGE=''
   PKG='clang fzf gopls luarocks lua-language-server marksman neovim python-pynvim quick-lint-js ripgrep rust-analyzer rust-src shellcheck shfmt stylua texlab tree-sitter yazi'
@@ -74,7 +74,7 @@ else
   command -v xz >/dev/null 2>&1 || DEBIAN_FRONTEND=noninteractive apt install xz-utils -y -o Dpkg::Options::="--force-confnew"
 fi
 if [ "$ENV" -ne 2 ]; then
-  BREW='fzf latexindent lua-language-server marksman neovim ripgrep yazi'
+  BREW='fzf lua-language-server marksman neovim ripgrep yazi'
   # shellcheck disable=2086
   if ! echo y | brew install $BREW; then
     echo y | brew install $BREW

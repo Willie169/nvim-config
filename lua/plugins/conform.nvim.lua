@@ -22,6 +22,9 @@ return {
 			["clang-format"] = {
 				append_args = { "-style=llvm" },
 			},
+			latexindent = {
+				append_args = { "-g", "/dev/null" },
+			},
 			shfmt = {
 				append_args = { "-i", "2", "-ci" },
 			},
@@ -33,7 +36,7 @@ return {
 			java = { "clang-format" },
 			javascript = { "prettier" },
 			json = { "prettier" },
-      latex = { "latexindent" },
+			latex = { "latexindent" },
 			lua = { "stylua" },
 			python = { "black" },
 			rust = { "rustfmt" },
