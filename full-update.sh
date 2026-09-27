@@ -43,6 +43,20 @@ if [ "$ENV" -ne 2 ]; then
   rustup component add rust-src
 fi
 ARCH=$(uname -m)
+rm -f ~/.local/bin/latexindent
+if [ "$ENV" -ne 2 ]; then
+  if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
+    LATEXINDENT=latexindent-linux
+  else
+    LATEXINDENT=latexindent-linux-arm64
+  fi
+  gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' cmhughes/latexindent.pl "$LATEXINDENT"
+  mv "$LATEXINDENT" latexindent
+else
+  gh_release -w --wget_option '--tries=100 --retry-connrefused --waitretry=5' Willie169/latexindent-termux latexindent
+fi
+chmod +x latexindent
+mv latexindent ~/.local/bin/
 rm -f ~/.local/bin/superhtml
 if [[ "$ARCH" == "x86_64" || "$ARCH" == "amd64" ]]; then
   SUPERHTML="x86_64-linux-musl"
@@ -78,7 +92,7 @@ cd ~ || exit
 test -f ~/eclipse.jdt.ls/bin/jdtls
 rm -rf ktlsp
 mkdir ktlsp
-cd ktlsp
+cd ktlsp || exit
 gh_release --codeberg winlogon/ktlsp server.zip
 unzip server.zip
 rm -f server.zip*
