@@ -52,7 +52,7 @@ else
 fi
 if [ "$ENV" -ne 2 ]; then
   PURGE='neovim tree-sitter-cli'
-  PKG='clangd clang-format gopls luarocks python3-pynvim shellcheck shfmt texlive-extra-utils'
+  PKG='clangd clang-format gopls luarocks python3-pynvim shellcheck shfmt'
 else
   PURGE=''
   PKG='clang fzf gopls luarocks lua-language-server marksman neovim python-pynvim quick-lint-js ripgrep rust-analyzer rust-src shellcheck shfmt stylua texlab tree-sitter yazi'
