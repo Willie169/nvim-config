@@ -49,7 +49,8 @@ return {
 			Rule("\\{", "\\}", { "tex", "latex", "plaintex" }),
 		})
 		npairs.add_rules({
-			Rule("|", "|", { "tex", "latex", "plaintex" }),
+			Rule("|", "|", { "tex", "latex", "plaintex" })
+      :with_move(cond.done()),
 		})
 	end,
 }
