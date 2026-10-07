@@ -48,5 +48,8 @@ return {
 		npairs.add_rules({
 			Rule("\\{", "\\}", { "tex", "latex", "plaintex" }),
 		})
+		npairs.add_rules({
+			Rule("|", "|", { "tex", "latex", "plaintex" }),
+		})
 	end,
 }
