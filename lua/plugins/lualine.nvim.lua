@@ -18,7 +18,7 @@ return {
 			if vim.v.hlsearch ~= 1 then
 				return ""
 			end
-			local search_info = vim.fn.searchcount({ maxcount = 0, recompute = 1 })
+			local search_info = vim.fn.searchcount({ maxcount = 0 })
 			local incomplete = search_info.incomplete or 0
 			local total = search_info.total or 0
 			local current = search_info.current or 0
