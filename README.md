@@ -82,14 +82,13 @@ Debian derivatives on x86\_64 or AArch64 architecture with normal or root user a
   ```
 - `npm`: can be installed with:
   ```
+  sudo apt install curl git jq libatomic1 -y
   NVM_VERSION=$(curl -fsSL "https://api.github.com/repos/nvm-sh/nvm/releases/latest" | jq -r '.tag_name')
   bash -c "curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash"
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
   nvm install --lts
-  echo y | corepack enable npm
-  echo y | npm --help || true
   ```
 - `rustup`: can be installed with
   ```
