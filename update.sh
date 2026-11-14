@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 cwd="$(pwd)"
-cd ~/.config/nvim
+cd ~/.config/nvim || exit
 git reset --hard
 git pull --rebase
 git clean -fd
-cd vim-config
+cd vim-config || exit
 git reset --hard
 git pull --rebase
 git clean -fd
