@@ -154,7 +154,6 @@ All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 * [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 * [jupytext.nvim](https://github.com/goerz/jupytext.nvim)
 * [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-* [luasnip-latex-snippets.nvim](https://github.com/iurimateus/luasnip-latex-snippets.nvim)
 * [match-delimiter.nvim](https://github.com/Willie169/match-delimiter.nvim)
 * [mini.ai](https://github.com/nvim-mini/mini.ai)
 * [mini.icons](https://github.com/nvim-mini/mini.icons)
