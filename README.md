@@ -169,6 +169,7 @@ All of them are installed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 * [sort.nvim](https://github.com/sQVe/sort.nvim)
 * [termux-clipboard](https://github.com/Willie169/termux-clipboard)
 * [trouble.nvim](https://github.com/folke/trouble.nvim)
+* [vim-abolish](https://github.com/tpope/vim-abolish)
 * [vim-suda](https://github.com/lambdalisue/vim-suda)
 * [vimtex](https://github.com/lervag/vimtex)
 * [which-key.nvim](https://github.com/folke/which-key.nvim)
