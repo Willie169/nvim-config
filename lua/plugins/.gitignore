@@ -29,6 +29,7 @@
 !sort.nvim.lua
 !termux-clipboard.lua
 !trouble.nvim.lua
+!vim-abolish.lua
 !vim-suda.lua
 !vimtex.lua
 !which-key.nvim.lua
